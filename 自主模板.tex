@@ -21,48 +21,34 @@ keyword1; keyword2
 
 \newpage
 \section{Introduction}
-\begin{itemize}
-\item minimizes the discomfort to the hands, or
-\item maximizes the outgoing velocity of the ball.
-\end{itemize}
-We focus exclusively on the second definition.
 
-\begin{itemize}
-\item the initial velocity and rotation of the ball,
-\item the initial velocity and rotation of the bat,
-\item the relative position and orientation of the bat and ball, and
-\item the force over time that the hitter hands applies on the handle.
-\end{itemize}
-
-\begin{itemize}
-\item the angular velocity of the bat,
-\item the velocity of the ball, and
-\item the position of impact along the bat.
-\end{itemize}
-
-\emph{center of percussion} [Brody 1986],
-
-\begin{Theorem} \label{thm:latex}
-\LaTeX
-\end{Theorem}
-\begin{Lemma} \label{thm:tex}
-\TeX .
-\end{Lemma}
-\begin{proof}
-The proof of theorem.
-\end{proof}
 \subsection{Problem Statement}
-\begin{itemize}
-\item
-\item
-\item
-\item
-\end{itemize}
+In the modern life, people would like to live in a healthy lifestyle. Then it is unavoidable to buy fresh and cheap fruits. Fruit prices fluctuate significantly from week to week. Consumers sometimes may be sensitive to these changes while sometimes not, leading to some fruits selling well while some do not. Besides, when seasons change, the popularity of some fruits also decline. Other factors can also influence the selling of fruits. When customers buy less fruits, those redundant fruits may soon become rotted and cause merchants’ loss. To avoid too many orders, fruit merchants have to predict how much fruits to be sold during the following days and try to make these predictions as close to the reality as possible. Moreover, when the selling of fruits does not live up to their expectations, they may use various strategies to promote, such as discount, combination, VIP benefits and etc.
 \subsection{Related Work}
-\section{Assumptions and Notations}
-\subsection{Assumptions}
-\subsection{Notations}
 
+\section{Assumptions and Notations}
+
+\subsection{Assumptions}
+We make the following basic assumptions in order to simplify the problem. Each
+of our assumptions is justified and is consistent with the basic fact.
+\begin{itemize}
+\item \textbf{}
+\item \textbf{}
+\item \textbf{}
+\item \textbf{}
+\end{itemize}
+\subsection{Notations}
+\begin{table}
+    \centering
+    \caption{Notations} \label{table-notations}
+    \begin{tabular}{ccc}
+    \toprule
+        Symbol & Definition & Notes\\
+    \midrule
+        h & hh & hhh\\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
 \section{Model Construction}
 
 \subsection{Model 1}
@@ -102,6 +88,48 @@ a^2 \label{aa}
   \right)!}}} \eqno (1)
 \]
 
+\section{Data Processing}
+
+\subsection{Data Analysis}
+
+All fruit selling data are limited as two comma separated value files,
+hence all the following analyses are based on that two files.
+
+The first file contains all purchasing records between the end of 2017 and the beginning of 2018, whereas 81445 records in approximately 3 months. Each record has a unique number as a ticket bill, carrying its purchasing time, merchant ID, paying method and special bonus.
+
+The second file contains all 182868 goods that matches the ticket bills above, carrying the good's primary kind, selling amount and the discount information.
+
+First thing needs to be done would be making connections between the bills and the goods. Since the unique ID, we can find all goods purchased in a single bill. The
+final data would be fitted in the following structure:
+
+\begin{table}
+    \centering
+    \caption{The data example} \label{table-data_example}
+    \begin{tabular}{|c|p{20em}|}
+    \hline
+        ID & 28221526017700008\\
+    \hline
+        Time & 2018-02-28 22:15:26\\
+    \hline
+        PayMethod & Cash\\
+    \hline
+        Price & [0.982] Unit [Hainan Cherry Tomatoes] as [Season Fruit], Origin price [12.90] Discount Price [12.90]\\
+    \hline
+        isVip & False\\
+    \hline
+        SolderId & Merchant 22\\
+
+    \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Error Data Fix}
+
+Some of the purchasing method were mistagged or missed entirely. Those data are either moved in the correct type or in a special "unmarked" type.
+
+Some fruit type are not marked correctly as so, and the similar solution is made, too.
+
+Because of the binary stored float numbers can't be exact, all current numbers (the origin price, discount price, special bonus) are all truncated to 2 digits after the decimal dots.
 \section{Model Extension and Simulation Analysis}
 \subsection{Problem 1}
 

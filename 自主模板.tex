@@ -1,5 +1,5 @@
 \documentclass{mcmthesis}
-\mcmsetup{CTeX = true,   % 使用 CTeX 套装时，设置为 true
+\mcmsetup{CTeX = true, 
         tcn = 0038
         , problem = C,
         sheet = true, titleinsheet = true, keywordsinsheet = true,
@@ -23,8 +23,10 @@ keyword1; keyword2
 \section{Introduction}
 
 \subsection{Problem Statement}
-In the modern life, people would like to live in a healthy lifestyle. Then it is unavoidable to buy fresh and cheap fruits. Fruit prices fluctuate significantly from week to week. Consumers sometimes may be sensitive to these changes while sometimes not, leading to some fruits selling well while some do not. Besides, when seasons change, the popularity of some fruits also decline. Other factors can also influence the selling of fruits. When customers buy less fruits, those redundant fruits may soon become rotted and cause merchants’ loss. To avoid too many orders, fruit merchants have to predict how much fruits to be sold during the following days and try to make these predictions as close to the reality as possible. Moreover, when the selling of fruits does not live up to their expectations, they may use various strategies to promote, such as discount, combination, VIP benefits and etc.
-\subsection{Related Work}
+In the modern life, people would like to live in a healthy lifestyle. Then it is unavoidable to buy fresh and cheap fruits. Fruit prices fluctuate significantly from week to week. Consumers sometimes may be sensitive to these changes while sometimes not, leading to some fruits selling well while some do not. Besides, when seasons change, the popularity of some fruits also decline. Other factors can also influence the selling of fruits. When customers buy less fruits, those redundant fruits may soon become rotted and cause merchants’ loss. To avoid too many orders, fruit merchants have to predict how much fruits to be sold during the following days and try to make these predictions as close to the reality as possible. Moreover, when the selling of fruits does not live up to their expectations, they may use various strategies to promote, such as discount, combination, VIP benefits and etc. 
+
+Based on the given data, we create a profile for the selling of the fruits. We also analyze the factors that influence the selling of different merchants and give a strategy for the best order. Moreover, we create a model to interpret the hidden competition among different fruits. Finally, we prepare a memo to the Chief Operating Officer of the fruit company.
+\subsection{Model Overview}
 
 \section{Assumptions and Notations}
 
@@ -32,13 +34,15 @@ In the modern life, people would like to live in a healthy lifestyle. Then it is
 We make the following basic assumptions in order to simplify the problem. Each
 of our assumptions is justified and is consistent with the basic fact.
 \begin{itemize}
-\item \textbf{}
-\item \textbf{}
-\item \textbf{}
-\item \textbf{}
+\item \textbf{The external economic environment is steady and unshakable during the period.} There is no dramatic change in the price of fruit.
+\item \textbf{The effect of payment method and zeroing shall be ignored.}
+\item \textbf{The seasonal factors are not taken into consideration.} Because the data given are concentrated in winter, and there are no other seasons, we ignore the seasonal factors.
+\item \textbf{Each store sells the same kind of fruit, and the discounts are consistent.} We assume that the supply of fruit is sufficient and that different stores will take the same preferential measures.
 \end{itemize}
+
 \subsection{Notations}
-\begin{table}
+The notation table [\ref{table-notations}] contains all the notations we use in this paper.
+\begin{table}[h]
     \centering
     \caption{Notations} \label{table-notations}
     \begin{tabular}{ccc}
@@ -49,44 +53,32 @@ of our assumptions is justified and is consistent with the basic fact.
     \bottomrule
     \end{tabular}
 \end{table}
+
 \section{Model Construction}
 
-\subsection{Model 1}
-\subsection{Model 2}
-\begin{figure}[h]
-\small
-\centering
-%\includegraphics[width=12cm]{mcmthesis-aaa.eps}
-\caption{aa} \label{fig:aa}
-\end{figure}
+\subsection{Additive Time Serious Model}
+From article\cite{1}, we learn that when forecasting sales figures, not only the sales history but also the future price of a product will influence the sales quantity. At first sight, multivariate time series seem to be the appropriate model for this task. Time series help to achieve various objectives:
+\begin{itemize}
+	\item \textbf{Descriptive Analysis:}  determines trends and patterns of future using graphs and other tools.
+	\item \textbf{Forecasting:} It is used extensively in financial, business forecasting based on historical trends and patterns.
+	\item \textbf{Explanative Analysis:} to study cross-correlation/relationship between two time-series and their dependency on one another.
+\end{itemize}
 
-\begin{equation}
-a^2 \label{aa}
-\end{equation}
-
-\[
-  \begin{pmatrix}{*{20}c}
-  {a_{11} } & {a_{12} } & {a_{13} }  \\
-  {a_{21} } & {a_{22} } & {a_{23} }  \\
-  {a_{31} } & {a_{32} } & {a_{33} }  \\
-  \end{pmatrix}
-  = \frac{{Opposite}}{{Hypotenuse}}\cos ^{ - 1} \theta \arcsin \theta
-\]
+The biggest advantage of using time series analysis is that it can be used to understand the past as well as predict the future. And there are two types of time series: the multiplicative time series and the additive time series.
+\begin{itemize}
+	\item In a multiplicative time series, the components multiply together to make the time series. If you have an increasing trend, the amplitude of seasonal activity increases. Everything becomes more exaggerated. This is common when you’re looking at web traffic.
+	\item In an additive time series, the components add together to make the time series. If you have an increasing trend, you still see roughly the same size peaks and troughs throughout the time series. This is often seen in indexed time series where the absolute value is growing but changes stay relative.
+\end{itemize}
 
 
-\[
-  p_{j}=\begin{cases} 0,&\text{if $j$ is odd}\\
-  r!\,(-1)^{j/2},&\text{if $j$ is even}
-  \end{cases}
-\]
 
-\[
-  \arcsin \theta  =
-  \mathop{{\int\!\!\!\!\!\int\!\!\!\!\!\int}\mkern-31.2mu
-  \bigodot}\limits_\varphi
-  {\mathop {\lim }\limits_{x \to \infty } \frac{{n!}}{{r!\left( {n - r}
-  \right)!}}} \eqno (1)
-\]
+So we choose to build the Additive Time Serious Model (ATSM). Here is the reason 
+\subsection{ARIMA model}
+In statistics and econometrics, and in particular in time series analysis, an autoregressive integrated moving average (ARIMA) model is a generalization of an autoregressive moving average (ARMA) model. Both of these models are fitted to time series data either to better understand the data or to predict future points in the series (forecasting). ARIMA models are applied in some cases where data show evidence of non-stationarity, where an initial differencing step (corresponding to the "integrated" part of the model) can be applied one or more times to eliminate the non-stationarity.
+
+The AR part of ARIMA indicates that the evolving variable of interest is regressed on its own lagged (i.e., prior) values. The MA part indicates that the regression error is actually a linear combination of error terms whose values occurred contemporaneously and at various times in the past. The I (for "integrated") indicates that the data values have been replaced with the difference between their values and the previous values (and this differencing process may have been performed more than once). The purpose of each of these features is to make the model fit the data as well as possible.
+
+\subsection{Gause-Lotka-Volterra Model}
 
 \section{Data Processing}
 
@@ -102,7 +94,7 @@ The second file contains all 182868 goods that matches the ticket bills above, c
 First thing needs to be done would be making connections between the bills and the goods. Since the unique ID, we can find all goods purchased in a single bill. The
 final data would be fitted in the following structure:
 
-\begin{table}
+\begin{table}[h]
     \centering
     \caption{The data example} \label{table-data_example}
     \begin{tabular}{|c|p{20em}|}
@@ -118,7 +110,6 @@ final data would be fitted in the following structure:
         isVip & False\\
     \hline
         SolderId & Merchant 22\\
-
     \hline
     \end{tabular}
 \end{table}
@@ -149,7 +140,7 @@ boarding time.We also know that all the service is automate.
 \item \textbf{Improve the quality of the airport service}\\
 Balancing the cost of the cost and the benefit, it will bring in
 more convenient  for airport and passengers.It also saves many
-human resources for the airline. \item \textbf{}
+human resources for the airline.\cite{1}
 \end{itemize}
 
 \subsection{Weaknesses}
@@ -163,14 +154,11 @@ sfhawfh
 \end{itemize}
 
 \begin{thebibliography}{99}
-\bibitem{1} D.~E. KNUTH   The \TeX{}book  the American
-Mathematical Society and Addison-Wesley
-Publishing Company , 1984-1986.
-\bibitem{2}Lamport, Leslie,  \LaTeX{}: `` A Document Preparation System '',
-Addison-Wesley Publishing Company, 1986.
-\bibitem{3}\url{http://www.latexstudio.net/}
-\bibitem{4}\url{http://www.chinatex.org/}
+	\bibitem{1} Schaidnagel, Michael and Abele, Christian and Laux, Fritz and Petrov, Tlia,  "Sales Prediction with Parametrized Time Series Analysis", \url{https://www.researchgate.net/publication/236463111_Sales_Prediction_with_Parametrized_Time_Series_Analysis}, 2013.
+	\bibitem{3}\url{http://www.latexstudio.net/}
+	\bibitem{4}\url{http://www.chinatex.org/}
 \end{thebibliography}
+
 
 \begin{appendices}
 
@@ -180,18 +168,16 @@ Addison-Wesley Publishing Company, 1986.
 
 Here are simulation programmes we used in our model as follow.\\
 
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
-\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+%\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
+%\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
 
 \section{Second appendix}
 
-some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
-\lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
+%some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
+%\lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
 
 
 \end{appendices}
-
-
 
 
 \end{document}

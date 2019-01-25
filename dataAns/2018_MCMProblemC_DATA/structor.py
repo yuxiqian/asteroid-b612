@@ -19,6 +19,7 @@ class County:
         self.latitude = float(lat)
         self.longitude = float(lng)
         self.density = float(density)
+        self.geo_data = [{}] * 8
 
     def __str__(self):
         return """

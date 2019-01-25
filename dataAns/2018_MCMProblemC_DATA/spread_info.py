@@ -37,8 +37,17 @@ for r in recs:
             continue
 
     print(r)
-    drug_info.append([r.county.latitude, r.county.longitude,
-                      r.year, r.drug_report_count, r.county.literal_name])
+
+    flag = True
+    for dg in drug_info:
+        if dg[4] == r.county.literal_name + "/" + r.county.state:
+            dg[3] += r.drug_report_count
+            flag = False
+            break
+
+    if flag:
+        drug_info.append([r.county.latitude, r.county.longitude,
+                          r.year, r.drug_report_count, r.county.literal_name + "/" + r.county.state])
 
 
 savefilename = input("Save it to [where].csv... \n>>> ")

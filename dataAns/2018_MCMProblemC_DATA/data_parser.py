@@ -53,7 +53,7 @@ for r in recs:
 
     print(r)
     drug_info.append([r.county.longitude, r.county.latitude,
-                      r.year, r.drug_report_count, r.county.literal_name + ", " + r.county.state, drug_list[r.substance_id]])
+                      r.year, r.drug_report_count, r.county.literal_name + "/" + r.county.state, drug_list[r.substance_id]])
 
 
 savefilename = input("Save it to [where].csv... \n>>> ")

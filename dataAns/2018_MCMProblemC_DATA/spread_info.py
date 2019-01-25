@@ -40,7 +40,7 @@ for r in recs:
 
     flag = True
     for dg in drug_info:
-        if dg[4] == r.county.literal_name + "/" + r.county.state:
+        if dg[4] == r.county.literal_name + "/" + r.county.state and dg[2] == r.year:
             dg[3] += r.drug_report_count
             flag = False
             break
@@ -59,6 +59,6 @@ else:
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["经度", "纬度", "年份", "数目", "地名"])
+    spamwriter.writerow(["经度", "纬度", "Year", "Amount", "Name"])
     for row in drug_info:
         spamwriter.writerow(row)

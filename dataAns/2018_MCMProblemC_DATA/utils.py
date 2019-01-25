@@ -3,7 +3,7 @@
 
 def find_county(name, lib):
     for ct in lib:
-        if name in ct.literal_name:
+        if name.lower() in ct.literal_name.lower():
             return ct
-        # print("%s != %s" % (name, ct.literal_name))
+        # print("%s not in %s" % (name.lower(), ct.literal_name.lower()))
     return None

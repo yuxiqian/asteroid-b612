@@ -58,8 +58,8 @@ for year in range(10, 17):
             county.geo_data[year - 10].update({p: it[p]})
 
       
-savefilename = input("Save it to [where].pkl... \n>>> ")
-output_hal = open("%s.pkl" % savefilename, 'wb')  
+savefilename = input("Save it to [where].loc... \n>>> ")
+output_hal = open("%s.loc" % savefilename, 'wb')  
 
 str_data = pickle.dumps(counties)
 output_hal.write(str_data)

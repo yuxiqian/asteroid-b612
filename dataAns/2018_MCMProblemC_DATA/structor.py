@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 
-
-state_dict = {
-
-}
+from drug import drug_list
 
 
 class County:
@@ -31,6 +28,24 @@ class County:
 
 class Record:
     county = None
-    name = 0
-    state_id = 0
-    county_id = 0
+    year = 0
+    substance_id = 0
+    drug_report_count = 0
+    county_drug_report_count = 0
+    state_drug_report_count = 0
+
+    def __init__(self, year, county, substance_id, drug_report_count, county_drug_report_count, state_drug_report_count):
+        self.year = year
+        self.county = county
+        self.substance_id = substance_id
+        self.drug_report_count = drug_report_count
+        self.county_drug_report_count = county_drug_report_count
+        self.state_drug_report_count = state_drug_report_count
+
+    def __str__(self):
+        return """
+        In %s, %d, Drug %s
+        ==================
+        Report, County Total, State Total
+        %d, %d, %d
+        """ % (self.county.literal_name, self.year, drug_list[self.substance_id], self.drug_report_count, self.county_drug_report_count, self.state_drug_report_count)

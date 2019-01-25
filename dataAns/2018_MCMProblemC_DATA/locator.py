@@ -19,10 +19,11 @@ params = ["HC01_VC03", "HC02_VC03", "HC03_VC03", "HC04_VC03", "HC01_VC04", "HC02
 for loc_item in range(order_count):
     it = loc_data.iloc[loc_item]
     if it['state_name'] in target_states:
-        it_ct = County("%s, %s" % (it['county_name'], it['city']), it['state_name'],
-                       it['lat'], it['lng'], it['density'])
-        print(it_ct)
-        counties.append(it_ct)
+        if find_county(it['county_name'], counties, it['state_name']) == None:
+            it_ct = County("%s" % (it['county_name']), it['state_name'],
+                        it['lat'], it['lng'], it['density'])
+            print(it_ct)
+            counties.append(it_ct)
 
 
 # for i in counties:

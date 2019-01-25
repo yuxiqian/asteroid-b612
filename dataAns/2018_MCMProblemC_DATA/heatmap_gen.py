@@ -26,7 +26,7 @@ if type(locs) != list:
 heat_loc = []
 
 for loc in locs:
-    itm = [loc.latitude, loc.longitude, loc.literal_name.split(',')[0], 0]
+    itm = [loc.latitude, loc.longitude, loc.literal_name + ", " + loc.state, 0]
     heat_loc.append(itm)
 
 print("Successfully get %d counties." % len(locs))
@@ -52,7 +52,8 @@ for r in recs:
         if str(r.year) != limit_year:
             continue
 
-    county_index = find_county_index(r.county.literal_name, locs)
+    county_index = find_county_index(
+        r.county.literal_name, locs, r.county.state)
     heat_loc[county_index][3] += r.drug_report_count
 
 

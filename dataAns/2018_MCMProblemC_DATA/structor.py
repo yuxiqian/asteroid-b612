@@ -44,8 +44,8 @@ class Record:
 
     def __str__(self):
         return """
-        In %s, %d, Drug %s
+        In %s, %s, %d, Drug %s
         ==================
         Report, County Total, State Total
         %d, %d, %d
-        """ % (self.county.literal_name, self.year, drug_list[self.substance_id], self.drug_report_count, self.county_drug_report_count, self.state_drug_report_count)
+        """ % (self.county.literal_name, self.county.state, self.year, drug_list[self.substance_id], self.drug_report_count, self.county_drug_report_count, self.state_drug_report_count)

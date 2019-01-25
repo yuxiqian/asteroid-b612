@@ -37,9 +37,9 @@ for rec in range(data_len):
 
     county = find_county(rec_item['COUNTY'], rq,
                          abbr_to_full(rec_item['State']))
+    # input("State = %s" % abbr_to_full(rec_item['State']))
     if county == None:
-        print("Can't detect county %s." % rec_item['COUNTY'])
-        continue
+        raise TypeError("Can't detect county %s." % rec_item['COUNTY'])
 
     print("Get county %s." % rec_item['COUNTY'])
     substance_id = drug_list.index(rec_item['SubstanceName'])

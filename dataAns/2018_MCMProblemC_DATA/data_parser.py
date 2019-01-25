@@ -52,8 +52,8 @@ for r in recs:
             continue
 
     print(r)
-    drug_info.append([r.county.latitude, r.county.longitude,
-                      r.year, r.drug_report_count, r.county.literal_name])
+    drug_info.append([r.county.longitude, r.county.latitude,
+                      r.year, r.drug_report_count, r.county.literal_name + ", " + r.county.state, drug_list[r.substance_id]])
 
 
 savefilename = input("Save it to [where].csv... \n>>> ")
@@ -68,6 +68,6 @@ else:
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["经度", "纬度", "年份", "数目", "地名"])
+    spamwriter.writerow(["经度", "纬度", "年份", "数目", "地名", "药物"])
     for row in drug_info:
         spamwriter.writerow(row)

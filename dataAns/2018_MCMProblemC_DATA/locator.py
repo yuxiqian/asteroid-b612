@@ -7,7 +7,7 @@ from utils import find_county
 
 loc_data = pd.read_csv('locations.csv')
 
-target_states = ['Ohio', 'Kentucky', 'West Virginia', 'Virginia', 'Tennessee']
+target_states = ['Ohio', 'Kentucky', 'West Virginia', 'Virginia', 'Pennsylvania']
 
 order_count = len(loc_data)
 

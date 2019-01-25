@@ -59,6 +59,6 @@ else:
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["经度", "纬度", "Year", "Amount", "Name"])
+    spamwriter.writerow(["纬度", "经度", "Year", "Amount", "Name"])
     for row in drug_info:
         spamwriter.writerow(row)

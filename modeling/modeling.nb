@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      1997,         74]
-NotebookOptionsPosition[      1457,         52]
-NotebookOutlinePosition[      1823,         68]
-CellTagsIndexPosition[      1780,         65]
+NotebookDataLength[      4093,        156]
+NotebookOptionsPosition[      3258,        123]
+NotebookOutlinePosition[      3624,        139]
+CellTagsIndexPosition[      3581,        136]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34,6 +34,24 @@ Cell[BoxData[
  CellChangeTimes->{3.757412748712718*^9}]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[PartialD]", "x"], 
+  RowBox[{"(", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", "x"], " ", "x"}], ")"}]}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", "x"], "+", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", "x"], " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.757415088929223*^9}]
+}, Open  ]],
+
 Cell[BoxData[""], "Input",
  CellChangeTimes->{3.7574127635834713`*^9},
  NumberMarks->False],
@@ -41,8 +59,61 @@ Cell[BoxData[""], "Input",
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.7574127499272947`*^9, 3.757412754575718*^9}}],
 
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.757412753818874*^9, 3.757412753830927*^9}}],
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[PartialD]", "t"], 
+   RowBox[{"(", 
+    RowBox[{"S", "[", "t", "]"}], ")"}]}], "==", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "\[Alpha]"}], "*", 
+    RowBox[{"S", "[", "t", "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.757412753818874*^9, 3.757412753830927*^9}, {
+  3.757415090497507*^9, 3.7574151715960407`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["S", "\[Prime]",
+    MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"-", "\[Alpha]"}], " ", 
+   RowBox[{"S", "[", "t", "]"}]}]}]], "Output",
+ CellChangeTimes->{{3.7574151687542543`*^9, 3.757415172068282*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["S", "\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"-", "\[Alpha]"}], " ", 
+     RowBox[{"S", "[", "t", "]"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"S", "[", "t", "]"}], "}"}], ",", 
+   RowBox[{"{", "t", "}"}]}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"S", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "t"}], " ", "\[Alpha]"}]], " ", 
+     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.7574151734502277`*^9}]
+}, Open  ]],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.7574127418559103`*^9, 3.757412741868264*^9}}],
@@ -69,13 +140,24 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 251, 6, 46, "Input"],
-Cell[834, 30, 130, 3, 66, "Output"]
+Cell[834, 30, 130, 3, 32, "Output"]
 }, Open  ]],
-Cell[979, 36, 91, 2, 32, "Input"],
-Cell[1073, 40, 94, 1, 32, "Input"],
-Cell[1170, 43, 92, 1, 32, InheritFromParent],
-Cell[1265, 46, 94, 1, 32, InheritFromParent],
-Cell[1362, 49, 91, 1, 32, InheritFromParent]
+Cell[CellGroupData[{
+Cell[1001, 38, 184, 6, 35, "Input"],
+Cell[1188, 46, 192, 5, 32, "Output"]
+}, Open  ]],
+Cell[1395, 54, 91, 2, 32, "Input"],
+Cell[1489, 58, 94, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1608, 63, 376, 11, 32, InheritFromParent],
+Cell[1987, 76, 292, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2316, 89, 401, 13, 46, "Input"],
+Cell[2720, 104, 331, 10, 35, "Output"]
+}, Open  ]],
+Cell[3066, 117, 94, 1, 32, InheritFromParent],
+Cell[3163, 120, 91, 1, 32, InheritFromParent]
 }
 ]
 *)

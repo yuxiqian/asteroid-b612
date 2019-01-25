@@ -8,7 +8,7 @@ Some Factors are provided directly and can be grabbed at the first time.
 * Case Count
 	Many drugs involved in all these incidents, but they are not equally significant. The reported count recording the troubles they made can be a convincing factor to determine how influential one drug is.
 * Geography Location
-	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to [Simple Maps Corp.][1] and their great work and generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
+	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to [Simple Maps Corp.][1] for their generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 ## Indirect Factors
 There are several important factors that affects the modeling procedure but not provided directly. 
 * Case History

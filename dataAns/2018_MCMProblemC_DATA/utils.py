@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 
 
-def find_county(name, lib):
+def find_county(name, lib, state=None):
     for ct in lib:
+        if state != None:
+            if not state.lower() in ct.state.lower():
+                # print("%s not in %s" %
+                #       (state.lower(), ct.state.lower()))
+                continue
+
         if name.lower().split(' ')[0] in ct.literal_name.lower():
             return ct
-        # print("%s not in %s" % (name.lower(), ct.literal_name.lower()))
+
     return None
 
 

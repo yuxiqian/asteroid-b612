@@ -2,7 +2,7 @@
 
 state_abbr = {
     "Alabama": "AL",
-    "Alaska ": "AK",
+    "Alaska": "AK",
     "Arizona": "AZ",
     "Arkansas": "AR",
     "California": "CA",
@@ -12,13 +12,13 @@ state_abbr = {
     "District of Columbia ": "DC",
     "Florida": "FL",
     "Georgia": "GA",
-    "Hawaii ": "HI",
-    "Idaho ": "ID",
+    "Hawaii": "HI",
+    "Idaho": "ID",
     "Illinois": "IL",
     "Indiana": "IN",
-    "Iowa ": "IA",
-    "Kansas ": "KS",
-    "Kentucky ": "KY",
+    "Iowa": "IA",
+    "Kansas": "KS",
+    "Kentucky": "KY",
     "Louisiana": "LA",
     "Maine": "ME",
     "Maryland": "MD",
@@ -36,7 +36,7 @@ state_abbr = {
     "New York": "NY",
     "North Carolina": "NC",
     "North Dakota": "ND",
-    "Ohio ": "OH",
+    "Ohio": "OH",
     "Oklahoma": "OK",
     "Oregon": "OR",
     "Pennsylvania": "PA",
@@ -58,6 +58,7 @@ state_abbr = {
 def abbr_to_full(abbr):
     for i in state_abbr:
         if state_abbr[i] == abbr:
+            print("%s => %s" % (state_abbr[i], i))
             return i
     return None
 

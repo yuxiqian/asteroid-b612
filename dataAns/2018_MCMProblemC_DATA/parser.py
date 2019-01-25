@@ -7,6 +7,7 @@ import seaborn as sns
 
 
 from drug import drug_list
+from abbr import abbr_to_full
 from utils import find_county
 from structor import County, Record
 
@@ -34,7 +35,8 @@ records = []
 for rec in range(data_len):
     rec_item = rcd_data.iloc[rec]
 
-    county = find_county(rec_item['COUNTY'], rq)
+    county = find_county(rec_item['COUNTY'], rq,
+                         abbr_to_full(rec_item['State']))
     if county == None:
         print("Can't detect county %s." % rec_item['COUNTY'])
         continue

@@ -45,10 +45,10 @@ for year in range(10, 17):
 
         ct = it['GEO.display-label'].split(', ')[0].replace(' County', '').replace(' city', '')
 
-        county = find_county(ct, counties)
+        county = find_county(ct, counties, it['GEO.display-label'].split(', ')[1])
         if county == None:
-            print("Nothing as %s found." % ct)
-            # input()
+            print("Nothing as %s, %s found." % (ct, it['GEO.display-label'].split(', ')[1]))
+            input()
             continue
 
         for p in params:

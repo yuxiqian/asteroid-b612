@@ -7,6 +7,8 @@ from drug import drug_list
 from utils import find_county_index
 from structor import County, Record
 
+limit_year = input("Which year would you want? Press <Enter> to show all >>> ")
+
 
 readfilename = input("Input [filename].loc... \n>>> ")
 locs = []
@@ -44,15 +46,24 @@ if type(recs) != list:
 
 print("Successfully get %d records." % len(recs))
 
+
 for r in recs:
+    if limit_year != "":
+        if str(r.year) != limit_year:
+            continue
+
     county_index = find_county_index(r.county.literal_name, locs)
     heat_loc[county_index][3] += r.drug_report_count
 
 
 savefilename = input("Save it to [where].csv... \n>>> ")
 
+if limit_year != "":
+    savefilename = '%s - %s.csv' % (savefilename, limit_year)
+else:
+    savefilename += '.csv'
 
-with open('%s.csv' % savefilename, 'w', newline='') as csvfile:
+with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
     spamwriter.writerow(["经度", "纬度", "名称", "数量"])
     for row in heat_loc:

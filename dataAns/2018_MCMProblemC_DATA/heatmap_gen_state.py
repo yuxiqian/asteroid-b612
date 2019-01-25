@@ -7,8 +7,10 @@ from drug import drug_list
 from utils import find_county_index
 from structor import County, Record
 
-for i in drug_list:
-    print(" - %s" % i)
+
+target_states = ['Ohio', 'Kentucky',
+                 'West Virginia', 'Virginia', 'Pennsylvania']
+
 
 limit_drug = input(
     "Which drug would you want? Press <Enter> to select all >>> ")
@@ -29,16 +31,22 @@ if type(recs) != list:
 
 print("Successfully get %d records." % len(recs))
 
-drug_info = []
+state_info = []
+
+for state in target_states:
+    for year in range(2010, 2018):
+        state_info.append([state, year, 0])
+
 
 for r in recs:
     if limit_drug != "":
         if drug_list[r.substance_id] != limit_drug:
             continue
 
-    print(r)
-    drug_info.append([r.county.latitude, r.county.longitude,
-                      r.year, r.drug_report_count, r.county.literal_name])
+    idx = target_states.index(r.county.state)
+    print("%d - %s, year %d, count %d" %
+          (idx, r.county.state, r.year, r.drug_report_count))
+    state_info[idx * 8 + r.year - 2010][2] += r.drug_report_count
 
 
 savefilename = input("Save it to [where].csv... \n>>> ")
@@ -50,6 +58,6 @@ else:
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["经度", "纬度", "年份", "数目", "地名"])
-    for row in drug_info:
+    spamwriter.writerow(["州名", "年份", "数量"])
+    for row in state_info:
         spamwriter.writerow(row)

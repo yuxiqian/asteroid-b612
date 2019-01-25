@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4093,        156]
-NotebookOptionsPosition[      3258,        123]
-NotebookOutlinePosition[      3624,        139]
-CellTagsIndexPosition[      3581,        136]
+NotebookDataLength[      3477,        131]
+NotebookOptionsPosition[      2673,        100]
+NotebookOutlinePosition[      3039,        116]
+CellTagsIndexPosition[      2996,        113]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -85,35 +85,12 @@ Cell[BoxData[
  CellChangeTimes->{{3.7574151687542543`*^9, 3.757415172068282*^9}}]
 }, Open  ]],
 
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"DSolve", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{
-     SuperscriptBox["S", "\[Prime]",
-      MultilineFunction->None], "[", "t", "]"}], "\[Equal]", 
-    RowBox[{
-     RowBox[{"-", "\[Alpha]"}], " ", 
-     RowBox[{"S", "[", "t", "]"}]}]}], ",", 
-   RowBox[{"{", 
-    RowBox[{"S", "[", "t", "]"}], "}"}], ",", 
-   RowBox[{"{", "t", "}"}]}], "]"}]], "Input",
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.757415251234568*^9},
  NumberMarks->False],
 
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{"S", "[", "t", "]"}], "\[Rule]", 
-    RowBox[{
-     SuperscriptBox["\[ExponentialE]", 
-      RowBox[{
-       RowBox[{"-", "t"}], " ", "\[Alpha]"}]], " ", 
-     RowBox[{"C", "[", "1", "]"}]}]}], "}"}], "}"}]], "Output",
- CellChangeTimes->{3.7574151734502277`*^9}]
-}, Open  ]],
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.757415249528315*^9, 3.757415249539267*^9}}],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.7574127418559103`*^9, 3.757412741868264*^9}}],
@@ -152,12 +129,10 @@ Cell[CellGroupData[{
 Cell[1608, 63, 376, 11, 32, InheritFromParent],
 Cell[1987, 76, 292, 8, 32, "Output"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[2316, 89, 401, 13, 46, "Input"],
-Cell[2720, 104, 331, 10, 35, "Output"]
-}, Open  ]],
-Cell[3066, 117, 94, 1, 32, InheritFromParent],
-Cell[3163, 120, 91, 1, 32, InheritFromParent]
+Cell[2294, 87, 89, 2, 32, "Input"],
+Cell[2386, 91, 92, 1, 32, InheritFromParent],
+Cell[2481, 94, 94, 1, 32, InheritFromParent],
+Cell[2578, 97, 91, 1, 32, InheritFromParent]
 }
 ]
 *)

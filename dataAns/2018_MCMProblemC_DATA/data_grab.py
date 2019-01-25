@@ -46,10 +46,11 @@ class Pack:
               """ % (self.id, self.name, self.x, self.y, ' -> '.join(str(v) for v in self.history)))
 
         for i in self.nearest_id:
+            dist = sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2)
             print("""
-                Closest to: #%d, City [%s] at [%.4f, %.4f]
+                Closest to: #%d, City [%s] at [%.4f, %.4f], distance = %.3f
                 History: %s
-            """ % (i, lib[i].name, lib[i].x, lib[i].y, ' -> '.join(str(v) for v in lib[i].history)))
+            """ % (i, lib[i].name, lib[i].x, lib[i].y, dist, ' -> '.join(str(v) for v in lib[i].history)))
 
 
 default_file = input(

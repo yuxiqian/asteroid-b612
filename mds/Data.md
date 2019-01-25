@@ -8,7 +8,7 @@ There’s some data factor in this sheet particularly attracting, which helps a 
 * Incident Count
 	Many drugs involved in all these incidents, but they’re not equally significant. The reports’ count recording the troubles they made can be a convincing factor to determine how influential one drug is.
 * County Location
-	The specific county name in OH, KY, WV, VA and PA are provided in detail. Thanks to[Simple Maps Corp.][1]’s great work and generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
+	The specific county name in OH, KY, WV, VA and PA are provided in detail. Thanks to [Simple Maps Corp.][1]’s great work and generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 ## Parsing
 There are several important factors that affects the modeling procedure. To clarify the argument parsing procedure, here’s a brief table about the variables that we’re aware of:
 * Case History

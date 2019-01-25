@@ -65,6 +65,6 @@ else:
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["经度", "纬度", "名称", "数量"])
+    spamwriter.writerow(["纬度", "经度", "名称", "数量"])
     for row in heat_loc:
         spamwriter.writerow(row)

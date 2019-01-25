@@ -17,6 +17,10 @@ There are several important factors that affects the modeling procedure but not 
 	Besides grabbing the location of each county, their 3 nearest neighbor counties and their case history is also recorded to build a drug crisis spreading model.
 * Population Density
 	The annual population of each county is also provided. Combining them with the area information of each county, we can diverse each county into  several approximate density levels. That would be helpful in solving Problem 2.
+## Resulting Dataset
+* 451 Unique Counties
+* 69 Kinds of Substances
+* 24062 Case Recordings
 ## Error Handling
 Thanks to the high quality database, there is no much difficulty finding out informations above. But it should be noticed that some names of counties are shared by two different states (for example, Adams County in Ohio and Adams County in Pennsylvania). To avoid conflicting analyzing result, both state name and county name should be used to identify a county. Hence the county data can be ensured unique.
 

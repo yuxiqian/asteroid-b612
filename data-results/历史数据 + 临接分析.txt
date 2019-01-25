@@ -1,9 +1,3 @@
-this-MacBook-Pro:2018_MCMProblemC_DATA yue$ python3 data_grab.py
-Input the clean location csv file: [clean_locs].csv >>> 
-Successfully read 451 items.
-Input the complete spread csv file: [spread - all.csv].csv >>> 
-Successfully read 3410 items.
-Input K as distance check limit: [3] >>> 
  #0
         City [Montgomery/Virginia] at [-80.4405, 37.0675]
         History: 197 -> 147 -> 132 -> 172 -> 146 -> 174 -> 160 -> 203
@@ -7220,4 +7214,3 @@ Input K as distance check limit: [3] >>>
                 Closest to: #388, City [Adair/Kentucky] at [-85.3197, 37.1803]
                 History: 7 -> 19 -> 25 -> 17 -> 45 -> 16 -> 20 -> 17
             
-this-MacBook-Pro:2018_MCMProblemC_DATA yue$ 

@@ -34,10 +34,12 @@ print("Successfully read %d items." % length)
 
 
 default_file = input(
-    "Input the complete spread csv file: [spread - all.csv].csv >>> ")
+    "Input the complete spread csv file: [spread - all].csv >>> ")
 
 if default_file == "":
     default_file = 'spread - all.csv'
+else:
+    default_file += ".csv"
 
 spread_dat = pd.read_csv(default_file)
 
@@ -111,16 +113,16 @@ for l in packages:
         l.affect_index_a = 0.0
         l.affect_index_b = 0.0
         l.affect_index_c = 0.0
-        input()
+        # input()
         continue
-    if l.affect_index_a == 1.0:
+    if l.affect_index_a == 1.0 or l.affect_index_b == 1.0 or l.affect_index_c == 1.0:
         print("Throwing data %s.\n\n" % lst)
         l.p = 0.0
         l.w = 0.0
         l.affect_index_a = 0.0
         l.affect_index_b = 0.0
         l.affect_index_c = 0.0
-        input()
+        # input()
     # input()
 
 savefilename = input("Save it to [where].ans... \n>>> ")

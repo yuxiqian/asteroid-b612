@@ -1,6 +1,6 @@
 # Data Analysis
 ## Data Origin
-The major data source is the `MCM_NFLIS_Data.xlsx` file. It contains all incidents involved with narcotic analgesics and heroin occurring since 2010 to 2017. Hopefully it can figure out the drug crisis spreading amount the northeast U.S.
+The major data source mentioned in Problem One is the `MCM_NFLIS_Data.xlsx` file. It contains all incidents involved with narcotic analgesics and heroin occurring since 2010 to 2017. Hopefully it can figure out the drug crisis spreading amount the northeast U.S.
 ## Obvious Factors
 Some Factors are provided directly and can be grabbed at the first time.
 * Substances of Drugs
@@ -14,7 +14,7 @@ There are several important factors that affects the modeling procedure but not 
 * Case History
 	There are accurate data recording how many cases involving with drugs occurred in each county since 2010 until 2017. Putting individual case counts altogether would allow them make more sense.
 * Neighbor Counties
-	Besides grabbing the location of each county, their 3 nearest neighbor counties and their case history is also recorded to build a drug crisis spreading model.
+	Besides grabbing the location of each county, their several nearest neighbor counties and their case history is also recorded to build a drug crisis spreading model.
 * Population Density
 	The annual population of each county is also provided. Combining them with the area information of each county, we can diverse each county into  several approximate density levels. That would be helpful in solving Problem 2.
 ## Resulting Dataset

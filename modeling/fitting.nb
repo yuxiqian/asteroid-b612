@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    309020,       8475]
-NotebookOptionsPosition[    286704,       7909]
-NotebookOutlinePosition[    287070,       7925]
-CellTagsIndexPosition[    287027,       7922]
+NotebookDataLength[    309142,       8477]
+NotebookOptionsPosition[    286826,       7911]
+NotebookOutlinePosition[    287192,       7927]
+CellTagsIndexPosition[    287149,       7924]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -7713,7 +7713,7 @@ Cell[BoxData[
  RowBox[{"Show", "[", 
   RowBox[{
    RowBox[{"ListPlot", "[", 
-    RowBox[{"SumHistory2", ",", 
+    RowBox[{"SumHistory0", ",", 
      RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}], ",", 
    RowBox[{"Plot", "[", 
     RowBox[{
@@ -7744,14 +7744,15 @@ Cell[BoxData[
         RowBox[{"M", "\[Rule]", "505.6960225972463`"}]}], "}"}]}], ",", 
      RowBox[{"{", 
       RowBox[{"t", ",", "1", ",", "8"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.75745553076056*^9, 3.7574555547090187`*^9}},
  NumberMarks->False],
 
 Cell[BoxData[
  GraphicsBox[{{{}, {{}, 
      {RGBColor[1, 0, 0], PointSize[0.012833333333333334`], AbsoluteThickness[
-      1.6], PointBox[{{1., 19.}, {2., 35.}, {3., 64.}, {4., 102.}, {5., 
-       139.}, {6., 195.}, {7., 245.}, {8., 
-       296.}}]}, {}}, {}, {}, {{}, {}}}, {{{}, {}, 
+      1.6], PointBox[{{1., 197.}, {2., 344.}, {3., 476.}, {4., 648.}, {5., 
+       794.}, {6., 968.}, {7., 1128.}, {8., 
+       1331.}}]}, {}}, {}, {}, {{}, {}}}, {{{}, {}, 
      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
       1.], LineBox[CompressedData["
 1:eJwVz3k41AkcBvAxrVpHyZHB4hchR0tTtCvZ31vuHDVYRbnPybh+dMsdjUfS
@@ -7804,7 +7805,7 @@ SvqkeN/MXvz6lYC0QMJrMZ3Cf+CjKtw=
          Part[#, 1]], 
         (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
          Part[#, 2]]}& )}},
-  PlotRange->{{0., 8.}, {0, 296.}},
+  PlotRange->{{0., 8.}, {0, 1331.}},
   PlotRangeClipping->True,
   PlotRangePadding->{{
      Scaled[0.02], 
@@ -7812,7 +7813,8 @@ SvqkeN/MXvz6lYC0QMJrMZ3Cf+CjKtw=
      Scaled[0.02], 
      Scaled[0.05]}},
   Ticks->{Automatic, Automatic}]], "Output",
- CellChangeTimes->{3.757455492750074*^9}]
+ CellChangeTimes->{
+  3.757455492750074*^9, {3.757455531481852*^9, 3.757455555225646*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8470,12 +8472,12 @@ Cell[277488, 7669, 878, 28, 69, "Input"],
 Cell[278369, 7699, 321, 7, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[278727, 7711, 1169, 35, 127, "Input"],
-Cell[279899, 7748, 3262, 66, 242, "Output"]
+Cell[278727, 7711, 1236, 36, 127, "Input"],
+Cell[279966, 7749, 3317, 67, 244, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[283198, 7819, 1221, 36, 127, "Input"],
-Cell[284422, 7857, 2266, 49, 242, "Output"]
+Cell[283320, 7821, 1221, 36, 127, "Input"],
+Cell[284544, 7859, 2266, 49, 242, "Output"]
 }, Open  ]]
 }
 ]

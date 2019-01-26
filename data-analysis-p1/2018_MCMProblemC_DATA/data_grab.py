@@ -56,10 +56,10 @@ class Pack:
 
     def print_for_fitting(self, lib):
         sum_history = deepcopy(self.history)
-        for i in range(len(sum_history) - 1):
-            sum_history[i + 1] += sum_history[i]
+        # for i in range(len(sum_history) - 1):
+        #     sum_history[i + 1] += sum_history[i]
         print("""
-SumHis_%d = {%s}
+SumHis%d = {%s}
               """ % (self.id, ', '.join(str(v) for v in sum_history)))
         return
         for i in self.nearest_id:

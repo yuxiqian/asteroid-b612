@@ -48,29 +48,37 @@ of our assumptions is justified and is consistent with the basic fact.
 
 \subsection{Notations}
 The notation table [\ref{table-notations}] contains all the notations we use in this paper.
+
 \begin{table}[h]
 	\centering
-	\caption{Notations} \label{table-notations}
-	\begin{tabular}{ccc}
+	\caption{The data example} \label{table-notations}
+	\begin{tabular}{cp{20em}}
 		\toprule
-		Symbol & Definition & Notes\\
-		\midrule
-		h & hh & hhh\\
+		ID & 28221526017700008\\
+		\hline
+		Time & 2018-02-28 22:15:26\\
+		\hline
+		PayMethod & Cash\\
+		\hline
+		Price & [0.982] Unit [Hainan Cherry Tomatoes] as [Season Fruit], Origin price [12.90] Discount Price [12.90]\\
+		\hline
+		isVip & False\\
+		\hline
+		SolderId & Merchant 22\\
 		\bottomrule
 	\end{tabular}
 \end{table}
+\section{}}
 
-\section{Model Construction}
+\subsection{Graph Theory}
+In \textbf(Part 1), we need to describe the spread of the reported cases and identify possible locations where specific opioid use started. From aticle\cite{2}, we learn that weighted directed graph can solve this problem well. The following is the weighted directed graph we constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
+\begin{figure}
+	\centering
+	\includegraphics[width=15cm]{graphtheory.png}
+	\caption{An Example of the Weighted Directed Graph}\label{graph}
+\end{figure}
 
-\subsection{Additive Time Serious Model}
-From article\cite{1}, we learn that when forecasting sales figures, not only the sales history but also the future price of a product will influence the sales quantity. At first sight, multivariate time series seem to be the appropriate model for this task. Time series help to achieve various objectives:
-\begin{itemize}
-	\item \textbf{Descriptive Analysis:}  determines trends and patterns of future using graphs and other tools.
-	\item \textbf{Forecasting:} It is used extensively in financial, business forecasting based on historical trends and patterns.
-	\item \textbf{Explanative Analysis:} to study cross-correlation/relationship between two time-series and their dependency on one another.
-\end{itemize}
-
-The biggest advantage of using time series analysis is that it can be used to understand the past as well as predict the future. And there are two types of time series: the multiplicative time series and the additive time series.
+The advantage of using graph theory analysis is that it can be used to understand the past as well as predict the future. And there are two types of time series: the multiplicative time series and the additive time series.
 \begin{itemize}
 	\item In a multiplicative time series, the components multiply together to make the time series. If you have an increasing trend, the amplitude of seasonal activity increases. Everything becomes more exaggerated. This is common when you’re looking at web traffic.
 	\item In an additive time series, the components add together to make the time series. If you have an increasing trend, you still see roughly the same size peaks and troughs throughout the time series. This is often seen in indexed time series where the absolute value is growing but changes stay relative.
@@ -102,25 +110,7 @@ Some factors are provided directly and can be grabbed at the first time:
 	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to [Simple Maps Corp.][1] and their generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 \end{itemize}
 
-\begin{table}[h]
-	\centering
-	\caption{The data example} \label{table-data_example}
-	\begin{tabular}{|c|p{20em}|}
-		\hline
-		ID & 28221526017700008\\
-		\hline
-		Time & 2018-02-28 22:15:26\\
-		\hline
-		PayMethod & Cash\\
-		\hline
-		Price & [0.982] Unit [Hainan Cherry Tomatoes] as [Season Fruit], Origin price [12.90] Discount Price [12.90]\\
-		\hline
-		isVip & False\\
-		\hline
-		SolderId & Merchant 22\\
-		\hline
-	\end{tabular}
-\end{table}
+
 
 \subsection{Error Data Fix}
 
@@ -135,8 +125,6 @@ Because of the binary stored float numbers can't be exact, all current numbers (
 \subsubsection{Sensitivity Analysis}
 
 \section{Strengths and weaknesses}
-
-\section{Conclusion}
 
 \subsection{Strengths}
 \begin{itemize}
@@ -156,8 +144,13 @@ Because of the binary stored float numbers can't be exact, all current numbers (
 	\item
 \end{itemize}
 
+\section{Conclusions}
+%$ c$_{avg}$ e^{\sin (p+t w)} \left(\frac{\text{C$_{1}$} \text{P$_{1}$}(t)}{\log (\text{D$_{1}$}+1)}+\frac{\text{C$_{2}$} \text{P$_{2}$}(t)}{\log (\text{D$_{2}$}+1)}+\frac{\text{C$_{3}$} \text{P$_{3}$}(t)}{\log (\text{D$_{3}$}+1)}\right)$
+
+
 \begin{thebibliography}{99}
 	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
+	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
 	\bibitem{3}\url{http://www.latexstudio.net/}
 	\bibitem{4}\url{http://www.chinatex.org/}
 \end{thebibliography}

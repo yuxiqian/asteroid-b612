@@ -55,20 +55,21 @@ class Pack:
             """ % (i, lib[i].name, lib[i].x, lib[i].y, dist, ' -> '.join(str(v) for v in lib[i].history)))
 
     def print_for_fitting(self, lib):
-        sum_history = deepcopy(self.history)
-        # for i in range(len(sum_history) - 1):
-        #     sum_history[i + 1] += sum_history[i]
-        print("""
-SumHis%d = {%s}
-              """ % (self.id, ', '.join(str(v) for v in sum_history)))
-        return
-        for i in self.nearest_id:
-            dist = sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2)
 
-            print("""
-                Closest to: #%d, City [%s] at [%.4f, %.4f], distance = %.3f
-                History: %s
-            """ % (i, lib[i].name, lib[i].x, lib[i].y, dist, ', '.join(str(v) for v in lib[i].history)))
+        rst = []
+
+        for i in range(7):
+            rst.append([self.history[i],
+                        lib[self.nearest_id[0]].history[i +
+                                                        1], lib[self.nearest_id[0]].history[i],
+                        lib[self.nearest_id[1]].history[i +
+                                                        1], lib[self.nearest_id[1]].history[i],
+                        lib[self.nearest_id[2]].history[i +
+                                                        1], lib[self.nearest_id[2]].history[i],
+                        self.history[i + 1]])
+
+        for item in rst:
+            print("{%s}," % ','.join(str(v) for v in item))
 
 
 default_file = input(
@@ -124,7 +125,9 @@ for it in packages:
         if dist == 0.0:
             dist = inf
         distances.append(dist)
-    it.nearest_id = np.argpartition(np.array(distances), target_k)[:target_k]
+    it.nearest_id = np.argpartition(np.array(distances), target_k)[: target_k]
 
 for l in packages:
+    l.print(packages)
     l.print_for_fitting(packages)
+    input()

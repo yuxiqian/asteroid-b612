@@ -3,8 +3,11 @@
 
 import heapq
 import pickle
+import subprocess
 import numpy as np
 import pandas as pd
+
+from pack import Pack
 from copy import deepcopy
 from math import sqrt, inf
 
@@ -16,60 +19,6 @@ def set_history_data(lib, name, year, count):
             loc.history[year_id] = count
             return
     raise TypeError("Nothing suitable found for %s, %d" % (name, year))
-
-
-class Pack:
-    id = 0
-    name = ""
-    x = 0.0
-    y = 0.0
-    nearest_id = []
-    history = []
-
-    def __init__(self, id, x, y, name, nearest_id=[]):
-        self.x = x
-        self.y = y
-        self.id = id
-        self.name = name
-        self.nearest_id = nearest_id
-        self.history = [0] * 8
-
-    def __str__(self):
-        return """ #%d
-        City [%s] at [%.4f, %.4f]
-        Nearest to: %s
-        """ % (self.id, self.name, self.x, self.y, self.nearest_id)
-
-    def print(self, lib):
-        print(""" #%d
-        City [%s] at [%.4f, %.4f]
-        History: %s
-              """ % (self.id, self.name, self.x, self.y, ' -> '.join(str(v) for v in self.history)))
-
-        for i in self.nearest_id:
-            dist = sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2)
-
-            print("""
-                Closest to: #%d, City [%s] at [%.4f, %.4f], distance = %.3f
-                History: %s
-            """ % (i, lib[i].name, lib[i].x, lib[i].y, dist, ' -> '.join(str(v) for v in lib[i].history)))
-
-    def print_for_fitting(self, lib):
-
-        rst = []
-
-        for i in range(7):
-            rst.append([self.history[i],
-                        lib[self.nearest_id[0]].history[i +
-                                                        1], lib[self.nearest_id[0]].history[i],
-                        lib[self.nearest_id[1]].history[i +
-                                                        1], lib[self.nearest_id[1]].history[i],
-                        lib[self.nearest_id[2]].history[i +
-                                                        1], lib[self.nearest_id[2]].history[i],
-                        self.history[i + 1]])
-
-        for item in rst:
-            print("{%s}," % ','.join(str(v) for v in item))
 
 
 default_file = input(
@@ -130,4 +79,52 @@ for it in packages:
 for l in packages:
     l.print(packages)
     l.print_for_fitting(packages)
-    input()
+
+    init = l.get_mma_script(packages)
+
+    txt = subprocess.check_output(["wolframscript", "-code", init + """
+        FindFit[dt,
+ Avg* E^Sin[
+   p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
+    C3  P3[[t]])/Log[1 + D3]), {p, w, C1, C2, C3}, t]
+    """]).decode('utf-8')
+
+    txt = txt.split('\n')[-2].replace(' ', '')
+    # print(txt)
+
+    lst = txt.replace('\n', '').replace('{p->', '').replace(',w->',
+                                                            ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace('}', '').split(' ')
+    print(lst)
+    print()
+    if len(lst) != 5:
+        txt = input("Failed to dump %s." % txt)
+        continue
+
+    try:
+        l.p = float(lst[0].replace('*^', 'e'))
+        l.w = float(lst[1].replace('*^', 'e'))
+        l.affect_index[0] = float(lst[2].replace('*^', 'e'))
+        l.affect_index[1] = float(lst[3].replace('*^', 'e'))
+        l.affect_index[2] = float(lst[4].replace('*^', 'e'))
+    except:
+        print("Throwing data %s.\n\n" % lst)
+        l.affect_index = [0.0] * 3
+        input()
+        continue
+    if l.affect_index[0] == 1.0:
+        print("Throwing data %s.\n\n" % lst)
+        l.p = 0.0
+        l.w = 0.0
+        l.affect_index = [0.0] * 3
+        input()
+        continue
+    # input()
+
+savefilename = input("Save it to [where].ans... \n>>> ")
+if savefilename == "":
+    savefilename = "awesome"
+output_hal = open("%s.ans" % savefilename, 'wb')
+
+str_data = pickle.dumps(packages)
+output_hal.write(str_data)
+output_hal.close()

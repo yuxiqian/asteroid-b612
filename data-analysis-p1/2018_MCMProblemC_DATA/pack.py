@@ -13,7 +13,9 @@ class Pack:
     history = []
     w = 0.0
     p = 0.0
-    affect_index = [0.0] * 3
+    affect_index_a = 0.0
+    affect_index_b = 0.0
+    affect_index_c = 0.0
 
     def __init__(self, id, x, y, name, nearest_id=[]):
         self.x = x
@@ -27,7 +29,8 @@ class Pack:
         return """ #%d
         City [%s] at [%.4f, %.4f]
         Nearest to: %s
-        """ % (self.id, self.name, self.x, self.y, self.nearest_id)
+        w = %.4f, p = %.4f, affect_index = %.4f, %.4f, %.4f
+        """ % (self.id, self.name, self.x, self.y, self.nearest_id, self.w, self.p, self.affect_index_a, self.affect_index_b, self.affect_index_c)
 
     def print(self, lib):
         print(""" #%d

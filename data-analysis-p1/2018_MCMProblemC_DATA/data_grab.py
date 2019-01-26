@@ -86,7 +86,7 @@ for l in packages:
         FindFit[dt,
  Avg* E^Sin[
    p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
-    C3  P3[[t]])/Log[1 + D3]), {p, w, C1, C2, C3}, t]
+    C3  P3[[t]])/Log[1 + D3] + 1), {p, w, C1, C2, C3}, t]
     """]).decode('utf-8')
 
     txt = txt.split('\n')[-2].replace(' ', '')
@@ -103,21 +103,24 @@ for l in packages:
     try:
         l.p = float(lst[0].replace('*^', 'e'))
         l.w = float(lst[1].replace('*^', 'e'))
-        l.affect_index[0] = float(lst[2].replace('*^', 'e'))
-        l.affect_index[1] = float(lst[3].replace('*^', 'e'))
-        l.affect_index[2] = float(lst[4].replace('*^', 'e'))
+        l.affect_index_a = float(lst[2].replace('*^', 'e'))
+        l.affect_index_b = float(lst[3].replace('*^', 'e'))
+        l.affect_index_c = float(lst[4].replace('*^', 'e'))
     except:
         print("Throwing data %s.\n\n" % lst)
-        l.affect_index = [0.0] * 3
+        l.affect_index_a = 0.0
+        l.affect_index_b = 0.0
+        l.affect_index_c = 0.0
         input()
         continue
-    if l.affect_index[0] == 1.0:
+    if l.affect_index_a == 1.0:
         print("Throwing data %s.\n\n" % lst)
         l.p = 0.0
         l.w = 0.0
-        l.affect_index = [0.0] * 3
+        l.affect_index_a = 0.0
+        l.affect_index_b = 0.0
+        l.affect_index_c = 0.0
         input()
-        continue
     # input()
 
 savefilename = input("Save it to [where].ans... \n>>> ")

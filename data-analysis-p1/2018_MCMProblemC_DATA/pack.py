@@ -11,11 +11,19 @@ class Pack:
     y = 0.0
     nearest_id = []
     history = []
+    estm_history = []
     w = 0.0
     p = 0.0
     affect_index_a = 0.0
     affect_index_b = 0.0
     affect_index_c = 0.0
+
+    def get_distance(self, lib):
+        dists = []
+        for i in self.nearest_id:
+            dists.append(
+                sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2))
+        return dists
 
     def __init__(self, id, x, y, name, nearest_id=[]):
         self.x = x

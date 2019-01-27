@@ -6,7 +6,11 @@ import numpy as np
 import pandas as pd
 from pack import Pack
 
-target_params = ['HC01_VC03']
+target_params = ['HC01_VC04',
+                 'HC01_VC37', 'HC01_VC86', 'HC01_VC85', 'HC01_VC80']
+
+result = ['Families - 1',
+          'Happy Marriage - 2', '25 year+ total - 4 Total', 'College - 5']
 
 
 def get_filehead(yr):
@@ -46,7 +50,10 @@ for year in range(7):
             itm = fs.iloc[i]
             if itm['GEO.display-label'].replace(' County', '').replace(' city', '') == pk.name.replace(' (city)', ''):
                 for p in target_params:
-                    params.append(itm[p])
+                    try:
+                        params.append(itm[p])
+                    except:
+                        params.append('0')
                 fine = True
                 break
         if not fine:
@@ -67,5 +74,7 @@ with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
     spamwriter.writerow(
         ["Year", "ID", "Name", "InnerIndex"] + target_params)
+    spamwriter.writerow(
+        ["Year", "ID", "Name", "InnerIndex"] + result)
     for row in results:
         spamwriter.writerow(row)

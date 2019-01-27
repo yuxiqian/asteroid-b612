@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import pickle
 import numpy as np
 from math import sqrt, e, sin
 

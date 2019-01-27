@@ -19,6 +19,7 @@ with open("%s.ans" % readfilename, 'rb') as file:
 
 real_dats = []
 estm_dats = []
+biases = []
 
 if type(locs) != list:
     raise TypeError("Bad File Format")
@@ -72,9 +73,13 @@ print("E 方差 = %f" % np.var(e_arr))
 
 input("Press <Enter> to calculate the bias >>> ")
 
+id = 0
 
 for i in locs:
+    id += 1
     print(i)
+
+    name = i.name
 
     loc_x = i.x
     loc_y = i.y
@@ -113,12 +118,19 @@ for i in locs:
 
     i.estm_history = calc_history
 
+    bias = 0.0
     for year in range(8):
+        real = i.history[year]
+        estm = i.estm_history[year]
         print("%d Real: %d\t%d Estm: %d" %
-              (2010 + year, i.history[year], 2010 + year, i.estm_history[year]))
-        real_dats.append([year, loc_x, loc_y, i.history[year]])
-        estm_dats.append([year, loc_x, loc_y, i.estm_history[year]])
+              (2010 + year, real, 2010 + year, estm))
+        real_dats.append([year, loc_x, loc_y, real])
+        estm_dats.append([year, loc_x, loc_y, estm])
+        bias += (real - estm) ** 2
     # input()
+
+    biases.append([id, name, bias])
+
     print()
 
 
@@ -130,7 +142,16 @@ output_hal.write(str_data)
 output_hal.close()
 
 
-savefilename = input("Save it to [where].csv... \n>>> ")
+savefilename = input("Save bias analysis to [where].csv... \n>>> ")
+with open(savefilename + " - bias.csv", 'w', newline='') as csvfile:
+    spamwriter = csv.writer(csvfile)
+    spamwriter.writerow(
+        ["id", "name", "bias"])
+    for row in biases:
+        spamwriter.writerow(row)
+
+
+savefilename = input("Save original data to [where].csv... \n>>> ")
 
 saverealfilename = savefilename + '_real.csv'
 

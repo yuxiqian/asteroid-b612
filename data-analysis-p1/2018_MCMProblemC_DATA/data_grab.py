@@ -163,27 +163,3 @@ output_hal = open("%s.ans" % savefilename, 'wb')
 str_data = pickle.dumps(packages)
 output_hal.write(str_data)
 output_hal.close()
-
-a_s = []
-b_s = []
-c_s = []
-d_s = []
-e_s = []
-for i in packages:
-    a_s.append(i.affect_index_a)
-    b_s.append(i.affect_index_b)
-    c_s.append(i.affect_index_c)
-    d_s.append(i.affect_index_d)
-    e_s.append(i.affect_index_e)
-
-a_arr = np.array(a_s)
-b_arr = np.array(b_s)
-c_arr = np.array(c_s)
-d_arr = np.array(d_s)
-e_arr = np.array(e_s)
-
-print("A var = " % np.var(a_arr))
-print("B var = " % np.var(b_arr))
-print("C var = " % np.var(c_arr))
-print("D var = " % np.var(d_arr))
-print("E var = " % np.var(e_arr))

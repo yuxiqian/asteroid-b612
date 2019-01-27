@@ -17,6 +17,8 @@ class Pack:
     affect_index_a = 0.0
     affect_index_b = 0.0
     affect_index_c = 0.0
+    affect_index_d = 0.0
+    affect_index_e = 0.0
 
     def get_distance(self, lib):
         dists = []
@@ -37,8 +39,8 @@ class Pack:
         return """ #%d
         City [%s] at [%.4f, %.4f]
         Nearest to: %s
-        w = %.4f, p = %.4f, affect_index = %.4f, %.4f, %.4f
-        """ % (self.id, self.name, self.x, self.y, self.nearest_id, self.w, self.p, self.affect_index_a, self.affect_index_b, self.affect_index_c)
+        w = %.4f, p = %.4f, affect_index = %.4f, %.4f, %.4f, %.4f, %.4f
+        """ % (self.id, self.name, self.x, self.y, self.nearest_id, self.w, self.p, self.affect_index_a, self.affect_index_b, self.affect_index_c, self.affect_index_d, self.affect_index_e)
 
     def print(self, lib):
         print(""" #%d

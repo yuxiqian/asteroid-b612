@@ -3,11 +3,12 @@
 
 import heapq
 import pickle
-
-from matplotlib import pyplot as plt
+import subprocess
 import numpy as np
 import pandas as pd
-import seaborn as sns
+
+from pack import Pack
+from copy import deepcopy
 from math import sqrt, inf
 
 
@@ -20,41 +21,14 @@ def set_history_data(lib, name, year, count):
     raise TypeError("Nothing suitable found for %s, %d" % (name, year))
 
 
-class Pack:
-    id = 0
-    name = ""
-    x = 0.0
-    y = 0.0
-    nearest_id = []
-    history = []
+def generate_mma_script():
 
-    def __init__(self, id, x, y, name, nearest_id=[]):
-        self.x = x
-        self.y = y
-        self.id = id
-        self.name = name
-        self.nearest_id = nearest_id
-        self.history = [0] * 8
-
-    def __str__(self):
-        return """ #%d
-        City [%s] at [%.4f, %.4f]
-        Nearest to: %s
-        """ % (self.id, self.name, self.x, self.y, self.nearest_id)
-
-    def print(self, lib):
-        print(""" #%d
-        City [%s] at [%.4f, %.4f]
-        History: %s
-              """ % (self.id, self.name, self.x, self.y, ' -> '.join(str(v) for v in self.history)))
-
-        for i in self.nearest_id:
-            dist = sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2)
-
-            print("""
-                Closest to: #%d, City [%s] at [%.4f, %.4f], distance = %.3f
-                History: %s
-            """ % (i, lib[i].name, lib[i].x, lib[i].y, dist, ' -> '.join(str(v) for v in lib[i].history)))
+    return """
+        FindFit[dt,
+ Avg* E^Sin[
+   p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
+    C3  P3[[t]])/Log[1 + D3] + 1), {p, w, C1, C2, C3}, t]
+    """
 
 
 default_file = input(
@@ -70,22 +44,18 @@ print("Successfully read %d items." % length)
 
 
 default_file = input(
-    "Input the complete spread csv file: [spread - all.csv].csv >>> ")
+    "Input the complete spread csv file: [general_dp].csv >>> ")
 
 if default_file == "":
-    default_file = 'spread - all.csv'
+    default_file = 'general_dp.csv'
+else:
+    default_file += ".csv"
 
 spread_dat = pd.read_csv(default_file)
 
 spread_len = len(spread_dat)
 print("Successfully read %d items." % spread_len)
 
-target_k = input("Input K as distance check limit: [3] >>> ")
-
-if target_k != "":
-    target_k = int(target_k)
-else:
-    target_k = 3
 
 packages = []
 
@@ -93,11 +63,11 @@ packages = []
 for i in range(length):
     item = dat.iloc[i]
     packages.append(Pack(i, item['经度'], item['纬度'],
-                         item['名称'].replace(', ', '/')))
+                         item['名称']))
 
 for j in range(spread_len):
     item = spread_dat.iloc[j]
-    set_history_data(packages, item['Name'], item['Year'], item['Amount'])
+    set_history_data(packages, item['地名'], item['年份'], item['数目'])
 
 for it in packages:
     x_0 = it.x
@@ -110,10 +80,67 @@ for it in packages:
         if dist == 0.0:
             dist = inf
         distances.append(dist)
-    it.nearest_id = np.argpartition(np.array(distances), target_k)[:target_k]
+    it.nearest_id = np.argpartition(np.array(distances), 3)[: 3]
 
 for l in packages:
     l.print(packages)
-    data = pd.DataFrame([list(range(2010, 2018)), l.history]).T
-    sns.pointplot(x=0, y=1, data=data)
-    plt.show()
+    l.print_for_fitting(packages)
+
+    init = l.get_mma_script(packages)
+
+    txt = subprocess.check_output(
+        ["wolframscript", "-code", init + generate_mma_script()]).decode('utf-8')
+
+    txt = txt.split('\n')[-2].replace(' ', '')
+    # print(txt)
+
+    lst = txt.replace('\n', '').replace('{p->', '').replace(',w->',
+                                                            ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace(',C4->', ' ').replace(',C5->', ' ').replace('}', '').split(' ')
+    print(lst)
+    print()
+    if len(lst) != 5:
+        txt = input("Failed to dump %s." % txt)
+        continue
+
+    try:
+        length = len(lst)
+        l.p = float(lst[0].replace('*^', 'e'))
+        l.w = float(lst[1].replace('*^', 'e'))
+        l.affect_index_a = float(lst[2].replace('*^', 'e'))
+        if length > 3:
+            l.affect_index_b = float(lst[3].replace('*^', 'e'))
+            if length > 4:
+                l.affect_index_c = float(lst[4].replace('*^', 'e'))
+                if length > 5:
+                    l.affect_index_d = float(lst[5].replace('*^', 'e'))
+                    if length > 6:
+                        l.affect_index_e = float(lst[6].replace('*^', 'e'))
+    except:
+        print("Throwing data %s.\n\n" % lst)
+        l.affect_index_a = 0.0
+        l.affect_index_b = 0.0
+        l.affect_index_c = 0.0
+        l.affect_index_d = 0.0
+        l.affect_index_e = 0.0
+        # input()
+        continue
+    if l.affect_index_a == 1.0 or l.affect_index_b == 1.0 or l.affect_index_c == 1.0:
+        print("Throwing data %s.\n\n" % lst)
+        l.p = 0.0
+        l.w = 0.0
+        l.affect_index_a = 0.0
+        l.affect_index_b = 0.0
+        l.affect_index_c = 0.0
+        l.affect_index_d = 0.0
+        l.affect_index_e = 0.0
+        # input()
+    # input()
+
+savefilename = input("Save it to [where].ans... \n>>> ")
+if savefilename == "":
+    savefilename = "awesome"
+output_hal = open("%s.ans" % savefilename, 'wb')
+
+str_data = pickle.dumps(packages)
+output_hal.write(str_data)
+output_hal.close()

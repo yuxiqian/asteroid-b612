@@ -1,0 +1,452 @@
+id,name,bias
+1,Montgomery/Virginia,146089.0
+2,Powhatan/Virginia,4738.0
+3,Rockbridge/Virginia,596.0
+4,Henrico/Virginia,308744.0
+5,Manassas Park (city)/Virginia,861.0
+6,Dickenson/Virginia,2690.0
+7,Northumberland/Virginia,3828.0
+8,Fairfax/Virginia,1074839.0
+9,Halifax/Virginia,3408.0
+10,Fluvanna/Virginia,1407.0
+11,Augusta/Virginia,16340.0
+12,Stafford/Virginia,5368.0
+13,Loudoun/Virginia,391884.0
+14,Wise/Virginia,885652.0
+15,Mathews/Virginia,723.0
+16,Buchanan/Virginia,25358.0
+17,Waynesboro (city)/Virginia,673.0
+18,Albemarle/Virginia,2168.0
+19,Grayson/Virginia,1446.0
+20,Nelson/Virginia,2194.0
+21,Lexington (city)/Virginia,27.0
+22,Russell/Virginia,192331.0
+23,Southampton/Virginia,844.0
+24,Westmoreland/Virginia,493.0
+25,Patrick/Virginia,2225.0
+26,Franklin/Virginia,6715.0
+27,Lee/Virginia,34251.0
+28,Campbell/Virginia,2516.0
+29,Scott/Virginia,37564.0
+30,Dinwiddie/Virginia,547.0
+31,Carroll/Virginia,31511.0
+32,Accomack/Virginia,7119.0
+33,Northampton/Virginia,115.0
+34,Lunenburg/Virginia,1041.0
+35,Lancaster/Virginia,68.0
+36,Buckingham/Virginia,505.0
+37,Henry/Virginia,7325.0
+38,Culpeper/Virginia,1588.0
+39,Winchester (city)/Virginia,28915.0
+40,Orange/Virginia,11354.0
+41,Chesterfield/Virginia,102564.0
+42,Fauquier/Virginia,89841.0
+43,Rockingham/Virginia,32401.0
+44,Amelia/Virginia,62.0
+45,Mecklenburg/Virginia,7145.0
+46,Washington/Virginia,1527.0
+47,Wythe/Virginia,107551.0
+48,Louisa/Virginia,6985.0
+49,Shenandoah/Virginia,201985.0
+50,Smyth/Virginia,4704.0
+51,Richmond/Virginia,1113600.0
+52,Greensville/Virginia,809.0
+53,Charles City/Virginia,12.0
+54,Radford (city)/Virginia,3903.0
+55,Cumberland/Virginia,221.0
+56,Warren/Virginia,628621.0
+57,Brunswick/Virginia,362.0
+58,Page/Virginia,21313.0
+59,Charlotte/Virginia,2627.0
+60,Highland/Virginia,6.0
+61,Giles/Virginia,135579.0
+62,New Kent/Virginia,1817.0
+63,Pulaski/Virginia,372725.0
+64,Caroline/Virginia,346.0
+65,Virginia Beach (city)/Virginia,5059.0
+66,Bedford/Virginia,5802.0
+67,Pittsylvania/Virginia,5468.0
+68,Prince William/Virginia,4593203.0
+69,Botetourt/Virginia,48548.0
+70,Isle of Wight/Virginia,4090.0
+71,Goochland/Virginia,297.0
+72,Frederick/Virginia,3786.0
+73,Bland/Virginia,1193.0
+74,Hanover/Virginia,9807.0
+75,Chesapeake (city)/Virginia,3441.0
+76,Essex/Virginia,378.0
+77,Sussex/Virginia,76.0
+78,Madison/Virginia,961.0
+79,Middlesex/Virginia,277.0
+80,Bath/Virginia,954.0
+81,Arlington/Virginia,56110.0
+82,Nottoway/Virginia,423.0
+83,Greene/Virginia,244.0
+84,Covington (city)/Virginia,1.0
+85,Tazewell/Virginia,498053.0
+86,Charlottesville (city)/Virginia,1488.0
+87,Craig/Virginia,86.0
+88,Alleghany/Virginia,974.0
+89,Gloucester/Virginia,3104.0
+90,Norfolk (city)/Virginia,1101.0
+91,Suffolk (city)/Virginia,12131.0
+92,Clarke/Virginia,1056.0
+93,Petersburg (city)/Virginia,4300.0
+94,Surry/Virginia,11.0
+95,Falls Church (city)/Virginia,11.0
+96,Rappahannock/Virginia,1415.0
+97,Galax (city)/Virginia,23.0
+98,Martinsville (city)/Virginia,1099.0
+99,James City/Virginia,6667.0
+100,Danville (city)/Virginia,1493.0
+101,Amherst/Virginia,163.0
+102,Harrisonburg (city)/Virginia,575.0
+103,Fredericksburg (city)/Virginia,3049.0
+104,Roanoke/Virginia,407671.0
+105,Appomattox/Virginia,215.0
+106,Portsmouth (city)/Virginia,25197.0
+107,Newport News (city)/Virginia,15760.0
+108,Spotsylvania/Virginia,183173.0
+109,Salem (city)/Virginia,5385.0
+110,Staunton (city)/Virginia,362.0
+111,Bristol (city)/Virginia,10324.0
+112,Williamsburg (city)/Virginia,47.0
+113,Floyd/Virginia,680.0
+114,Alexandria (city)/Virginia,1280.0
+115,Norton (city)/Virginia,4.0
+116,Lynchburg (city)/Virginia,8004.0
+117,York/Virginia,4180.0
+118,Emporia (city)/Virginia,376.0
+119,Poquoson (city)/Virginia,297.0
+120,Hopewell (city)/Virginia,1720.0
+121,Buena Vista (city)/Virginia,137.0
+122,Colonial Heights (city)/Virginia,3168.0
+123,Logan/West Virginia,5448.0
+124,Hardy/West Virginia,3413.0
+125,Tucker/West Virginia,21.0
+126,Fayette/West Virginia,324.0
+127,Hancock/West Virginia,6893.0
+128,Jefferson/West Virginia,761.0
+129,Harrison/West Virginia,132011.0
+130,Wayne/West Virginia,11029.0
+131,Grant/West Virginia,2772.0
+132,Raleigh/West Virginia,1093051.0
+133,Mercer/West Virginia,370501.0
+134,Boone/West Virginia,320.0
+135,Preston/West Virginia,205.0
+136,Monroe/West Virginia,708.0
+137,McDowell/West Virginia,3020.0
+138,Randolph/West Virginia,2841.0
+139,Monongalia/West Virginia,122383.0
+140,Wood/West Virginia,33257.0
+141,Putnam/West Virginia,5255.0
+142,Kanawha/West Virginia,1508640.0
+143,Cabell/West Virginia,187019.0
+144,Brooke/West Virginia,142.0
+145,Marshall/West Virginia,2906.0
+146,Morgan/West Virginia,8388.0
+147,Pendleton/West Virginia,16.0
+148,Barbour/West Virginia,422.0
+149,Calhoun/West Virginia,725.0
+150,Jackson/West Virginia,7043.0
+151,Taylor/West Virginia,6.0
+152,Mingo/West Virginia,8384.0
+153,Mineral/West Virginia,1732.0
+154,Marion/West Virginia,166215.0
+155,Pocahontas/West Virginia,3744.0
+156,Webster/West Virginia,1441.0
+157,Mason/West Virginia,1916.0
+158,Braxton/West Virginia,18379.0
+159,Upshur/West Virginia,2765.0
+160,Clay/West Virginia,199.0
+161,Wyoming/West Virginia,278.0
+162,Roane/West Virginia,1156.0
+163,Wetzel/West Virginia,2381.0
+164,Gilmer/West Virginia,231.0
+165,Nicholas/West Virginia,110292.0
+166,Hampshire/West Virginia,19427.0
+167,Ohio/West Virginia,1154.0
+168,Berkeley/West Virginia,345987.0
+169,Greenbrier/West Virginia,36961.0
+170,Pleasants/West Virginia,8.0
+171,Summers/West Virginia,3030.0
+172,Ritchie/West Virginia,323.0
+173,Wirt/West Virginia,2.0
+174,Tyler/West Virginia,924.0
+175,Lewis/West Virginia,32012.0
+176,Lincoln/West Virginia,9.0
+177,Doddridge/West Virginia,202.0
+178,Westmoreland/Pennsylvania,108607.0
+179,Delaware/Pennsylvania,75797.0
+180,Carbon/Pennsylvania,3023.0
+181,Venango/Pennsylvania,14083.0
+182,Washington/Pennsylvania,55920.0
+183,Lebanon/Pennsylvania,40902.0
+184,Montgomery/Pennsylvania,10920.0
+185,Perry/Pennsylvania,40828.0
+186,Cambria/Pennsylvania,117758.0
+187,Allegheny/Pennsylvania,431980.0
+188,Lackawanna/Pennsylvania,1073320.0
+189,Berks/Pennsylvania,77005.0
+190,Beaver/Pennsylvania,38196.0
+191,Wayne/Pennsylvania,3265.0
+192,Susquehanna/Pennsylvania,2242.0
+193,Bucks/Pennsylvania,3159033.0
+194,Schuylkill/Pennsylvania,37852.0
+195,Luzerne/Pennsylvania,145366.0
+196,Armstrong/Pennsylvania,86251.0
+197,Snyder/Pennsylvania,940.0
+198,Northampton/Pennsylvania,163921.0
+199,Huntingdon/Pennsylvania,30926.0
+200,York/Pennsylvania,294061.0
+201,Clearfield/Pennsylvania,8571.0
+202,Chester/Pennsylvania,1006271.0
+203,Butler/Pennsylvania,45807.0
+204,McKean/Pennsylvania,6719.0
+205,Clinton/Pennsylvania,4361.0
+206,Lancaster/Pennsylvania,170193.0
+207,Warren/Pennsylvania,1430.0
+208,Forest/Pennsylvania,228.0
+209,Adams/Pennsylvania,28079.0
+210,Monroe/Pennsylvania,7123.0
+211,Clarion/Pennsylvania,1083.0
+212,Lehigh/Pennsylvania,42220.0
+213,Indiana/Pennsylvania,47963.0
+214,Cumberland/Pennsylvania,9441.0
+215,Bradford/Pennsylvania,9087.0
+216,Bedford/Pennsylvania,7375.0
+217,Centre/Pennsylvania,52700.0
+218,Mifflin/Pennsylvania,564.0
+219,Mercer/Pennsylvania,11499.0
+220,Lycoming/Pennsylvania,27440.0
+221,Jefferson/Pennsylvania,28318.0
+222,Blair/Pennsylvania,29324.0
+223,Greene/Pennsylvania,474.0
+224,Lawrence/Pennsylvania,4815.0
+225,Tioga/Pennsylvania,1827.0
+226,Franklin/Pennsylvania,32755.0
+227,Fayette/Pennsylvania,6132.0
+228,Columbia/Pennsylvania,15079.0
+229,Somerset/Pennsylvania,44120.0
+230,Erie/Pennsylvania,291251.0
+231,Dauphin/Pennsylvania,85526.0
+232,Elk/Pennsylvania,903.0
+233,Sullivan/Pennsylvania,28.0
+234,Northumberland/Pennsylvania,2688.0
+235,Wyoming/Pennsylvania,11542.0
+236,Cameron/Pennsylvania,78.0
+237,Crawford/Pennsylvania,16227.0
+238,Union/Pennsylvania,965.0
+239,Montour/Pennsylvania,2081.0
+240,Juniata/Pennsylvania,4637.0
+241,Fulton/Pennsylvania,2841.0
+242,Potter/Pennsylvania,10963.0
+243,Pike/Pennsylvania,420.0
+244,Philadelphia/Pennsylvania,84977616.0
+245,Erie/Ohio,48760.0
+246,Putnam/Ohio,125.0
+247,Henry/Ohio,884.0
+248,Lorain/Ohio,1461178.0
+249,Wood/Ohio,6673.0
+250,Lucas/Ohio,1459117.0
+251,Scioto/Ohio,687249.0
+252,Muskingum/Ohio,13866.0
+253,Cuyahoga/Ohio,115985972.0
+254,Hamilton/Ohio,12126869.0
+255,Logan/Ohio,30748.0
+256,Williams/Ohio,139.0
+257,Clermont/Ohio,408057.0
+258,Van Wert/Ohio,19132.0
+259,Knox/Ohio,2602.0
+260,Seneca/Ohio,31966.0
+261,Hancock/Ohio,69692.0
+262,Perry/Ohio,35636.0
+263,Belmont/Ohio,11462.0
+264,Jackson/Ohio,351464.0
+265,Meigs/Ohio,2324.0
+266,Fayette/Ohio,8264.0
+267,Union/Ohio,22487.0
+268,Huron/Ohio,27769.0
+269,Richland/Ohio,120006.0
+270,Montgomery/Ohio,58541499.0
+271,Butler/Ohio,120676.0
+272,Stark/Ohio,493388.0
+273,Wayne/Ohio,3727.0
+274,Ashland/Ohio,164400.0
+275,Tuscarawas/Ohio,951.0
+276,Defiance/Ohio,80933.0
+277,Ashtabula/Ohio,44723.0
+278,Brown/Ohio,57243.0
+279,Franklin/Ohio,19078931.0
+280,Morrow/Ohio,40389.0
+281,Pickaway/Ohio,12996.0
+282,Summit/Ohio,352744.0
+283,Coshocton/Ohio,11335.0
+284,Madison/Ohio,16093.0
+285,Sandusky/Ohio,39405.0
+286,Mahoning/Ohio,2400701.0
+287,Warren/Ohio,6232.0
+288,Noble/Ohio,2403.0
+289,Paulding/Ohio,562.0
+290,Athens/Ohio,375233.0
+291,Harrison/Ohio,937.0
+292,Licking/Ohio,1682049.0
+293,Lawrence/Ohio,9090.0
+294,Fairfield/Ohio,839951.0
+295,Lake/Ohio,5563008.0
+296,Washington/Ohio,45040.0
+297,Gallia/Ohio,137443.0
+298,Medina/Ohio,3628.0
+299,Clinton/Ohio,48708.0
+300,Columbiana/Ohio,80123.0
+301,Allen/Ohio,35453.0
+302,Fulton/Ohio,618.0
+303,Trumbull/Ohio,821630.0
+304,Champaign/Ohio,29743.0
+305,Ross/Ohio,401725.0
+306,Greene/Ohio,45576.0
+307,Holmes/Ohio,1643.0
+308,Shelby/Ohio,6853.0
+309,Guernsey/Ohio,17615.0
+310,Mercer/Ohio,150568.0
+311,Portage/Ohio,191963.0
+312,Ottawa/Ohio,2130.0
+313,Preble/Ohio,4667.0
+314,Adams/Ohio,185112.0
+315,Pike/Ohio,17685.0
+316,Darke/Ohio,5655.0
+317,Crawford/Ohio,77752.0
+318,Monroe/Ohio,1741.0
+319,Wyandot/Ohio,796.0
+320,Jefferson/Ohio,8676.0
+321,Delaware/Ohio,1186912.0
+322,Geauga/Ohio,6551.0
+323,Carroll/Ohio,296.0
+324,Clark/Ohio,92380.0
+325,Vinton/Ohio,10434.0
+326,Miami/Ohio,9205.0
+327,Hardin/Ohio,56420.0
+328,Highland/Ohio,114733.0
+329,Marion/Ohio,46143.0
+330,Hocking/Ohio,9613.0
+331,Auglaize/Ohio,2160.0
+332,Morgan/Ohio,949.0
+333,Rowan/Kentucky,98837.0
+334,Jefferson/Kentucky,2242283.0
+335,Perry/Kentucky,519485.0
+336,Breckinridge/Kentucky,88.0
+337,Calloway/Kentucky,4446.0
+338,Ohio/Kentucky,1262.0
+339,Floyd/Kentucky,89661.0
+340,Bath/Kentucky,13773.0
+341,Oldham/Kentucky,5895.0
+342,Union/Kentucky,505.0
+343,Scott/Kentucky,29872.0
+344,Whitley/Kentucky,298743.0
+345,Hopkins/Kentucky,21873.0
+346,Kenton/Kentucky,2262110.0
+347,Pulaski/Kentucky,375528.0
+348,Pendleton/Kentucky,9621.0
+349,Muhlenberg/Kentucky,3459.0
+350,Monroe/Kentucky,285.0
+351,Boone/Kentucky,23170.0
+352,Pike/Kentucky,120855.0
+353,Meade/Kentucky,7471.0
+354,Breathitt/Kentucky,48453.0
+355,Clinton/Kentucky,1196.0
+356,Morgan/Kentucky,3184.0
+357,Hardin/Kentucky,63706.0
+358,Harlan/Kentucky,1024087.0
+359,Graves/Kentucky,10809.0
+360,Powell/Kentucky,29420.0
+361,Nelson/Kentucky,8040.0
+362,Lawrence/Kentucky,3653.0
+363,Webster/Kentucky,639.0
+364,Leslie/Kentucky,1285.0
+365,Metcalfe/Kentucky,93.0
+366,Fleming/Kentucky,6289.0
+367,Todd/Kentucky,58.0
+368,Letcher/Kentucky,41335.0
+369,Ballard/Kentucky,5.0
+370,Harrison/Kentucky,30019.0
+371,Taylor/Kentucky,5807.0
+372,Clark/Kentucky,85577.0
+373,Wolfe/Kentucky,1826.0
+374,Larue/Kentucky,59.0
+375,Warren/Kentucky,11695.0
+376,Garrard/Kentucky,7759.0
+377,Bell/Kentucky,327725.0
+378,Knox/Kentucky,132107.0
+379,Christian/Kentucky,19058.0
+380,Carroll/Kentucky,2150.0
+381,Bracken/Kentucky,6271.0
+382,Grant/Kentucky,8840.0
+383,Jackson/Kentucky,15554.0
+384,Casey/Kentucky,665.0
+385,Henderson/Kentucky,1201.0
+386,Campbell/Kentucky,79019.0
+387,Boyd/Kentucky,488733.0
+388,Carlisle/Kentucky,30.0
+389,Adair/Kentucky,1911.0
+390,Hart/Kentucky,441.0
+391,Marion/Kentucky,965.0
+392,Trigg/Kentucky,106.0
+393,Marshall/Kentucky,319.0
+394,Lyon/Kentucky,487.0
+395,Washington/Kentucky,96.0
+396,Owen/Kentucky,61.0
+397,Carter/Kentucky,170499.0
+398,Fayette/Kentucky,74840.0
+399,Menifee/Kentucky,2159.0
+400,Bourbon/Kentucky,11209.0
+401,Henry/Kentucky,683.0
+402,Madison/Kentucky,9372.0
+403,Hickman/Kentucky,54.0
+404,Daviess/Kentucky,9278.0
+405,Johnson/Kentucky,26724.0
+406,Magoffin/Kentucky,6866.0
+407,Estill/Kentucky,2547.0
+408,Boyle/Kentucky,13083.0
+409,Logan/Kentucky,2196.0
+410,Gallatin/Kentucky,823.0
+411,Lewis/Kentucky,11182.0
+412,Jessamine/Kentucky,225549.0
+413,Caldwell/Kentucky,7305.0
+414,Nicholas/Kentucky,11854.0
+415,Rockcastle/Kentucky,49770.0
+416,Mercer/Kentucky,7891.0
+417,Woodford/Kentucky,5347.0
+418,McLean/Kentucky,98.0
+419,Barren/Kentucky,14905.0
+420,Hancock/Kentucky,19.0
+421,Crittenden/Kentucky,312.0
+422,Franklin/Kentucky,16701.0
+423,McCreary/Kentucky,1490.0
+424,Greenup/Kentucky,2221.0
+425,Fulton/Kentucky,244.0
+426,Laurel/Kentucky,436360.0
+427,Lincoln/Kentucky,3504.0
+428,Clay/Kentucky,46217.0
+429,Spencer/Kentucky,1195.0
+430,Livingston/Kentucky,37.0
+431,Wayne/Kentucky,5796.0
+432,Bullitt/Kentucky,181221.0
+433,Montgomery/Kentucky,297723.0
+434,McCracken/Kentucky,23650.0
+435,Russell/Kentucky,1714.0
+436,Simpson/Kentucky,2939.0
+437,Shelby/Kentucky,1978.0
+438,Butler/Kentucky,256.0
+439,Mason/Kentucky,49895.0
+440,Grayson/Kentucky,6308.0
+441,Elliott/Kentucky,12549.0
+442,Anderson/Kentucky,2775.0
+443,Edmonson/Kentucky,849.0
+444,Allen/Kentucky,26166.0
+445,Trimble/Kentucky,972.0
+446,Knott/Kentucky,39545.0
+447,Robertson/Kentucky,288.0
+448,Martin/Kentucky,11326.0
+449,Lee/Kentucky,75855.0
+450,Owsley/Kentucky,779.0
+451,Cumberland/Kentucky,516.0

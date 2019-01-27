@@ -21,6 +21,29 @@ def set_history_data(lib, name, year, count):
     raise TypeError("Nothing suitable found for %s, %d" % (name, year))
 
 
+def generate_mma_script(k):
+    if k == 3:
+        return """
+        FindFit[dt,
+ Avg* E^Sin[
+   p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
+    C3  P3[[t]])/Log[1 + D3] + 1), {p, w, C1, C2, C3}, t]
+    """
+    elif k == 1:
+        return """
+FindFit[dt, 
+ Avg* E^Sin[p + t w] ((C1 P1[[t]])/Log[1 + D1]), {p, w, C1}, t]
+        """
+    elif k == 5:
+        return """
+FindFit[dt, 
+ Avg* E^Sin[
+   p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
+    C3  P3[[t]])/Log[1 + D3] + (C4 P4[[t]])/Log[1 + D4] + (
+    C5  P5[[t]])/Log[1 + D5]), {p, w, C1, C2, C3, C4, C5}, t]
+        """
+
+
 default_file = input(
     "Input the clean location csv file: [clean_locs].csv >>> ")
 
@@ -84,35 +107,40 @@ for l in packages:
 
     init = l.get_mma_script(packages)
 
-    txt = subprocess.check_output(["wolframscript", "-code", init + """
-        FindFit[dt,
- Avg* E^Sin[
-   p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (
-    C3  P3[[t]])/Log[1 + D3] + 1), {p, w, C1, C2, C3}, t]
-    """]).decode('utf-8')
+    txt = subprocess.check_output(
+        ["wolframscript", "-code", init + generate_mma_script(target_k)]).decode('utf-8')
 
     txt = txt.split('\n')[-2].replace(' ', '')
     # print(txt)
 
     lst = txt.replace('\n', '').replace('{p->', '').replace(',w->',
-                                                            ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace('}', '').split(' ')
+                                                            ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace(',C4->', ' ').replace(',C5->', ' ').replace('}', '').split(' ')
     print(lst)
     print()
-    if len(lst) != 5:
+    if len(lst) != target_k + 2:
         txt = input("Failed to dump %s." % txt)
         continue
 
     try:
+        length = len(lst)
         l.p = float(lst[0].replace('*^', 'e'))
         l.w = float(lst[1].replace('*^', 'e'))
         l.affect_index_a = float(lst[2].replace('*^', 'e'))
-        l.affect_index_b = float(lst[3].replace('*^', 'e'))
-        l.affect_index_c = float(lst[4].replace('*^', 'e'))
+        if length > 3:
+            l.affect_index_b = float(lst[3].replace('*^', 'e'))
+            if length > 4:
+                l.affect_index_c = float(lst[4].replace('*^', 'e'))
+                if length > 5:
+                    l.affect_index_d = float(lst[5].replace('*^', 'e'))
+                    if length > 6:
+                        l.affect_index_e = float(lst[6].replace('*^', 'e'))
     except:
         print("Throwing data %s.\n\n" % lst)
         l.affect_index_a = 0.0
         l.affect_index_b = 0.0
         l.affect_index_c = 0.0
+        l.affect_index_d = 0.0
+        l.affect_index_e = 0.0
         # input()
         continue
     if l.affect_index_a == 1.0 or l.affect_index_b == 1.0 or l.affect_index_c == 1.0:
@@ -122,6 +150,8 @@ for l in packages:
         l.affect_index_a = 0.0
         l.affect_index_b = 0.0
         l.affect_index_c = 0.0
+        l.affect_index_d = 0.0
+        l.affect_index_e = 0.0
         # input()
     # input()
 

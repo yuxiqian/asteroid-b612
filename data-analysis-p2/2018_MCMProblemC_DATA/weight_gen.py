@@ -78,6 +78,9 @@ for year in range(7):
         results.append(params)
         counties_dat[pk.id][2][year] = params[4:]
 
+
+input()
+
 for dat in counties_dat:
     # 八件
     dat[2][0][0] = int(dat[2][0][0])
@@ -86,13 +89,15 @@ for dat in counties_dat:
         # 七年
         nums = []
         for i in range(7):
-            if not i in [4, 6]:
-                nums.append(int(dat[2][i][j]))
-            else:
-                nums.append(weight - int(dat[2][i][j]))
+            nums.append(int(dat[2][i][j]))
+        print(nums)
+        # input()
         avg = np.mean(nums)
         for i in range(7):
-            dat[2][i][j] = nums[i] / avg
+            if not i in [4, 6]:
+                dat[2][i][j] = nums[i] / avg
+            else:
+                dat[2][i][j] = 2.0 - nums[i] / avg
     print("标准化了： %s" % dat[2])
 
 

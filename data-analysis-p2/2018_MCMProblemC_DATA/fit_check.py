@@ -15,7 +15,7 @@ def get_blocks(lst):
     culture = []
     for i in lst:
         # print(i)
-        family.append(sqrt(pow(i[1], 2) * pow((i[2] + i[3]) / 2, 2)))
+        family.append(sqrt(pow(i[1], 2) * pow((i[2] + i[3]) / 2.0, 2)))
         education.append(sqrt(pow(i[4], 2) * pow(i[5], 2)))
         culture.append(sqrt(pow(i[6], 2) * pow(i[7], 2)))
     return family, education, culture

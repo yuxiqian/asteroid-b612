@@ -20,8 +20,8 @@ class Pack:
     affect_index_d = 0.0
     affect_index_e = 0.0
 
-    def get_interior_index(self, year):
-        return np.mean(self.history) * pow(e, sin(self.p + year * self.w))
+    def get_interior_index(self, t):
+        return np.mean(self.history) * pow(e, sin(self.p + t * self.w))
 
     def get_distance(self, lib):
         dists = []
@@ -42,8 +42,8 @@ class Pack:
         return """ #%d
         City [%s] at [%.4f, %.4f]
         Nearest to: %s
-        w = %.4f, p = %.4f, affect_index = %.4f, %.4f, %.4f, %.4f, %.4f
-        """ % (self.id, self.name, self.x, self.y, self.nearest_id, self.w, self.p, self.affect_index_a, self.affect_index_b, self.affect_index_c, self.affect_index_d, self.affect_index_e)
+        w = %.4f, p = %.4f, affect_index = %.4f, %.4f, %.4f
+        """ % (self.id, self.name, self.x, self.y, self.nearest_id, self.w, self.p, self.affect_index_a, self.affect_index_b, self.affect_index_c)
 
     def print(self, lib):
         print(""" #%d

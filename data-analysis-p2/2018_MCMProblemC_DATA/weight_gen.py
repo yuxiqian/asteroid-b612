@@ -29,6 +29,7 @@ if type(packages) != list:
 
 print("Successfully get %d items." % len(packages))
 
+
 results = []
 
 for year in range(7):
@@ -43,7 +44,7 @@ for year in range(7):
         fine = False
         for i in range(size):
             itm = fs.iloc[i]
-            if itm['GEO.display-label'].replace(', ', '/').replace(' County', '').replace(' city', '') == pk.name.replace(' (city)', ''):
+            if itm['GEO.display-label'].replace(' County', '').replace(' city', '') == pk.name.replace(' (city)', ''):
                 for p in target_params:
                     params.append(itm[p])
                 fine = True

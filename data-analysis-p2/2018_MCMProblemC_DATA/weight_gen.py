@@ -86,7 +86,7 @@ for dat in counties_dat:
         # 七年
         nums = []
         for i in range(7):
-            if i in [4, 6]:
+            if not i in [4, 6]:
                 nums.append(int(dat[2][i][j]))
             else:
                 nums.append(weight - int(dat[2][i][j]))

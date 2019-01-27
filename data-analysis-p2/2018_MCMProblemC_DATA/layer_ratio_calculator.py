@@ -4,6 +4,7 @@ import csv
 import pickle
 import numpy as np
 import pandas as pd
+from math import log
 from pack import Pack
 
 
@@ -11,7 +12,7 @@ readfilename = input("Input [filename].csv... \n>>> ")
 packages = []
 
 if readfilename == "":
-    readfilename = "cherish"
+    readfilename = "fit_xs"
 
 
 description = ['Family * a + Education',
@@ -33,7 +34,7 @@ total_weight = 0
 
 for index in range(length):
     loc_x = weight_csv.iloc[index]
-    weight = int(loc_x['Weight'])
+    weight = log(int(loc_x['Weight']))
     total_weight += weight
     type = int(loc_x['Type'])
     if type == 0:

@@ -6,11 +6,17 @@ import numpy as np
 import pandas as pd
 from pack import Pack
 
-target_params = ['HC01_VC04',
-                 'HC01_VC37', 'HC01_VC86', 'HC01_VC85', 'HC01_VC80']
+target_params_before = ['HC01_VC25', 'HC01_VC04',
+                        'HC01_VC37', 'HC01_VC37', 'HC01_VC85', 'HC01_VC80', 'HC01_VC144',
+                        'HC01_VC118']
 
-result = ['Families - 1',
-          'Happy Marriage - 2', '25 year+ total - 4 Total', 'College - 5']
+target_params_after = ['HC01_VC26', 'HC01_VC04',
+                       'HC01_VC38', 'HC01_VC45', 'HC01_VC86', 'HC01_VC81', 'HC01_VC146',
+                       'HC01_VC120']
+
+result = ['Weight', 'Families',
+          'Happy Marriage Men', 'Happy Marriage Women', 'Drop out ones of school before Grade 9', 'College School Students', 'Born Outside people', 'The Settled'
+          ]
 
 
 def get_filehead(yr):
@@ -33,6 +39,7 @@ if type(packages) != list:
 
 print("Successfully get %d items." % len(packages))
 
+counties_dat = [[]] * 451
 
 results = []
 
@@ -42,6 +49,9 @@ for year in range(7):
     fs = pd.read_csv(csv_file)
     size = len(fs)
     for pk in packages:
+        if counties_dat[pk.id] == []:
+            counties_dat[pk.id] = [pk.name, pk, [[]] * 7]
+
         print(pk)
         internal_index = pk.get_interior_index(year)
         params = [year + 2010, pk.id, pk.name, internal_index]
@@ -49,7 +59,11 @@ for year in range(7):
         for i in range(size):
             itm = fs.iloc[i]
             if itm['GEO.display-label'].replace(' County', '').replace(' city', '') == pk.name.replace(' (city)', ''):
-                for p in target_params:
+                if year < 3:
+                    prm = target_params_before
+                else:
+                    prm = target_params_after
+                for p in prm:
                     try:
                         params.append(itm[p])
                     except:
@@ -57,13 +71,26 @@ for year in range(7):
                 fine = True
                 break
         if not fine:
-            for p in target_params:
+            for p in prm:
                 params.append(0)
                 input("No data found for #%d %s." % (pk.id, pk.name))
         print(params)
         results.append(params)
+        counties_dat[pk.id][2][year] = params[4:]
 
-savefilename = input("Save it to [where].csv... \n>>> ")
+for dat in counties_dat:
+    for ls in dat[2]:
+        numbers = []
+        for i in ls:
+            numbers.append(int(i))
+
+        avg = np.mean(numbers)
+        for i in range(len(ls)):
+            ls[i] = numbers[i] / avg
+        print("Fixed params to %s." % ls)
+
+
+savefilename = input("Save csv file to [where].csv... \n>>> ")
 
 if savefilename == "":
     savefilename = "weight"
@@ -72,9 +99,18 @@ savefilename += '.csv'
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(
-        ["Year", "ID", "Name", "InnerIndex"] + target_params)
+
     spamwriter.writerow(
         ["Year", "ID", "Name", "InnerIndex"] + result)
     for row in results:
         spamwriter.writerow(row)
+
+
+savebinaryfile = input("Save binary file to [where].bf... \n>>> ")
+if savebinaryfile == "":
+    savebinaryfile = "awesome"
+output_hal = open("%s.bf" % savebinaryfile, 'wb')
+
+str_data = pickle.dumps(counties_dat)
+output_hal.write(str_data)
+output_hal.close()

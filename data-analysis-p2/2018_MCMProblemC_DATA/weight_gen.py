@@ -94,7 +94,7 @@ for dat in counties_dat:
         # input()
         avg = np.mean(nums)
         for i in range(7):
-            if not i in [4, 6]:
+            if i in [4, 6]:
                 dat[2][i][j] = nums[i] / avg
             else:
                 dat[2][i][j] = 2.0 - nums[i] / avg

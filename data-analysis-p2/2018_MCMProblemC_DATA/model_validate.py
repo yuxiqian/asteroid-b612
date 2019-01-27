@@ -25,7 +25,7 @@ readfilename = input("Input [datagrab].ans... \n>>> ")
 locs = []
 
 if readfilename == "":
-    readfilename = "model_alldrug"
+    readfilename = "awesome - improved"
 
 with open("%s.ans" % readfilename, 'rb') as file:
     locs = pickle.loads(file.read())

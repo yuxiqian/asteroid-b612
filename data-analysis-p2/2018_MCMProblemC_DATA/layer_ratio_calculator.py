@@ -4,7 +4,7 @@ import csv
 import pickle
 import numpy as np
 import pandas as pd
-from math import log
+from math import log, e
 from pack import Pack
 
 
@@ -30,11 +30,11 @@ Index_a = 0.0
 Index_b = 0.0
 Index_c = 0.0
 
-total_weight = 0
+total_weight = 0.0
 
 for index in range(length):
     loc_x = weight_csv.iloc[index]
-    weight = log(int(loc_x['Weight']))
+    weight = int(loc_x['Weight'])
     total_weight += weight
     type = int(loc_x['Type'])
     if type == 0:

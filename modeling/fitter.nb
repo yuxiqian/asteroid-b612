@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12347,        348]
-NotebookOptionsPosition[     11262,        311]
-NotebookOutlinePosition[     11631,        327]
-CellTagsIndexPosition[     11588,        324]
+NotebookDataLength[     12864,        363]
+NotebookOptionsPosition[     11779,        326]
+NotebookOutlinePosition[     12145,        342]
+CellTagsIndexPosition[     12102,        339]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -71,14 +71,29 @@ Cell[BoxData[{
         RowBox[{"P3", "[", 
          RowBox[{"[", "t", "]"}], "]"}]}], 
        RowBox[{"Log", "[", 
-        RowBox[{"1", "+", "D3"}], "]"}]]}], ")"}]}], ",", 
+        RowBox[{"1", "+", "D3"}], "]"}]], "+", 
+      FractionBox[
+       RowBox[{"C4", " ", 
+        RowBox[{"P4", "[", 
+         RowBox[{"[", "t", "]"}], "]"}]}], 
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "+", "D4"}], "]"}]], "+", 
+      FractionBox[
+       RowBox[{"C5", "  ", 
+        RowBox[{"P5", "[", 
+         RowBox[{"[", "t", "]"}], "]"}]}], 
+       RowBox[{"Log", "[", 
+        RowBox[{"1", "+", "D5"}], "]"}]]}], ")"}]}], ",", 
    RowBox[{"{", 
-    RowBox[{"p", ",", "w", ",", "C1", ",", "C2", ",", "C3"}], "}"}], ",", 
-   "t"}], "]"}]}], "Input",
+    RowBox[{
+    "p", ",", "w", ",", "C1", ",", "C2", ",", "C3", ",", "C4", ",", "C5"}], 
+    "}"}], ",", "t"}], "]"}]}], "Input",
  CellChangeTimes->{{3.757473347818087*^9, 3.757473392504422*^9}, {
    3.757473731476636*^9, 3.757473757440887*^9}, {3.757474258986453*^9, 
    3.757474263740087*^9}, {3.7574744146698093`*^9, 3.757474414854321*^9}, 
-   3.7574746189623213`*^9, 3.757474699300105*^9, 3.757474935710647*^9}],
+   3.7574746189623213`*^9, 3.757474699300105*^9, 3.757474935710647*^9, {
+   3.757540514831378*^9, 3.757540553485969*^9}, {3.757540842721938*^9, 
+   3.757540845195601*^9}}],
 
 Cell[BoxData["33"], "Output",
  CellChangeTimes->{{3.757473359856097*^9, 3.75747339304151*^9}, {
@@ -310,7 +325,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{808, 752},
-WindowMargins->{{167, Automatic}, {-179, Automatic}},
+WindowMargins->{{Automatic, 21}, {23, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (2016\:5e747\
 \:670828\:65e5)",
 StyleDefinitions->"Default.nb"
@@ -327,28 +342,28 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2047, 58, 265, "Input"],
-Cell[2630, 82, 215, 3, 32, "Output"],
-Cell[2848, 87, 333, 7, 32, "Output"],
-Cell[3184, 96, 220, 3, 32, "Output"],
-Cell[3407, 101, 220, 3, 32, "Output"],
-Cell[3630, 106, 220, 3, 32, "Output"],
-Cell[3853, 111, 329, 7, 32, "Output"],
-Cell[4185, 120, 329, 7, 32, "Output"],
-Cell[4517, 129, 328, 7, 32, "Output"],
-Cell[4848, 138, 339, 7, 24, "Message"],
-Cell[5190, 147, 339, 7, 24, "Message"],
-Cell[5532, 156, 338, 7, 24, "Message"],
-Cell[5873, 165, 411, 8, 24, "Message"],
-Cell[6287, 175, 553, 11, 32, "Output"]
+Cell[580, 22, 2564, 73, 293, "Input"],
+Cell[3147, 97, 215, 3, 32, "Output"],
+Cell[3365, 102, 333, 7, 32, "Output"],
+Cell[3701, 111, 220, 3, 32, "Output"],
+Cell[3924, 116, 220, 3, 32, "Output"],
+Cell[4147, 121, 220, 3, 32, "Output"],
+Cell[4370, 126, 329, 7, 32, "Output"],
+Cell[4702, 135, 329, 7, 32, "Output"],
+Cell[5034, 144, 328, 7, 32, "Output"],
+Cell[5365, 153, 339, 7, 24, "Message"],
+Cell[5707, 162, 339, 7, 24, "Message"],
+Cell[6049, 171, 338, 7, 24, "Message"],
+Cell[6390, 180, 411, 8, 24, "Message"],
+Cell[6804, 190, 553, 11, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6877, 191, 1664, 45, 140, "Input"],
-Cell[8544, 238, 276, 6, 24, "Message"],
-Cell[8823, 246, 278, 6, 24, "Message"],
-Cell[9104, 254, 276, 6, 24, "Message"],
-Cell[9383, 262, 340, 7, 24, "Message"],
-Cell[9726, 271, 1520, 37, 245, "Output"]
+Cell[7394, 206, 1664, 45, 140, "Input"],
+Cell[9061, 253, 276, 6, 24, "Message"],
+Cell[9340, 261, 278, 6, 24, "Message"],
+Cell[9621, 269, 276, 6, 24, "Message"],
+Cell[9900, 277, 340, 7, 24, "Message"],
+Cell[10243, 286, 1520, 37, 245, "Output"]
 }, Open  ]]
 }
 ]

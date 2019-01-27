@@ -8,6 +8,7 @@
 	titlepage = true, abstract = true}
 \usepackage{palatino}
 \usepackage{lipsum}
+\usepackage{subfigure}
 \title{The \LaTeX{} Template for MCM Version \MCMversion}
 \author{}
 \date{\today}
@@ -25,11 +26,12 @@
 \section{Introduction}
 
 \subsection{Background}
-In 2016, about 275 million people worldwide used drugs at least once, or 5.6 percent of the world's population aged 15 to 64. About 31 million drug users are suffering from drug addiction, which means their use is so harmful that they may need treatment. Preliminary estimates suggest that 13.8 million young people aged 15 to 16 worldwide used marijuana last year, or 5.6\% of the population.
+About 275 million people worldwide, which is roughly 5.6 per cent of the global population aged 15–64 years, used drugs at least once during 2016. Some 31 million of people who use drugs suffer from drug use disorders, meaning that their drug use is harmful to the point where they may need treatment. Initial estimations suggest that, globally, 13.8 million young people aged 15–16 years used cannabis in the past year, equivalent to a rate of 5.6 per cent. 
+Roughly 450,000 people died as a result of drug use in 2015, according to WHO. Of those deaths, 167,750 were directly associated with drug use disorders (mainly overdoses). The rest were indirectly attributable to drug use and included deaths related to HIV and hepatitis C acquired through unsafe injecting practices.
 
-The world health organization reports that about 450,000 people died from drug use in 2015. Of these deaths, 167,750 were directly related to symptoms of drug use (mainly overdoses). The remaining deaths were indirectly related to drug use, including those from HIV and hepatitis c infection as a result of unsafe injection practices.
+Opioids continued to cause the most harm, accounting for 76 per cent of deaths where drug use disorders were implicated. PWID — some 10.6 million worldwide in 2016 — endure the greatest health risks. More than half of them live with hepatitis C, and one in eight live with HIV.The headline figures for drug users have changed little in recent years, but this stability masks the striking ongoing changes in drug markets. Drugs such as heroin and cocaine that have been available for a long time increasingly coexist with NPS and there has been an increase in the non-medical use of prescription drugs (either diverted from licit channels or illicitly manufactured).The use of substances of unclear origin supplied through illicit channels that are sold as purported medicines but are destined for non-medical use is also on the increase. The range of substances and combinations available to users has never been wider. 
 
-The harm caused by opioids continues to be the greatest, accounting for 76 per cent of deaths from drug-related conditions. Injecting drug users --- some 10.6 million people worldwide in 2016 --- bear the greatest health risks; More than half had hepatitis c and one in eight had HIV. Major figures on drug users have changed little in recent years, but this stability masks significant changes taking place in the drug market. Long-term availability of drugs such as heroin and cocaine is increasingly coexisting with new psychoactive substances, as is the non-medical use of prescription drugs (diverted from legal sources or manufactured illegally). Also increasing are the use of substances of unknown origin, which are supplied through illegal channels and are sold claiming to be medicines but destined for non-medical use. The range of substances and compounds available to drug users is unprecedented.\cite{1}
+In 2015 and 2016, for the first time in half a century, life expectancy in the United States of America declined for two consecutive years. A key factor was the increase in unintentional injuries, which includes overdose deaths. In 2016, 63,632 people died from a drug overdose in the United States, the highest number on record and a 21 per cent increase from the previous year. This was largely due to a rise in deaths associated with pharmaceutical opioids, including fentanyl and fentanyl analogues. This group of opioids, excluding methadone, was implicated in 19,413 deaths in the country, more than double the number in 2015. It is necessary for us to study the law of drug spread and take corresponding measures to curb the trend of drug spread.\cite{1}
 
 \subsection{Our Work}
 
@@ -68,31 +70,18 @@ The notation table [\ref{table-notations}] contains all the notations we use in 
 		\bottomrule
 	\end{tabular}
 \end{table}
-\section{}}
 
-\subsection{Graph Theory}
-In \textbf(Part 1), we need to describe the spread of the reported cases and identify possible locations where specific opioid use started. From aticle\cite{2}, we learn that weighted directed graph can solve this problem well. The following is the weighted directed graph we constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
-\begin{figure}
+\section{Related Knowledge}
+
+\subsection*{Graph Theory}
+In \textbf{Part 1}, we need to describe the spread of the reported cases and identify possible locations where specific opioid use started. From aticle\cite{2}, we learn that weighted directed graph can solve this problem well. The advantage of using graph theory analysis is that it can directly reflect that interaction between the counties and it helps to analyze the path of transmission of certain drugs. Based on the linkages between the counties and counties, it is easier to derive strategies for controlling drug spread.
+
+The following is the weighted directed graph we constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{graphtheory.png}
 	\caption{An Example of the Weighted Directed Graph}\label{graph}
 \end{figure}
-
-The advantage of using graph theory analysis is that it can be used to understand the past as well as predict the future. And there are two types of time series: the multiplicative time series and the additive time series.
-\begin{itemize}
-	\item In a multiplicative time series, the components multiply together to make the time series. If you have an increasing trend, the amplitude of seasonal activity increases. Everything becomes more exaggerated. This is common when you’re looking at web traffic.
-	\item In an additive time series, the components add together to make the time series. If you have an increasing trend, you still see roughly the same size peaks and troughs throughout the time series. This is often seen in indexed time series where the absolute value is growing but changes stay relative.
-\end{itemize}
-
-
-
-So we choose to build the Additive Time Serious Model (ATSM). Here is the reason
-\subsection{ARIMA model}
-\indent In statistics and econometrics, and in particular in time series analysis, an autoregressive integrated moving average (ARIMA) model is a generalization of an autoregressive moving average (ARMA) model. Both of these models are fitted to time series data either to better understand the data or to predict future points in the series (forecasting). ARIMA models are applied in some cases where data show evidence of non-stationarity, where an initial differencing step (corresponding to the "integrated" part of the model) can be applied one or more times to eliminate the non-stationarity.
-
-The AR part of ARIMA indicates that the evolving variable of interest is regressed on its own lagged (i.e., prior) values. The MA part indicates that the regression error is actually a linear combination of error terms whose values occurred contemporaneously and at various times in the past. The I (for "integrated") indicates that the data values have been replaced with the difference between their values and the previous values (and this differencing process may have been performed more than once). The purpose of each of these features is to make the model fit the data as well as possible.
-
-\subsection{Gause-Lotka-Volterra Model}
 
 \section{Data Analysis}
 
@@ -107,24 +96,72 @@ Some factors are provided directly and can be grabbed at the first time:
 	\item \textbf{Case Count}\\
 	Many drugs involved in all these incidents, but they are not equally significant. The reported count recording the troubles they made can be a convincing factor to determine how influential one drug is.
 	\item \textbf{Geography Location}\\
-	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to [Simple Maps Corp.][1] and their generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
+	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to $Simple\ Maps\ Corp.$[1] and their generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 \end{itemize}
-
-
 
 \subsection{Error Data Fix}
 
-Some of the purchasing method were mistagged or missed entirely. Those data are either moved in the correct type or in a special "unmarked" type.
-
-Some fruit type are not marked correctly as so, and the similar solution is made, too.
-
-Because of the binary stored float numbers can't be exact, all current numbers (the origin price, discount price, special bonus) are all truncated to 2 digits after the decimal dots.
-\section{Model Extension and Simulation Analysis}
+\section{Model Construction and Simulation Analysis}
 \subsection{Problem 1}
+\subsubsection{Construction Process}
+We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states from 2010 to 2017.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{StateSum.png}
+	\caption{Total Drug Use In Five States in Years 2010-2017}\label{sum_flowchart}
+\end{figure}
+
+Through the overall analysis of the flow chart, we find that the number of cases has a tendency to rise slowly. We take the following steps to build this model.First of all, we think that the change in the number of cases in a county $Y(t)$ depends on two factors: time $T(t)$ and space $S(t)$ and these two factors have equally important influence on the change of the case number. Based on this, the space-time model of $Y(t) = T(t)S(t)$ type for the county case number is established:
+\begin{enumerate}
+	\item \textbf{The impact of the number of local cases in the past on the present.} According to the knowledge of time series, we need $T(t)$ to reflect the trend and periodicity of case number changes. Therefore, $T(t)$ should be a component that fluctuates slowly with time. We assume that $ T(t) = C_{base}e^{sin(\omega t+\varphi)}$, where $C_{base}$ is the base level of the number of cases in the county, $\omega$ in $e$ is the angular velocity of the number of cases in the county, and $\varphi$ is the modified initial phase.
+	\item \textbf{The influence of the number of cases in the current space around on the number of local cases.} According to the figure we establish, we need $S(t)$ to reflect the randomness and correlation of the number of cases, so $S(t)$ should be a random component monitoring the influence of the number of cases in the surrounding space. We believe that the impact on the number of the cases in the local counties is positively correlated with the number of the adjacent county cases and negatively correlated with the distance between the two places. At the same time, we note that distance and influence are not strictly inversely proportional. For example, at a distance of enough, a difference of 1 or 2 kilometers does not make a significant difference. We think that taking the logarithm of the distance is going to be a good solution.
+\end{enumerate} 
+
+Based on the above, we get Equation \eqref{model1_eq1}.
+\begin{equation}
+P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} (1+\sum_{i=1}^{k} {\frac{C_{i,j} P_{i}(t)}{\ln (D_{i,j}+1)}})
+\label{model1_eq1}
+\end{equation}
+
+In the equation, $P_{j}$ represents the number of cases in the target county, $P_{i}$ represents the number of cases in the surrounding county, $(1+\sum_{i=1}^{k} {\frac{C_{i,j} P_{i}(t)}{\ln (D_{i,j}+1)}})$ represents the effect of $k$ surrounding counties on target counties (We consider that this parameter is going to be the value of fluctuating on a base of $1$), $C_{i,j}$ represents the influence coefficient of county i on county j, and $D_{i,j}$ represents the distance between county i and county j.
+
+\subsubsection{Model Simplification}
+In the model, if we take into account the relationship among all counties, then $k$ will be 451, and we will calculate 451 correlation coefficients when we analyze each county. Considering that there is the data of only eight years from 2010 to 2017 in the file ``MCM\_NFLIS\_Data.xlsx``, we cannot specifically calculate the specific value of each parameter. And when the geographical location of two counties is far from each other, the relationship between them is relatively small, and then its influence can be ignored. In other words, we can only take adjacent counties that are close to the target county as the analysis target. How do we define proximity? Based on the map information, we collect the longitude and latitude information of each county. Since the latitude and longitude of the five states do not vary much, we used the longitude and latitude of the two locations to calculate their relative distances\eqref{distance}.
+\begin{equation}
+D_{i,j} = \sqrt{(lon_i-lon_j)^2+(lat_i-lat_j)^2}
+\label{distance}
+\end{equation}
+
+In the equation, $lon_i$ represents the longitude of county $i$, $lon_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and bias analysis can help us get the right parameter $k$. We get Figure \ref{model1_bias_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
+\begin{figure}[h]
+	\centering
+	\subfigure[Bias Analysis]{
+		\includegraphics[width=15cm]{model1_bias}\label{model1_bias}
+	}
+	\subfigure[Variance Analysis]{
+		\includegraphics[width=10cm]{model1_variance}\label{model1_variance}
+	}
+	\caption{Bias And Variance Analysis}\label{model1_bias_variance}	
+\end{figure}
+
+Finally, we can get the simplified equation\eqref{model1_sim}:
+\begin{equation}
+P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)
+\label{model1_sim}
+\end{equation}
+\subsubsection{Problem Solving}
 
 \subsubsection{Sensitivity Analysis}
+\subsection{Problem 2}
+\subsubsection{Construction Process}
 
+\subsection{Problem 3}
 \section{Strengths and weaknesses}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{all_relation.png}
+	\caption{An Example of the Weighted Directed Graph}\label{all_relation}
+\end{figure}
 
 \subsection{Strengths}
 \begin{itemize}
@@ -145,13 +182,12 @@ Because of the binary stored float numbers can't be exact, all current numbers (
 \end{itemize}
 
 \section{Conclusions}
-%$ c$_{avg}$ e^{\sin (p+t w)} \left(\frac{\text{C$_{1}$} \text{P$_{1}$}(t)}{\log (\text{D$_{1}$}+1)}+\frac{\text{C$_{2}$} \text{P$_{2}$}(t)}{\log (\text{D$_{2}$}+1)}+\frac{\text{C$_{3}$} \text{P$_{3}$}(t)}{\log (\text{D$_{3}$}+1)}\right)$
 
 
 \begin{thebibliography}{99}
 	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
 	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
-	\bibitem{3}\url{http://www.latexstudio.net/}
+	\bibitem{3}
 	\bibitem{4}\url{http://www.chinatex.org/}
 \end{thebibliography}
 

@@ -80,6 +80,35 @@ class Pack:
 
         return result
 
+    def get_mma_script_for_phase_2(self, lib, Family, Education, Culture):
+        result = ""
+        result += ("Avg = %d \n " % (int(np.mean(self.history))))
+
+        result += ("dt = {%s} \n " % (', '.join(str(v)
+                                                for v in self.history[:7])))
+
+        result += ("Family = {%s} \n " % (', '.join(str(v) for v in Family)))
+
+        result += ("Education = {%s} \n " %
+                   (', '.join(str(v) for v in Education)))
+
+        result += ("Culture = {%s} \n " % (', '.join(str(v) for v in Culture)))
+
+        count = 1
+        for i in self.nearest_id:
+            result += ("D%d = %.4f \n " % (count,
+                                           sqrt((self.x - lib[i].x) ** 2 + (self.y - lib[i].y) ** 2)))
+            count += 1
+
+        count = 1
+        for i in self.nearest_id:
+            result += ("P%d = {%s} \n " % (count, ', '.join(str(v)
+                                                            for v in lib[i].history)))
+
+            count += 1
+
+        return result
+
     def print_for_fitting(self, lib):
 
         print("Avg = %d" % (int(np.mean(self.history))))

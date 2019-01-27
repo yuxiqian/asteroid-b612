@@ -79,15 +79,21 @@ for year in range(7):
         counties_dat[pk.id][2][year] = params[4:]
 
 for dat in counties_dat:
-    for ls in dat[2]:
-        numbers = []
-        for i in ls:
-            numbers.append(int(i))
-
-        avg = np.mean(numbers)
-        for i in range(len(ls)):
-            ls[i] = numbers[i] / avg
-        print("Fixed params to %s." % ls)
+    # 八件
+    dat[2][0][0] = int(dat[2][0][0])
+    weight = dat[2][0][0]
+    for j in range(1, 8):
+        # 七年
+        nums = []
+        for i in range(7):
+            if i in [4, 6]:
+                nums.append(int(dat[2][i][j]))
+            else:
+                nums.append(weight - int(dat[2][i][j]))
+        avg = np.mean(nums)
+        for i in range(7):
+            dat[2][i][j] = nums[i] / avg
+    print("标准化了： %s" % dat[2])
 
 
 savefilename = input("Save csv file to [where].csv... \n>>> ")

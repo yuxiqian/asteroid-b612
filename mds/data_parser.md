@@ -1,0 +1,2 @@
+## 补充：关于 Problem 2 拟合中的定参：
+To determine the \alpha \beta \gamma precisely, we must take the weighted average value as the result. However, making 451 times of single fitting calculation is not acceptable. To balance the time and preciseness, we randomly pick 20 different counties to build the parameters.

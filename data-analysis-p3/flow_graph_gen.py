@@ -29,8 +29,11 @@ for i in locs:
     count = 0
 
     for flowto in i.nearest_id:
+        src_x, src_y = i.x, i.y
         src_id = id
+        dst_x, dst_y = locs[flowto].x, locs[flowto].y
         dst_id = flowto
+
         if count == 0:
             affect_idx = i.affect_index_a
         elif count == 1:
@@ -39,7 +42,8 @@ for i in locs:
             affect_idx = i.affect_index_c
         count += 1
         if affect_idx > 0.0:
-            new_item = [src_id, dst_id, "%.9f" % affect_idx]
+            new_item = [src_x, src_y, dst_x, dst_y,
+                        src_id, dst_id, "%.9f" % affect_idx]
             flow_items.append(new_item)
             print(new_item)
             # input()
@@ -51,6 +55,7 @@ savefilename += '.csv'
 
 with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
-    spamwriter.writerow(["StartId", "DestId", "AffectIndex"])
+    spamwriter.writerow(["StartX", "StartY", "DestX",
+                         "DestY", "StartID", "EndID", "AffectIndex"])
     for row in flow_items:
         spamwriter.writerow(row)

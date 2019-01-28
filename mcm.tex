@@ -126,7 +126,7 @@ In the modeling part of Problem 1 solution, we have determined a best `k` value 
 
 
 \section{Model Construction and Simulation Analysis}
-\subsection{Problem 1}
+\subsection{Problem 1: Time-Space Model}
 \subsubsection{Construction Process}
 We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states from 2010 to 2017.
 \begin{figure}[ht]
@@ -135,7 +135,7 @@ We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databa
 	\caption{Total Drug Use In Five States in Years 2010-2017}\label{sum_flowchart}
 \end{figure}
 
-Through the overall analysis of the flow chart, we find that the number of cases has a tendency to rise slowly. We take the following steps to build this model.First of all, we think that the change in the number of cases in a county $Y(t)$ depends on two factors: time $T(t)$ and space $S(t)$ and these two factors have equally important influence on the change of the case number. Based on this, the space-time model of $Y(t) = T(t)S(t)$ type for the county case number is established:
+Through the overall analysis of the flow chart, we find that the number of cases has a tendency to rise slowly. We take the following steps to build this model[\cite{4}].First of all, we think that the change in the number of cases in a county $Y(t)$ depends on two factors: time $T(t)$ and space $S(t)$ and these two factors have equally important influence on the change of the case number. Based on this, the space-time model of $Y(t) = T(t)S(t)$ type for the county case number is established:
 \begin{enumerate}
 	\item \textbf{The impact of the number of local cases in the past on the present.} According to the knowledge of time series, we need $T(t)$ to reflect the trend and periodicity of case number changes. Therefore, $T(t)$ should be a component that fluctuates slowly with time. We assume that $ T(t) = C_{base}e^{sin(\omega t+\varphi)}$, where $C_{base}$ is the base level of the number of cases in the county, $\omega$ in $e$ is the angular velocity of the number of cases in the county, and $\varphi$ is the modified initial phase.
 	\item \textbf{The influence of the number of cases in the current space around on the number of local cases.} According to the figure we establish, we need $S(t)$ to reflect the randomness and correlation of the number of cases, so $S(t)$ should be a random component monitoring the influence of the number of cases in the surrounding space. We believe that the impact on the number of the cases in the local counties is positively correlated with the number of the adjacent county cases and negatively correlated with the distance between the two places. At the same time, we note that distance and influence are not strictly inversely proportional. For example, at a distance of enough, a difference of 1 or 2 kilometers does not make a significant difference. We think that taking the logarithm of the distance is going to be a good solution.
@@ -156,7 +156,7 @@ D_{i,j} = \sqrt{(long_i-long_j)^2+(lat_i-lat_j)^2}
 \label{distance}
 \end{equation}
 
-In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and deviation analysis can help us get the right parameter $k$. We get Figure \ref{model1_deviation_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
+In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{5}, we learned that using variance and deviation analysis can help us get the right parameter $k$. We get Figure [\ref{model1_deviation_variance}] as a result. From the figure, when $k = 3$, we can get the best fit.
 \begin{figure}[ht]
 	\centering
 	\subfigure[Deviation Analysis]{
@@ -174,20 +174,20 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 \label{model1_sim}
 \end{equation}
 \subsubsection{Problem Solving}
-Based on Equation\eqref{model1_sim}, we put the data of eight years into the formula to fit it, and we get a graph of each county based on the total amount of drugs\ref{all_relation}.
+Based on Equation\eqref{model1_sim}, we put the data of eight years into the formula to fit it, and we get a graph of each county based on the total amount of drugs[\ref{all_relation}].
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=15cm]{figure-release/Model1.FlowMap.png}
-	\caption{}\label{all_relation}
+	\caption{Relationship of All Counties for the Drug Use Spread}\label{all_relation}
 \end{figure}
 
 
 
 \subsubsection{Sensitivity Analysis}
-
-\subsection{Problem 2}
+[\cite{6}]
+\subsection{Problem 2: TSSE Model}
 \subsubsection{Construction Process}
-In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
+In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process[\cite{7}]. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories[\cite{8}]: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figure-release/Model2.LayerMap.png}
@@ -216,11 +216,11 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 \label{model2_eq2}
 \end{equation}
 
-\subsection{Problem 3}
+\subsection{Problem 3: Strategy and Evaluating}
 \subsubsection{Problem Solving}
 In model 1, we consider that case number changes are influenced by both time and space factors and obtain the fitting result with small deviation. In model 2, we combine the results of the county population survey, focuse on the internal factors, and identify the important degree of the influence of different population factors through the analytic hierarchy process. Based on all the data provided and the county geographic information that we have looked up, we can get a complete equation\eqref{model2_eq2} of how the county case numbers are changing.
 
-We have taken into account the response to the drug crisis in many regions and find that they take into account both the whole and the parts. In other words, the states control the trend by making laws, strengthen safety education, and monitoring food safety. In the meanwhile, the counties monitor the region where drug cases are most frequent. The above measure takes both efficiency and effect into consideration, with little investment to achieve the purpose of stable drug control.
+We have taken into account the response to the drug crisis in many regions[\cite{9}] and find that they take into account both the whole and the parts. In other words, the states control the trend by making laws, strengthen safety education, and monitoring food safety. In the meanwhile, the counties monitor the region where drug cases are most frequent. The above measure takes both efficiency and effect into consideration, with little investment to achieve the purpose of stable drug control[\cite{10}].
 
 \textbf{Degree Centrality} can reflect the degree of association between a county and other neighboring counties. In other words, in counties with high clustering coefficient, traffic is always developed and drug trade is active. We decide to use the Degree Centrality as the measurement standard. By sorting the county Degree Centrality, we can get the list of key areas.
 
@@ -289,8 +289,14 @@ useful information. Thanks.
 \begin{thebibliography}{99}
 	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
 	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
-	\bibitem{3} \url{https://www.census.gov/geo/maps-data/}
-	\bibitem{4}\url{http://www.chinatex.org/}
+	\bibitem{3} U.S. Census Bureau  \url{https://www.census.gov/geo/maps-data/}
+	\bibitem{7} Matthew J. Liberatore, Robert L. Nydick. ``The analytic hierarchy process in medical and health care decision making: A literature review". European Journal of Operational Research, 2008, 189(1): 194-207
+	\bibitem{9} \url{https://www.globalcommissionondrugs.org}
+	\bibitem{10} \url{https://ips-dc.org/us_drug_policy}
+	\bibitem{4} Richard A. Davis. ``Introduction to statistical analysis of time series." \url{http://www.stat.columbia.edu/~rdavis/lecture/Session6.pdf}
+	\bibitem{8} Steve Sussman, William J. McCuller, Clyde W. Dent. ``The associations of social self-control, personality disorders, and demographics with drug use among high-risk youth". 2003
+	\bibitem{5} Edward A. Bender. ``An Introduction to Mathematical Modeling". 2000
+	\bibitem{6} \url{https://en.wikipedia.org/wiki/Cross-validation_(statistics)}
 \end{thebibliography}
 
 \newpage

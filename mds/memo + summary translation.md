@@ -2,7 +2,7 @@
 
 ### Situation
 
-Our research based on eastnorthern 5 states reveals that American opioid and heroin related crime frequency is strongly regional and spatial.
+Our research based on east-northern 5 states reveals that American opioid and heroin related crime frequency is strongly regional and spatial.
 The total incident amount of each county floats around a reference value, at the same time, significantly affected by nearby counties and border geographical environment. Specific kinds of drug's propagation indicates the existence of drug selling chain and regional crime gang. Drug control faces a complex situation and great pressure.
 
 ### Influencing Factor

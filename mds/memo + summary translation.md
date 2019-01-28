@@ -27,16 +27,15 @@ Ordered by importance, as following:
 
 ### Drug Crime Control Measures for The Opioid Crisis
 
-随着美国正在经历一场国家性的阿片类药物危机，而这正在给社会的医疗和安全带来巨大的消极影响，我们尝试建立毒品传播时空模型用以刻画美国阿片类药物的使用情况和传播特点，并向政府给出毒品管控建议。
+American is suffering from a national opioid crisis, bringing huge impact on the health and safety of society. We attempted to build a Time-Space model to describe the opioid usage and transportation traits in America, and giving advice to the government on drug control.
 
-首先，我们建立起五个州每个郡相关关系的图，并考虑一个郡自身变化的时间因素和临近郡对它影响的空间因素建立起方程，成功刻画了阿片类药物案例数逐年变化的曲线。通过对方程的分析，我们可以得到毒品变化的规律。借助图中最小生成树的性质，我们可以找到毒品传播的源头。
+First, we build a relationship graph containing every county in these 5 states, consider the autoregressive internal factor and nearby counties' external affecting factor of each county, and build the equation that characterizes the variation of the opioid incident cases. We get the rule describing drug crime cases count by analyzing the equations, and get the source of drug propagation by the minimum spanning tree.
 
-其次，我们借助模型一和人口经济调查表更加明确自身变化的时间因素。我们将数据信息视为指标选择性归为三个准则，并用层次分析法给出了各个准则与毒品犯罪的相关性和重要程度。这样把分析结果归入模型一中的方程，我们发现模型更加接近实际曲线。
+Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by AHP. Subsuming these economical and social factors into the equations, we get a much better fitting model and less deviations.
 
-最后，我们通过修改后的模型成功分析了全国毒品犯罪的特点，并用图中中心度的知识识别了区域性的毒品中心，参考其他国家地区的措施，我们给出了针对美国具体的管控措施和实施方法。
+Finally, we successfully describe national drug criminals’ traits with the modified model, and identify regional drug centers by the degree of centrality in the graph. We provide advice to the government by referring to the drug measures in other countries and regions.
 
-总之，经过修改和测试，我们的模型很好地适应了对美国阿片类药物危机的描述，可以成功给出解决阿片类药物危机切实可行的方案。除此之外，我们认为此模型还可以应用于对其他学科局部区域相互影响关系和总体统筹分析的场景，如不同地区销售定价，新闻舆论传播等。
-
+Overall, our model adapts well in the problem of describing the the U.S. opioid crisis, and is able to give out a practical solution. Besides, we believe that this model can also be applied to those scenarios of interactions and overall analysis of local areas in other disciplines, such as sales pricing in different regions, news dissemination and public opinion.
 
 
 Keywords: Space-time Model, Drug Control, AHP, Centrality Degree, Minimum Spanning Tree

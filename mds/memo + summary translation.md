@@ -37,4 +37,6 @@ Ordered by importance, as following:
 
 总之，经过修改和测试，我们的模型很好地适应了对美国阿片类药物危机的描述，可以成功给出解决阿片类药物危机切实可行的方案。除此之外，我们认为此模型还可以应用于对其他学科局部区域相互影响关系和总体统筹分析的场景，如不同地区销售定价，新闻舆论传播等。
 
-关键词：时空模型 毒品管控 层次分析法 中心度 最小生成树
+
+
+Keywords: Space-time Model, Drug Control, AHP, Centrality Degree, Minimum Spanning Tree

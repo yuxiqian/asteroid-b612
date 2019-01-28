@@ -184,7 +184,8 @@ Based on Equation\eqref{model1_sim}, we put the data of eight years into the for
 
 
 \subsubsection{Sensitivity Analysis}
-[\cite{6}]
+\cite{6}
+
 \subsection{Problem 2: TSSE Model}
 \subsubsection{Construction Process}
 In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process[\cite{7}]. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories[\cite{8}]: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
@@ -202,7 +203,7 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 
 And so on we can get three important levels($x_{F,E}$, $x_{F,C}$, $x_{E,C}$) for each county. And then we can get the following matrix.
 
-\[
+\[A=
 \begin{pmatrix}
 {1 } & {x_{F,E} } & {x_{F,C} }  \\
 {\frac{1}{x_{F,E}}} & {1 } & {x_{E,C} }  \\
@@ -215,6 +216,33 @@ A new matrix is obtained by normalizing each column of the matrix. Then we figur
 P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)\left(a\*F+b\*E+d\*C\right)
 \label{model2_eq2}
 \end{equation}
+
+Then we compare the results of this model with the actual results and get Figure[\ref{model2_results}]. We can learn that we get a good fitting results.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model2.FittingResult.png}
+	\caption{The Fitting Results of TSSE Model}\label{model2_results}
+\end{figure}
+
+Moreover, we carried on variance and deviation analysis to model 2, and get the Figure[\ref{model2_vd}]
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model2.Evaluation.png}
+	\caption{Variance And Deviation analysis of TSSE Model}\label{model2_vd}
+\end{figure}
+
+
+\subsubsection{Consistency Test}
+In the analytic hierarchy process, the consistency test can be used to measure the significance of differences in the relationship of the principles. According to \textbf{Consistency Test}, we can define consistency index as $CI$. The expression of $CI$ is shown below\eqref{model2_ci}.
+\begin{equation}
+CI = \frac{\lambda_{max}-n}{n-1}
+\label{model2_ci}
+\end{equation}
+
+In general, if $CI$$\le$0.10, the matrix is considered to be consistent. The values calculated are acceptable according to this.
+Therefore, in TSSE Model, we can get $CI$=0.0776$\le$0.10. It can be inferred that we have a good accuracy in fitting the important degree coefficient of family, education, and culture factors. We can be sure that they have such a relationship.
+
 
 \subsection{Problem 3: Strategy and Evaluating}
 \subsubsection{Problem Solving}
@@ -232,7 +260,15 @@ Based on the above results, we get strategies to deal with the drug crisis:
 	\item The community should pay more attention to the family relations and mediate the family contradiction in time.
 \end{enumerate}
 
-\subsubsection{Evaluating}
+\subsubsection{Evaluating and Sensitivity}
+With the help of the established model formula, we assume that the number of cases in the county change in the second year after the implementation of the above strategies. We compare the number of cases in the next few years with the original data. If there is a significant gap between the two (by means of deviation), we consider the strategy a success.
+
+Moreover, we perform sensitivity tests on these parameters.  The results are as follows[\ref{model_sensitivity}]:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model.Sensitivity.png}
+	\caption{Sensitivity Tests of the Model}\label{model_sensitivity}
+\end{figure}
 
 \subsection{Strengths}
 \begin{itemize}

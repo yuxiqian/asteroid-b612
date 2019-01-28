@@ -16,11 +16,12 @@ Ordered by importance, as following:
 
 * Raise the attention of drug crime, and implement strict drug managing laws. Control the planting and import of drug crops with the help of U.S. Department of Agriculture and Commerce.
 
-* 
+* Combat the drug criminals according to its growth-recession cycle, deploy police force in advance, and maintain a low level of stability in the number of criminals.
 
-（2）希望敦促各州对该州区域性犯罪团伙的法律制裁，依照犯罪人数增长的周期性规律在增长势头最猛的时候强力遏制毒品源头的规模和扩散趋势，保持犯罪人数的低水平稳定。
-（3）希望注意州际线附近犯罪，敦促州际合作与联动，提高管控效率，切断跨州合作网络，分散势力各个击破。
-（4）希望推进毒品犯罪更严厉的法律措施惩罚，从根本上改变犯罪管控局势。
+* Pay more attention to crimes around the inter-state borders, cut drug trafficking channel, and promote interstate cooperation in drug controlling system.
+
+* Legislate for aggravated punishment.
+
 
 ## Summary
 

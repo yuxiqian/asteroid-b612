@@ -38,7 +38,7 @@ class xval:
 description = ['Family * x + Education',
                'Education * x + Culture', 'Family * x + Culture']
 
-mma_fitting_script = "FindFit[dt,Avg * E ^ Sin[p + t w]((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*((Family[[t]] * 3.124 + 1.711*Education[[t]] + Culture[[t]]))/(3.124 + 1.711 + 1), {p, w, C1, C2, C3}, t]"
+mma_fitting_script = "FindFit[dt,Avg * ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*((Family[[t]] * 3.124 + 3.8*Education[[t]] + Culture[[t]]))/(3.124 + 1.711 + 1), {C1, C2, C3}, t]"
 
 readfilename = input("Input [awesome].bf... \n>>> ")
 locs = []

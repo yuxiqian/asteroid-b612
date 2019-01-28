@@ -7,6 +7,7 @@ import pandas as pd
 from pack import Pack
 from copy import deepcopy
 from math import sqrt, inf
+from random import shuffle
 
 
 class xval:
@@ -26,9 +27,9 @@ class xval:
 param_dictionary = ['General Population', 'Families', 'Happy Marriage Men', 'Happy Marriage Women',
                     'Didn\'t Drop out ones of school before Grade 9', 'College School Students', 'Not Born Outside people', 'The Settled']
 
-mma_fitting_script = ["FindFit[dt,Avg* E^Sin[p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Family[[t]] + Education[[t]]), {p, w, C1, C2, C3,x}, t]",
-                      "FindFit[dt,Avg* E^Sin[p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Education[[t]] + Culture[[t]]), {p, w, C1, C2, C3,x}, t]",
-                      "FindFit[dt,Avg* E^Sin[p + t w] ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Family[[t]] + Culture[[t]]), {p, w,C1, C2, C3, x}, t]"
+mma_fitting_script = ["FindFit[dt,Avg ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Family[[t]] + Education[[t]]), { C1, C2, C3,x}, t]",
+                      "FindFit[dt,Avg ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Education[[t]] + Culture[[t]]), { C1, C2, C3,x}, t]",
+                      "FindFit[dt,Avg ((C1 P1[[t]])/Log[1 + D1] + (C2 P2[[t]])/Log[1 + D2] + (C3  P3[[t]])/Log[1 + D3] + 1)*(x Family[[t]] + Culture[[t]]), {C1, C2, C3, x}, t]"
                       ]
 
 description = ['Family * x + Education',
@@ -56,7 +57,9 @@ packages = []
 for i in pkgs:
     packages.append(i[1])
 
-for itm in pkgs:
+shuffle(pkgs)
+
+for itm in pkgs[:20]:
 
     time_strip = []
 
@@ -94,15 +97,15 @@ for itm in pkgs:
         txt = txt.split('\n')[-2].replace(' ', '')
         # print(txt)
 
-        lst = txt.replace('\n', '').replace('{p->', '').replace(',w->',
-                                                                ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace(',x->', ' ').replace('}', '').split(' ')
+        lst = txt.replace('\n', '').replace('{', '').replace(',w->',
+                                                             ' ').replace(',C1->', ' ').replace(',C2->', ' ').replace(',C3->', ' ').replace(',x->', ' ').replace('}', '').split(' ')
         print(lst)
         print()
-        if len(lst) != 6:
+        if len(lst) != 4:
             txt = input("Failed to dump %s." % txt)
             continue
 
-        get_x = xval(float(lst[5]), int(params[0][0]))
+        get_x = xval(float(lst[3]), int(params[0][0]))
         print(get_x)
         x_values[i].append(get_x)
         if l.affect_index_a == 1.0 or l.affect_index_b == 1.0 or l.affect_index_c == 1.0:

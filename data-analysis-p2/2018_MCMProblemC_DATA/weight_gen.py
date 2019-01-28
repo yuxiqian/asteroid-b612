@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from pack import Pack
 
+
 target_params_before = ['HC01_VC25', 'HC01_VC04',
                         'HC01_VC37', 'HC01_VC37', 'HC01_VC85', 'HC01_VC80', 'HC01_VC144',
                         'HC01_VC118']
@@ -94,7 +95,7 @@ for dat in counties_dat:
         # input()
         avg = np.mean(nums)
         for i in range(7):
-            if not i in [6, 7]:
+            if not i in [5, 7]:
                 dat[2][i][j] = nums[i] / avg
             else:
                 dat[2][i][j] = 2.0 - nums[i] / avg

@@ -50,3 +50,7 @@ Washington;WA
 West Virginia;WV
 Wisconsin;WI
 Wyoming;WY"
+
+profile_text <- read.table(text=profile,header=T, row.names=1, quote="",sep=";", check.names=F)
+library(ggplot2)
+library(reshape2)

@@ -1,0 +1,452 @@
+id,name,bias
+0,"Montgomery, Virginia",37949.09530691809
+1,"Powhatan, Virginia",45636.57311881301
+2,"Rockbridge, Virginia",10079.696214129544
+3,"Henrico, Virginia",50996.67622543225
+4,"Manassas Park (city), Virginia",8589.115407158837
+5,"Dickenson, Virginia",25662.419624174392
+6,"Northumberland, Virginia",10786.999912122108
+7,"Fairfax, Virginia",328995.2987808313
+8,"Halifax, Virginia",12248.578624257043
+9,"Fluvanna, Virginia",11154.952397024525
+10,"Augusta, Virginia",15072.302683465186
+11,"Stafford, Virginia",24843.86962515818
+12,"Loudoun, Virginia",12803.700734521797
+13,"Wise, Virginia",2880443.329921953
+14,"Mathews, Virginia",466.2677875952101
+15,"Buchanan, Virginia",199127.62047785128
+16,"Waynesboro (city), Virginia",7907.339347154815
+17,"Albemarle, Virginia",330331.50293599983
+18,"Grayson, Virginia",856.2584038253884
+19,"Nelson, Virginia",4494.814035059719
+20,"Lexington (city), Virginia",32.30467871953451
+21,"Russell, Virginia",2588662.841006855
+22,"Southampton, Virginia",66662.14655851974
+23,"Westmoreland, Virginia",41948.477279317754
+24,"Patrick, Virginia",132594.51237491827
+25,"Franklin, Virginia",937577.9799186285
+26,"Lee, Virginia",7886.057688163057
+27,"Campbell, Virginia",20468.387272606466
+28,"Scott, Virginia",60816.95891248042
+29,"Dinwiddie, Virginia",138261.3587555887
+30,"Carroll, Virginia",1634.1916426838475
+31,"Accomack, Virginia",4192.4809532619465
+32,"Northampton, Virginia",2719.9653806059355
+33,"Lunenburg, Virginia",86133.97337445403
+34,"Lancaster, Virginia",504.4311452869042
+35,"Buckingham, Virginia",739.4090519848748
+36,"Henry, Virginia",505274.3437530818
+37,"Culpeper, Virginia",7826.681871177773
+38,"Winchester (city), Virginia",361832.72390412306
+39,"Orange, Virginia",4601.670880961753
+40,"Chesterfield, Virginia",271224.6228411418
+41,"Fauquier, Virginia",758332.4922842623
+42,"Rockingham, Virginia",26988.286658767916
+43,"Amelia, Virginia",2568.762531354715
+44,"Mecklenburg, Virginia",329638.3944159766
+45,"Washington, Virginia",12088.659669203564
+46,"Wythe, Virginia",16025.245448494657
+47,"Louisa, Virginia",69924.396151416
+48,"Shenandoah, Virginia",29249.883399640366
+49,"Smyth, Virginia",196097.9496370519
+50,"Richmond, Virginia",16526065.183562584
+51,"Greensville, Virginia",91084.3198077345
+52,"Charles City, Virginia",329.5575445244867
+53,"Radford (city), Virginia",40381.82089791443
+54,"Cumberland, Virginia",215.61941289052427
+55,"Warren, Virginia",3047824.6217521005
+56,"Brunswick, Virginia",5957.192070116474
+57,"Page, Virginia",11361.628236822256
+58,"Charlotte, Virginia",4097.869740071429
+59,"Highland, Virginia",88.30722203908859
+60,"Giles, Virginia",5468.6365436876395
+61,"New Kent, Virginia",46590.58696277254
+62,"Pulaski, Virginia",28403.608043945344
+63,"Caroline, Virginia",1893.1780030447956
+64,"Virginia Beach (city), Virginia",98907.41830451081
+65,"Bedford, Virginia",25030.276412266798
+66,"Pittsylvania, Virginia",177307.1031666227
+67,"Prince William, Virginia",267843.63601376733
+68,"Botetourt, Virginia",4497.09515298319
+69,"Isle of Wight, Virginia",314613.10319056147
+70,"Goochland, Virginia",558.0764466125294
+71,"Frederick, Virginia",12791.787746335145
+72,"Bland, Virginia",291.34797697851354
+73,"Hanover, Virginia",80139.51721238045
+74,"Chesapeake (city), Virginia",50011.27687572857
+75,"Essex, Virginia",5546.437828273733
+76,"Sussex, Virginia",28067.360638905728
+77,"Madison, Virginia",9396.81757059634
+78,"Middlesex, Virginia",903.3073295676197
+79,"Bath, Virginia",565.7302287578132
+80,"Arlington, Virginia",65869.79020089329
+81,"Nottoway, Virginia",343.69521883794647
+82,"Greene, Virginia",67986.40149256791
+83,"Covington (city), Virginia",1.948024742774638
+84,"Tazewell, Virginia",141454.96015877163
+85,"Charlottesville (city), Virginia",182755.04543672502
+86,"Craig, Virginia",3080.859649196495
+87,"Alleghany, Virginia",29993.074069003516
+88,"Gloucester, Virginia",2144.3495602949693
+89,"Norfolk (city), Virginia",35730.84142873592
+90,"Suffolk (city), Virginia",210677.05755148066
+91,"Clarke, Virginia",1156.7108956093211
+92,"Petersburg (city), Virginia",10358.394761170082
+93,"Surry, Virginia",233.94641692838564
+94,"Falls Church (city), Virginia",1409.7987891243397
+95,"Rappahannock, Virginia",2055.2832058552294
+96,"Galax (city), Virginia",902.9053036887693
+97,"Martinsville (city), Virginia",16745.20000499604
+98,"James City, Virginia",5848.1493016296645
+99,"Danville (city), Virginia",7767.48819157981
+100,"Amherst, Virginia",4267.945605523973
+101,"Harrisonburg (city), Virginia",3562.484471769719
+102,"Fredericksburg (city), Virginia",198749.54193667736
+103,"Roanoke, Virginia",72667.48679115115
+104,"Appomattox, Virginia",1836.0935076819212
+105,"Portsmouth (city), Virginia",73480.75918868491
+106,"Newport News (city), Virginia",2057162.5781638017
+107,"Spotsylvania, Virginia",53784.81524535789
+108,"Salem (city), Virginia",13830.832801291002
+109,"Staunton (city), Virginia",11408.149576385034
+110,"Bristol (city), Virginia",142342.88014284003
+111,"Williamsburg (city), Virginia",1175.9630196628555
+112,"Floyd, Virginia",4590.95783524066
+113,"Alexandria (city), Virginia",21472.82700516104
+114,"Norton (city), Virginia",7.965149342712563
+115,"Lynchburg (city), Virginia",124108.6621710221
+116,"York, Virginia",16113.922980647221
+117,"Emporia (city), Virginia",2546.198052860487
+118,"Poquoson (city), Virginia",6808.912864123661
+119,"Hopewell (city), Virginia",928.2066324060097
+120,"Buena Vista (city), Virginia",224.3586477498119
+121,"Colonial Heights (city), Virginia",1522.8491793198298
+122,"Logan, West Virginia",1758812.1763516448
+123,"Hardy, West Virginia",14803.580253772221
+124,"Tucker, West Virginia",21.18138379790415
+125,"Fayette, West Virginia",1378.082860191204
+126,"Hancock, West Virginia",21558.55066669408
+127,"Jefferson, West Virginia",28492.00681099729
+128,"Harrison, West Virginia",45226.941037709235
+129,"Wayne, West Virginia",30077.316848278024
+130,"Grant, West Virginia",4898.030932561212
+131,"Raleigh, West Virginia",250860.28788676998
+132,"Mercer, West Virginia",32253.808814652406
+133,"Boone, West Virginia",19441.54924963372
+134,"Preston, West Virginia",8944.466069565999
+135,"Monroe, West Virginia",2082.1443839816257
+136,"McDowell, West Virginia",31379.81139461316
+137,"Randolph, West Virginia",61965.702860184705
+138,"Monongalia, West Virginia",261164.90309182947
+139,"Wood, West Virginia",60498.90543034679
+140,"Putnam, West Virginia",13233.162738882735
+141,"Kanawha, West Virginia",85538.43540476532
+142,"Cabell, West Virginia",1337112.4694111107
+143,"Brooke, West Virginia",656.5568213106006
+144,"Marshall, West Virginia",28120.474469232206
+145,"Morgan, West Virginia",26853.433823260693
+146,"Pendleton, West Virginia",235.48013014882588
+147,"Barbour, West Virginia",320.31373698499823
+148,"Calhoun, West Virginia",1088.4566843617265
+149,"Jackson, West Virginia",42413.418305015075
+150,"Taylor, West Virginia",112.17321131852994
+151,"Mingo, West Virginia",15306.960874038952
+152,"Mineral, West Virginia",1446.0009373557232
+153,"Marion, West Virginia",103123.501479559
+154,"Pocahontas, West Virginia",32566.001923645348
+155,"Webster, West Virginia",11647.979167118036
+156,"Mason, West Virginia",3287.5914265524475
+157,"Braxton, West Virginia",8329.139049460455
+158,"Upshur, West Virginia",18200.400513386678
+159,"Clay, West Virginia",2225.999370170833
+160,"Wyoming, West Virginia",1791.899152954723
+161,"Roane, West Virginia",14386.242643705633
+162,"Wetzel, West Virginia",5003.575938585451
+163,"Gilmer, West Virginia",5719.260798981132
+164,"Nicholas, West Virginia",39224.644022202665
+165,"Hampshire, West Virginia",8872.728289762106
+166,"Ohio, West Virginia",17379.228213950457
+167,"Berkeley, West Virginia",792119.4285107615
+168,"Greenbrier, West Virginia",35592.97978263564
+169,"Pleasants, West Virginia",528.1408584029431
+170,"Summers, West Virginia",6962.736810968225
+171,"Ritchie, West Virginia",1159.4823255359343
+172,"Wirt, West Virginia",25.53701713619362
+173,"Tyler, West Virginia",2618.637184653094
+174,"Lewis, West Virginia",121243.81405521989
+175,"Lincoln, West Virginia",642.400120302092
+176,"Doddridge, West Virginia",552.9103452787126
+177,"Westmoreland, Pennsylvania",61129.28266873892
+178,"Delaware, Pennsylvania",272419.66465395596
+179,"Carbon, Pennsylvania",23941.819106986826
+180,"Venango, Pennsylvania",16554.89222075723
+181,"Washington, Pennsylvania",6072.4453391009365
+182,"Lebanon, Pennsylvania",16755583.256665707
+183,"Montgomery, Pennsylvania",232527.29199365436
+184,"Perry, Pennsylvania",40130.79429680416
+185,"Cambria, Pennsylvania",208334.32544931248
+186,"Allegheny, Pennsylvania",1016934.4126172995
+187,"Lackawanna, Pennsylvania",1313064.526667188
+188,"Berks, Pennsylvania",5154131.006414925
+189,"Beaver, Pennsylvania",2377523.305749749
+190,"Wayne, Pennsylvania",14201.351437064297
+191,"Susquehanna, Pennsylvania",205204.15254027236
+192,"Bucks, Pennsylvania",32309495.44518212
+193,"Schuylkill, Pennsylvania",3392149.864619683
+194,"Luzerne, Pennsylvania",129674.96958649736
+195,"Armstrong, Pennsylvania",5866.946250004673
+196,"Snyder, Pennsylvania",1511.7443409565149
+197,"Northampton, Pennsylvania",106231.23588142064
+198,"Huntingdon, Pennsylvania",70786.42079643867
+199,"York, Pennsylvania",168168858.30282405
+200,"Clearfield, Pennsylvania",105690.92966374982
+201,"Chester, Pennsylvania",14262075.787158497
+202,"Butler, Pennsylvania",5322.456953451465
+203,"McKean, Pennsylvania",59431.36054791133
+204,"Clinton, Pennsylvania",3990.606950454038
+205,"Lancaster, Pennsylvania",406302.9217796373
+206,"Warren, Pennsylvania",6065.944124543488
+207,"Forest, Pennsylvania",223.1922990339301
+208,"Adams, Pennsylvania",190029.90731608868
+209,"Monroe, Pennsylvania",1030428.0276427728
+210,"Clarion, Pennsylvania",293159.70981086313
+211,"Lehigh, Pennsylvania",1168282.834814963
+212,"Indiana, Pennsylvania",563007.7294164409
+213,"Cumberland, Pennsylvania",9472.622409543734
+214,"Bradford, Pennsylvania",5376.379134333123
+215,"Bedford, Pennsylvania",29121.97393247142
+216,"Centre, Pennsylvania",1460308.2137287261
+217,"Mifflin, Pennsylvania",43430.08210596708
+218,"Mercer, Pennsylvania",16332.984586333414
+219,"Lycoming, Pennsylvania",471837.3569110862
+220,"Jefferson, Pennsylvania",98111.13375299331
+221,"Blair, Pennsylvania",4995839.90469793
+222,"Greene, Pennsylvania",23895.822403950708
+223,"Lawrence, Pennsylvania",76084.08485582635
+224,"Tioga, Pennsylvania",110129.14735224952
+225,"Franklin, Pennsylvania",2353143.154205127
+226,"Fayette, Pennsylvania",771906.4143351662
+227,"Columbia, Pennsylvania",489318.0503758028
+228,"Somerset, Pennsylvania",150973.69267288738
+229,"Erie, Pennsylvania",6862.929056399142
+230,"Dauphin, Pennsylvania",30371044.679828063
+231,"Elk, Pennsylvania",680.7658965810299
+232,"Sullivan, Pennsylvania",1052.1506166014756
+233,"Northumberland, Pennsylvania",227003.51767101057
+234,"Wyoming, Pennsylvania",61232.6188487226
+235,"Cameron, Pennsylvania",383.82231772248684
+236,"Crawford, Pennsylvania",499653.3901988121
+237,"Union, Pennsylvania",3788.287290913708
+238,"Montour, Pennsylvania",29829.550773808318
+239,"Juniata, Pennsylvania",8632.674700370293
+240,"Fulton, Pennsylvania",7696.028330619535
+241,"Potter, Pennsylvania",1391.5871402689245
+242,"Pike, Pennsylvania",20213.69243293478
+243,"Philadelphia, Pennsylvania",191928648.80246857
+244,"Erie, Ohio",75347.42706114154
+245,"Putnam, Ohio",2390.99928257224
+246,"Henry, Ohio",5089.050298977455
+247,"Lorain, Ohio",5550638.756970094
+248,"Wood, Ohio",71835.91341422299
+249,"Lucas, Ohio",616295.761158341
+250,"Scioto, Ohio",7347.1610481502585
+251,"Muskingum, Ohio",754586.331389032
+252,"Cuyahoga, Ohio",153532031.45465988
+253,"Hamilton, Ohio",207416204.31178308
+254,"Logan, Ohio",186416.05724336265
+255,"Williams, Ohio",2407.660697391576
+256,"Clermont, Ohio",4358025.895239117
+257,"Van Wert, Ohio",5597.977300687896
+258,"Knox, Ohio",46988.15995630355
+259,"Seneca, Ohio",29538.77155812544
+260,"Hancock, Ohio",120032.8033012037
+261,"Perry, Ohio",277072.98873747385
+262,"Belmont, Ohio",506579.97383744887
+263,"Jackson, Ohio",1378409.353956068
+264,"Meigs, Ohio",203379.72999680843
+265,"Fayette, Ohio",68529.58102316392
+266,"Union, Ohio",235803.0506939104
+267,"Huron, Ohio",969149.2626404031
+268,"Richland, Ohio",454617.1349448257
+269,"Montgomery, Ohio",4870005.421241896
+270,"Butler, Ohio",3993843.2071871255
+271,"Stark, Ohio",14215541.87733221
+272,"Wayne, Ohio",24915.343984907944
+273,"Ashland, Ohio",210873.95311147286
+274,"Tuscarawas, Ohio",438991.3821379589
+275,"Defiance, Ohio",785695.0642692201
+276,"Ashtabula, Ohio",301729.5944046012
+277,"Brown, Ohio",1725115.63855393
+278,"Franklin, Ohio",11598470.513598774
+279,"Morrow, Ohio",413103.7825270363
+280,"Pickaway, Ohio",176452.83641815005
+281,"Summit, Ohio",5060804.350094518
+282,"Coshocton, Ohio",23872.41465973158
+283,"Madison, Ohio",1038873.2869027903
+284,"Sandusky, Ohio",87373.32849565272
+285,"Mahoning, Ohio",6436950.978990501
+286,"Warren, Ohio",9280751.837548004
+287,"Noble, Ohio",3033.8591178456118
+288,"Paulding, Ohio",155603.66583290164
+289,"Athens, Ohio",1868489.5582493225
+290,"Harrison, Ohio",6450.813751094063
+291,"Licking, Ohio",17443699.244693343
+292,"Lawrence, Ohio",52581.203109563445
+293,"Fairfield, Ohio",271342.4566182286
+294,"Lake, Ohio",131864434.33135015
+295,"Washington, Ohio",17636.22953840299
+296,"Gallia, Ohio",982621.9013650377
+297,"Medina, Ohio",243554.81338068596
+298,"Clinton, Ohio",872088.2405177564
+299,"Columbiana, Ohio",379882.55905942514
+300,"Allen, Ohio",1445860.0410926086
+301,"Fulton, Ohio",21732.720323633137
+302,"Trumbull, Ohio",152711.15270830583
+303,"Champaign, Ohio",268898.4333353403
+304,"Ross, Ohio",4605.851901318977
+305,"Greene, Ohio",14866.598435602797
+306,"Holmes, Ohio",8840.172062323147
+307,"Shelby, Ohio",1611.4506758635616
+308,"Guernsey, Ohio",334297.0150049696
+309,"Mercer, Ohio",4551.961752951082
+310,"Portage, Ohio",157920.13668247912
+311,"Ottawa, Ohio",33663.07920983907
+312,"Preble, Ohio",23315.884965343088
+313,"Adams, Ohio",1416832.4636891615
+314,"Pike, Ohio",64760.23158531358
+315,"Darke, Ohio",50176.75790799099
+316,"Crawford, Ohio",92719.01630502164
+317,"Monroe, Ohio",11571.699851375113
+318,"Wyandot, Ohio",6913.172341607013
+319,"Jefferson, Ohio",10280.89367762653
+320,"Delaware, Ohio",10529061.934011782
+321,"Geauga, Ohio",89171.9674150588
+322,"Carroll, Ohio",10495.928207090956
+323,"Clark, Ohio",205263.3488364662
+324,"Vinton, Ohio",3891.6575090785077
+325,"Miami, Ohio",29892.997152680597
+326,"Hardin, Ohio",28854.856517063497
+327,"Highland, Ohio",2544838.7252946785
+328,"Marion, Ohio",62043.69798294818
+329,"Hocking, Ohio",5971.395170820636
+330,"Auglaize, Ohio",4567.921630125408
+331,"Morgan, Ohio",14230.728049817668
+332,"Rowan, Kentucky",680639.115122779
+333,"Jefferson, Kentucky",135636071.99488312
+334,"Perry, Kentucky",676984.3707618376
+335,"Breckinridge, Kentucky",1398.991582781621
+336,"Calloway, Kentucky",10044.48261828642
+337,"Ohio, Kentucky",22692.761616236185
+338,"Floyd, Kentucky",18920.322749203304
+339,"Bath, Kentucky",82651.70406298162
+340,"Oldham, Kentucky",7882.361437649881
+341,"Union, Kentucky",43607.53449715448
+342,"Scott, Kentucky",44284.865816267265
+343,"Whitley, Kentucky",730040.8127321174
+344,"Hopkins, Kentucky",877170.4631531879
+345,"Kenton, Kentucky",133669.42429859051
+346,"Pulaski, Kentucky",1227393.1579240775
+347,"Pendleton, Kentucky",6396.50904588694
+348,"Muhlenberg, Kentucky",233050.45590340503
+349,"Monroe, Kentucky",5405.340610723311
+350,"Boone, Kentucky",23025.639371447498
+351,"Pike, Kentucky",3313582.8994605616
+352,"Meade, Kentucky",97532.67411887951
+353,"Breathitt, Kentucky",3514.35440132118
+354,"Clinton, Kentucky",15556.038151030822
+355,"Morgan, Kentucky",9750.520082847326
+356,"Hardin, Kentucky",38680.089344061314
+357,"Harlan, Kentucky",274502.42179461673
+358,"Graves, Kentucky",10001.800935063717
+359,"Powell, Kentucky",9644.648307141764
+360,"Nelson, Kentucky",476570.2557533309
+361,"Lawrence, Kentucky",13635.909527057895
+362,"Webster, Kentucky",7909.761723059459
+363,"Leslie, Kentucky",6634.271356625954
+364,"Metcalfe, Kentucky",1123.979154962426
+365,"Fleming, Kentucky",9542.661962088685
+366,"Todd, Kentucky",3317.7215725639703
+367,"Letcher, Kentucky",108781.72736298403
+368,"Ballard, Kentucky",1059.9705464534104
+369,"Harrison, Kentucky",10047.129030823842
+370,"Taylor, Kentucky",273.14962912486334
+371,"Clark, Kentucky",27685.60202633836
+372,"Wolfe, Kentucky",29658.984532904826
+373,"Larue, Kentucky",8384.571058323978
+374,"Warren, Kentucky",1307041.0183806897
+375,"Garrard, Kentucky",5284.692925649997
+376,"Bell, Kentucky",691679.0448230011
+377,"Knox, Kentucky",549441.4459432751
+378,"Christian, Kentucky",61770.2377981848
+379,"Carroll, Kentucky",1109.221117639336
+380,"Bracken, Kentucky",733.4226144174149
+381,"Grant, Kentucky",18275.367294564698
+382,"Jackson, Kentucky",2877.101855892552
+383,"Casey, Kentucky",6459.522734091733
+384,"Henderson, Kentucky",27957.34597758513
+385,"Campbell, Kentucky",1084448.200555058
+386,"Boyd, Kentucky",3334830.968178054
+387,"Carlisle, Kentucky",2476.138195409823
+388,"Adair, Kentucky",16684.206243603603
+389,"Hart, Kentucky",2080.661810599991
+390,"Marion, Kentucky",97203.6022259236
+391,"Trigg, Kentucky",3079.4563080106714
+392,"Marshall, Kentucky",174.47213708390098
+393,"Lyon, Kentucky",34764.72390534807
+394,"Washington, Kentucky",4099.881372742534
+395,"Owen, Kentucky",259.2027855259768
+396,"Carter, Kentucky",13636.625731944847
+397,"Fayette, Kentucky",48790430.70124595
+398,"Menifee, Kentucky",509.72895197965
+399,"Bourbon, Kentucky",1971.3431845429557
+400,"Henry, Kentucky",37027.21501791795
+401,"Madison, Kentucky",35861.28495735968
+402,"Hickman, Kentucky",1729.0583855865052
+403,"Daviess, Kentucky",1150.9254422230897
+404,"Johnson, Kentucky",133452.2392659112
+405,"Magoffin, Kentucky",3713.4084128192053
+406,"Estill, Kentucky",57657.8815342346
+407,"Boyle, Kentucky",96141.07538334421
+408,"Logan, Kentucky",272743.0140560884
+409,"Gallatin, Kentucky",12618.878881259674
+410,"Lewis, Kentucky",962.0256976594175
+411,"Jessamine, Kentucky",1316015.7664566084
+412,"Caldwell, Kentucky",62535.81736942278
+413,"Nicholas, Kentucky",1538.1528044480103
+414,"Rockcastle, Kentucky",136974.11758625484
+415,"Mercer, Kentucky",109794.41647289498
+416,"Woodford, Kentucky",9045.175028426347
+417,"McLean, Kentucky",3181.2791885117895
+418,"Barren, Kentucky",52025.236763462766
+419,"Hancock, Kentucky",833.7657313894487
+420,"Crittenden, Kentucky",2036.485626050326
+421,"Franklin, Kentucky",24164.906128833667
+422,"McCreary, Kentucky",23078.070588848266
+423,"Greenup, Kentucky",23112.47011156738
+424,"Fulton, Kentucky",16685.500898007052
+425,"Laurel, Kentucky",1045096.8796222038
+426,"Lincoln, Kentucky",42788.28606556271
+427,"Clay, Kentucky",16036.501718000523
+428,"Spencer, Kentucky",5184.19565322194
+429,"Livingston, Kentucky",579.6244622463109
+430,"Wayne, Kentucky",57899.20884090692
+431,"Bullitt, Kentucky",598.9953217303719
+432,"Montgomery, Kentucky",948938.9761665623
+433,"McCracken, Kentucky",860165.8425962934
+434,"Russell, Kentucky",13460.045796584494
+435,"Simpson, Kentucky",115807.52150258396
+436,"Shelby, Kentucky",16692.225709296476
+437,"Butler, Kentucky",90.64707285474267
+438,"Mason, Kentucky",86265.27167882216
+439,"Grayson, Kentucky",65948.59049596603
+440,"Elliott, Kentucky",4393.085663783952
+441,"Anderson, Kentucky",4228.295100411451
+442,"Edmonson, Kentucky",19568.228550990494
+443,"Allen, Kentucky",261544.47963924354
+444,"Trimble, Kentucky",17378.425259476182
+445,"Knott, Kentucky",40540.20109930973
+446,"Robertson, Kentucky",197.5681176454472
+447,"Martin, Kentucky",103904.16560884356
+448,"Lee, Kentucky",42860.26567440006
+449,"Owsley, Kentucky",13669.318050151096
+450,"Cumberland, Kentucky",2102.339403311561

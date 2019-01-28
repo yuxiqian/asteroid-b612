@@ -14,9 +14,17 @@
 \date{\today}
 \begin{document}
 \begin{abstract}
-	fhakfhw
+	American is suffering from a national opioid crisis, bringing huge impact on the health and safety of society. We attempted to build a Time-Space model to describe the opioid usage and transportation traits in America, and giving advice to the government on drug control.
+	
+	First, we build a relationship graph containing every county in these 5 states, consider the autoregressive internal factor and nearby counties' external affecting factor of each county, and build the equation that characterizes the variation of the opioid incident cases. We get the rule describing drug crime cases count by analyzing the equations, and get the source of drug propagation by the minimum spanning tree.
+	
+	Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by AHP. Subsuming these economic and social factors into the equations, we get a much better fitting model and less deviations.
+	
+	Finally, we successfully describe national drug criminals’ traits with the modified model, and identify regional drug centers by the degree of centrality in the graph. We provide advice to the government by referring to the drug measures in other countries and regions.
+	
+	Overall, our model adapts well in the problem of describing the the U.S. opioid crisis, and is able to give out a practical solution. Besides, we believe that this model can also be applied to those scenarios of interactions and overall analysis of local areas in other disciplines, such as sales pricing in different regions, news dissemination and public opinion.
 	\begin{keywords}
-		keyword1; keyword2
+		 Time-Space Model, Drug Control, AHP, Centrality Degree, Minimum Spanning Tree
 	\end{keywords}
 \end{abstract}
 \maketitle
@@ -37,9 +45,9 @@ Opioids continued to cause the most harm, accounting for 76 per cent of deaths w
 In 2015 and 2016, for the first time in half a century, life expectancy in the United States of America declined for two consecutive years. A key factor was the increase in unintentional injuries, which includes overdose deaths. In 2016, 63,632 people died from a drug overdose in the United States, the highest number on record and a 21 per cent increase from the previous year. This was largely due to a rise in deaths associated with pharmaceutical opioids, including fentanyl and fentanyl analogues. This group of opioids, excluding methadone, was implicated in 19,413 deaths in the country, more than double the number in 2015. It is necessary for us to study the law of drug spread and take corresponding measures to curb the trend of drug spread.\cite{1}
 
 \subsection{Our Work}
-First, we consider the influence of time and space on the number of drug use cases in counties, and combine the knowledge of graph theory to construct Time \& Space Equation. We study the spread of drug use, identify the locations where specific drug use started, give the drug identification threshold levels at what drug use will become harder to control, and test the effectiveness of our model.
+First, we consider the influence of time and space on the number of drug use cases in counties, and combine the knowledge of graph theory to construct Time-Space Equation. We study the spread of drug use, identify the locations where specific drug use started, give the drug identification threshold levels at what drug use will become harder to control, and test the effectiveness of our model.
 
-Secondly, we take the influence of some important  factors into consideration, improve our model, construct Time \& Space, Social \& Economic Equation(TSSE Equation) and compare the fitting result with the model before.
+Secondly, we take the influence of some important  factors into consideration, improve our model, construct Time-Space \& Social-Economic Equation(TSSE Equation) and compare the fitting result with the model before.
 
 Finally, we come up with some solutions for the spread of drugs, test their effectiveness, and write a memo to the Chief Administrator, DEA/NFLIS Database.We use Figure [\ref{all_flowmap}] as a flowchart for our work.
 \begin{figure}[h]
@@ -228,22 +236,56 @@ Based on the above results, we get strategies to deal with the drug crisis:
 
 \subsection{Strengths}
 \begin{itemize}
-	\item \textbf{Simplication}\\
-	
-	\item \textbf{Improve the quality of the airport service}\\
-	Balancing the cost of the cost and the benefit, it will bring in
-	more convenient  for airport and passengers.It also saves many
-	human resources for the airline.
+	\item \textbf{Simplification}\\
+	When building the model, we find the influence of the three surrounding counties account for a significant proportion, so we selectively ignore the influence of other counties. This greatly simplifies the process of model building and analysis.
+	\item \textbf{Exactness}\\
+	We fully consider the various influencing factors that are already known, and get a good fit after detailed discussion for the factors.
+	\item \textbf{Stabilitys}\\
+	Our models have some undetermined factors. We carry out Sensitivity analysis, consistency test and deviation analysis on these parameters, and obtain expected results.
+	\item \textbf{Stabilitys}\\
+	We have produced a general algorithm to solve the opioid crisis problem. Our model can not only fit the description of the opioid crisis in the United States, but also be used in other disciplines to analyze the interaction between local regions and the overall planning, such as sales pricing in different regions, news communication, and so on.
 \end{itemize}
 
 \subsection{Weaknesses}
 \begin{itemize}
-	\item
+	\item When calculating distance between counties, the curvature of the earth isn’t considered. These 5 states’ latitude varies between 36° N and 42° N. That causes notable bias when the latitude difference can’t be ignored.
+	\item Not all social and economic factor data is accessible, so the model can’t be complete as lacking traffic, politics, and laws information.
+	\item Only 5 states’ data of the U.S. were provided, so these counties lying in the borderline between the 5 states and the rest would not be well described.
 \end{itemize}
 
 \section{Conclusions}
 
+\newpage
+\Large\textbf{MEMORANDUM}
 
+\normalsize \textbf{To:} The Chief Administrator, DEA/NFLIS Database
+
+\textbf{From:} Team \#1919828
+
+\textbf{Date:} Jan 28th, 2019
+
+\textbf{Subject:} Drug Crime Control Measures for The Opioid Crisis
+
+Honorable the Chief Administrator, DEA/NFLIS Database,
+
+\textbf{Situation:} Our research based on east-northern 5 states reveals that American opioid and heroin related crime frequency is strongly regional and spatial.The total incident amount of each county floats around a reference value, at the same time, significantly affected by nearby counties and border geographical environment. Specific kinds of drug's propagation indicates the existence of drug selling chain and regional crime gang. Drug control faces a complex situation and great pressure.
+
+\textbf{Influencing Factor:} According to economic research reports from NFLIS, the crime frequency is 52.16\% related to culture factors, including nationality ratio, first language proportion, and ancestral combination of its population. It is also 31.82\% related to education factors, as the education level and dropout rate of its population. It is merely 16.02\% related to family factors, e.g., family people numbers, relatives' health status, and martial status.
+
+\textbf{Prediction:} In the next decade, American opioid and heroin crime cases would keep increasing spirally. It is predicted that the growth-recession cycle is distributed between 3.5 years and 12.5 years, along with an approximately 5.6\% increase by each cycle. Regional criminal gangs would develop closer communication, leading to the synchronized periodical floating of crime cases in a specific region. Consequently the managing of drugs would be much harder.
+
+\textbf{Advice:} Ordered by importance, as following:
+\begin{itemize}
+	\item Raise the attention of drug crime, and implement strict drug managing laws. Control the planting and import of drug crops with the help of U.S. Department of Agriculture and Commerce.
+	\item Combat the drug criminals according to its growth-recession cycle, deploy police force in advance, and maintain a low level of stability in the number of criminals.
+	\item Pay more attention to crimes around the inter-state borders, cut drug trafficking channel, and promote interstate cooperation in drug controlling system.
+	\item Legislate for aggravated punishment.
+\end{itemize}
+
+The above is the summary of our study. We sincerely hope that it will provide you with
+useful information. Thanks.
+
+\newpage
 \begin{thebibliography}{99}
 	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
 	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
@@ -251,6 +293,7 @@ Based on the above results, we get strategies to deal with the drug crisis:
 	\bibitem{4}\url{http://www.chinatex.org/}
 \end{thebibliography}
 
+\newpage
 
 \begin{appendices}
 	

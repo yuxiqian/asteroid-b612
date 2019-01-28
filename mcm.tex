@@ -9,18 +9,18 @@
 \usepackage{palatino}
 \usepackage{lipsum}
 \usepackage{subfigure}
-\title{The \LaTeX{} Template for MCM Version \MCMversion}
+\title{A Time-Space \& Social-Economic Model for Drug Propagation}
 \author{}
 \date{\today}
 \begin{document}
 \begin{abstract}
-	American is suffering from a national opioid crisis, bringing huge impact on the health and safety of society. We attempted to build a Time-Space model to describe the opioid usage and transportation traits in America, and giving advice to the government on drug control.
+	American is suffering from a national opioid crisis, bringing huge impact on the health and safety of society. We tried to  describe opioium usage and transportation traits with a \textbf{Time-Space model}, and give advice to the government on \textbf{drug control}.
 	
-	First, we build a relationship graph containing every county in these 5 states, consider the autoregressive internal factor and nearby counties' external affecting factor of each county, and build the equation that characterizes the variation of the opioid incident cases. We get the rule describing drug crime cases count by analyzing the equations, and get the source of drug propagation by the minimum spanning tree.
+	First, we build a relationship graph containing counties in 5 states, consider the autoregressive internal factor and nearby counties' external affecting factor of each county, and build the equation that characterizes the variation of the opioid incident cases. We get the rule describing drug crime cases count by analyzing the equations, and get the source of drug propagation by \textbf{Minimum Spanning Tree}.
 	
-	Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by AHP. Subsuming these economic and social factors into the equations, we get a much better fitting model and less deviations.
+	Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by \textbf{AHP}. Subsuming these economic and social factors into the equations, we get a much better fitting model and less deviations.
 	
-	Finally, we successfully describe national drug criminals’ traits with the modified model, and identify regional drug centers by the degree of centrality in the graph. We provide advice to the government by referring to the drug measures in other countries and regions.
+	Finally, we successfully describe national drug criminals’ traits with the modified model, and identify regional drug centers by the \textbf{Degree of Centrality} in the graph. We provide advice to the government by referring to the drug measures in other countries and regions.
 	
 	Overall, our model adapts well in the problem of describing the the U.S. opioid crisis, and is able to give out a practical solution. Besides, we believe that this model can also be applied to those scenarios of interactions and overall analysis of local areas in other disciplines, such as sales pricing in different regions, news dissemination and public opinion.
 	\begin{keywords}
@@ -38,18 +38,18 @@
 
 \subsection{Background}
 About 275 million people worldwide, which is roughly 5.6 per cent of the global population aged 15–64 years, used drugs at least once during 2016. Some 31 million of people who use drugs suffer from drug use disorders, meaning that their drug use is harmful to the point where they may need treatment. Initial estimations suggest that, globally, 13.8 million young people aged 15–16 years used cannabis in the past year, equivalent to a rate of 5.6 per cent. 
-Roughly 450,000 people died as a result of drug use in 2015, according to WHO. Of those deaths, 167,750 were directly associated with drug use disorders (mainly overdoses). The rest were indirectly attributable to drug use and included deaths related to HIV and hepatitis C acquired through unsafe injecting practices.
+Roughly 450,000 people died as a result of drug use in 2015, according to WHO. Of those deaths, 167,750 were directly associated with drug use disorders (mainly overdoses). The rest were indirectly attributable to drug use and included deaths related to HIV and Hepatitis C acquired through unsafe injecting practices.
 
-Opioids continued to cause the most harm, accounting for 76 per cent of deaths where drug use disorders were implicated. PWID — some 10.6 million worldwide in 2016 — endure the greatest health risks. More than half of them live with hepatitis C, and one in eight live with HIV.The headline figures for drug users have changed little in recent years, but this stability masks the striking ongoing changes in drug markets. Drugs such as heroin and cocaine that have been available for a long time increasingly coexist with NPS and there has been an increase in the non-medical use of prescription drugs (either diverted from licit channels or illicitly manufactured).The use of substances of unclear origin supplied through illicit channels that are sold as purported medicines but are destined for non-medical use is also on the increase. The range of substances and combinations available to users has never been wider. 
+Opioids continued to cause the most harm, accounting for 76 per cent of deaths where drug use disorders were implicated. PWID — some 10.6 million worldwide in 2016 — endure the greatest health risks. More than half of them live with Hepatitis C, and one in eight live with HIV.The headline figures for drug users have changed little in recent years, but this stability masks the striking ongoing changes in drug markets. Drugs such as heroin and cocaine that have been available for a long time increasingly coexist with NPS and there has been an increase in the non-medical use of prescription drugs (either diverted from licit channels or illicitly manufactured).The use of substances of unclear origin supplied through illicit channels that are sold as purported medicines but are destined for non-medical use is also on the increase. The range of substances and combinations available to users has never been wider. 
 
-In 2015 and 2016, for the first time in half a century, life expectancy in the United States of America declined for two consecutive years. A key factor was the increase in unintentional injuries, which includes overdose deaths. In 2016, 63,632 people died from a drug overdose in the United States, the highest number on record and a 21 per cent increase from the previous year. This was largely due to a rise in deaths associated with pharmaceutical opioids, including fentanyl and fentanyl analogues. This group of opioids, excluding methadone, was implicated in 19,413 deaths in the country, more than double the number in 2015. It is necessary for us to study the law of drug spread and take corresponding measures to curb the trend of drug spread.\cite{1}
+In 2015 and 2016, for the first time in half a century, life expectancy in the United States of America declined for two consecutive years. A key factor was the increase in unintentional injuries, which includes overdose deaths. In 2016, 63,632 people died from a drug overdose in the United States, the highest number on record and a 21 per cent increase from the previous year. This was largely due to a rise in deaths associated with pharmaceutical opioids, including fentanyl and fentanyl analogues. This group of opioids, excluding methadone, was implicated in 19,413 deaths in the country, more than double the number in 2015. It is necessary for us to figure out the rules of drug propagation and take corresponding measures to curb the trend of drug spread.\cite{1}
 
 \subsection{Our Work}
-First, we consider the influence of time and space on the number of drug use cases in counties, and combine the knowledge of graph theory to construct Time-Space Equation. We study the spread of drug use, identify the locations where specific drug use started, give the drug identification threshold levels at what drug use will become harder to control, and test the effectiveness of our model.
+First, we consider the influence of time and space on the number of drug abuse cases in each county, combined with the knowledge of graph theory to construct Time-Space Equation. We study the spread of drug use, identify the locations where one specific drug started spreading, give the drug identification threshold levels, at which drug use will become much harder to control, and test the effectiveness of our model.
 
-Secondly, we take the influence of some important  factors into consideration, improve our model, construct Time-Space \& Social-Economic Equation(TSSE Equation) and compare the fitting result with the model before.
+Secondly, we take the influence of some important factors into consideration, improve our model, construct Time-Space \& Social-Economic Equation(TSSE Equation) and compare the fitting result with the original model.
 
-Finally, we come up with some solutions for the spread of drugs, test their effectiveness, and write a memo to the Chief Administrator, DEA/NFLIS Database.We use Figure [\ref{all_flowmap}] as a flowchart for our work.
+Finally, we come up with some solutions to the drug crisis, test their effectiveness, and write a memo to the Chief Administrator of DEA/NFLIS Database. We use Figure [\ref{all_flowmap}] as a flowchart of our work.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figure-release/ProgressMap.png}
@@ -58,21 +58,20 @@ Finally, we come up with some solutions for the spread of drugs, test their effe
 
 \section{Assumptions}
 
-We make the following basic assumptions in order to simplify the problem. Each
-of our assumptions is justified and is consistent with the basic fact.
+We make the following basic assumptions in order to simplify the problem. Each of our assumptions is justified and is consistent with the basic fact.
 \begin{itemize}
-	\item \textbf{The reported counts contains all the cases of drug use in the states and counties.} There is no unreported drug use case and the report will not lead to a reduction in drug use.
-	\item \textbf{The total population of the states and counties remains essentially stable in these years.} The effect of population density on drug use cases is constant.
-	\item \textbf{The rest of America and the rest of the world have a constant impact on the five states.} We assume that the external influence on these five states remains the same.
-	\item \textbf{States and counties have stable policies on drug use.} We assume that policy does not change during the study period.
+	\item \textbf{All drug abuse cases are reported.} There is no unreported drug abuse case and the report is not directly correlative to the punishment to the drug abuse.
+	\item \textbf{Total population remains essentially stable.} The effect of population density on drug use cases during this time period is ignorable.
+	\item \textbf{The rest states are not taken into account.} We assume that the external world have a consistent impact on the five states.
+	\item \textbf{States and counties have stable policies on drug abuse.} We assume that policy does not change during the study period.
 \end{itemize}
 
 \section{Related Knowledge}
 
 \subsection*{Graph Theory}
-In \textbf{Part 1}, we need to describe the spread of the reported cases and identify possible locations where specific opioid use started. From aticle\cite{2}, we learn that weighted directed graph can solve this problem well. The advantage of using graph theory analysis is that it can directly reflect that interaction between the counties and it helps to analyze the path of transmission of certain drugs. Based on the linkages between the counties and counties, it is easier to derive strategies for controlling drug spread.
+In \textbf{Part 1}, we need to describe the spread of the reported cases and identify possible locations where the usage of a specific kind of opioid started. From aticle\cite{2}, we learn that weighted directed graph can solve this problem well. The advantage of using graph theory analysis is that it can directly reflect the interactions between the counties and it helps analyze the path of transmission of certain drugs. Based on the linkages between the counties and counties, it is easier to derive strategies for controlling drug spread.
 
-The following is the weighted directed graph we constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
+The following is the weighted and directed graph we have constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figure-release/Model1.ExampleMap.png}
@@ -82,7 +81,7 @@ The following is the weighted directed graph we constructed. In this diagram [\r
 \section{Data Analysis}
 
 \subsection{Data Origin}
-The major data source is the ``MCM\_NFLIS\_Data.xlsx`` file. It contains all incidents involved with narcotic analgesics and heroin occurring from 2010 to 2017. Hopefully it can figure out the drug crisis spreading amount the northeast U.S.
+The major data source is the ``MCM\_NFLIS\_Data.xlsx'' file. It contains all incidents involved with narcotic analgesics and heroin occured between 2010 and 2017. Hopefully it can help us figure out the drug crisis spreading in north-eastern U.S.
 
 \subsection{Obvious Factors}
 Some factors are provided directly and can be grabbed at the first time:
@@ -92,7 +91,7 @@ Some factors are provided directly and can be grabbed at the first time:
 	\item \textbf{Case Count}\\
 	Many drugs involved in all these incidents, but they are not equally significant. The reported count recording the troubles they made can be a convincing factor to determine how influential one drug is.
 	\item \textbf{Geography Location}\\
-	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to the data on the Internet\cite{3}, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
+	The detailed county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to the data provided by U.S. government\cite{3}, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 \end{itemize}
 
 \subsection{Indirect Factors}
@@ -102,7 +101,7 @@ There are several important factors that affects the modeling procedure but not 
 	There are accurate data recording how many cases involving with drugs occurred in each county since 2010 until 2017. Putting individual case counts altogether would allow them make more sense.
 	\item \textbf{Neighbor Counties}\\
 	Besides grabbing the location of each county, their several nearest neighbor counties and their case history is also recorded to build a drug crisis spreading model.
-	\item \textbf{Population Density}
+	\item \textbf{Population Density}\\
 	The annual population of each county is also provided. Combining them with the area information of each county, we can diverse each county into  several approximate density levels. That would be helpful in solving Problem 2.
 \end{itemize}
 
@@ -111,31 +110,32 @@ There are several important factors that affects the modeling procedure but not 
 	\item 451 Unique Counties
 	\item 69 Kinds of Substances
 	\item 24062 Case Recordings
+	\item 631 Notable Spreading Paths
 \end{itemize}
 
 \subsection{Error Handling}
-Thanks to the high quality database, there is no much difficulty finding out informations above. But it should be noticed that some names of counties are shared by two different states (for example, Adams County in Ohio and Adams County in Pennsylvania). To avoid conflicting analyzing result, both state name and county name should be used to identify a county. Hence the county data can be ensured unique.
+Thanks to the high quality database, there is no much difficulty finding out informations above. But it should be noticed that some names of counties are shared by two different states (for example, Adams County in Ohio and Adams County in Pennsylvania). To avoid conflicting analyzing result, both state name and county name should be used to identify a county. Hence the county name can be ensured unique.
 
 \subsection{Spreading Index}
-To describe the spreading process quantitatively, opioid and heroin case report data during these years and the location data of all counties are introduced to fit the equation mentioned above. According to general intuition, two counties at long distance might not lead to major spreadings. So for one specific county, only those data from the nearest `k` counties can be used in model fitting. Considering the fitting efficiency, `k` should be no more than 10. The fitting result should go beyond a threshold value to make sense. Any lower spreading index should be treated as disturbance and ignored. By judging the value of spreading index, a weighted directed graph can be constructed to analyze the origin of any single kind of drugs.
+To describe the spreading process quantitatively, opioid and heroin case report data during these years and the location data of all counties are introduced to fit the equation mentioned above. According to general intuition, two counties at long distance might not lead to major spreadings. So for one specific county, only those data from the nearest $k$ counties can be used in model fitting. Considering the fitting efficiency, $k$ should be no more than 10. The fitting result should go beyond a threshold value to make sense. Any lower spreading index should be treated as disturbance and ignored. By judging the value of spreading index, a weighted directed graph can be constructed to analyze the origin of any single kind of drugs.
 
 \subsection{Considering Eco-Social Factors}
 In Problem 1 solving phase, only opioid and heroin related case data are applied in model building, but the total amount of drug abusing cases are provided separately. Hence those spreading factor above can’t be directly used here, and another spreading index fitting for general drug abusing cases is necessary.
 Performing AHP needs data series of various factors. Eco-Social Factor Data in 2017 were not provided, so the fitting would be limited between 2010 and 2016 under this phase.
-In the modeling part of Problem 1 solution, we have determined a best `k` value that optimizes the fitting procedure. It is assumed that the same `k` should also provide the optimized result, so as to reduce excessive fitting calculations.
+In the modeling part of Problem 1 solution, we have determined a best $k$ value that optimizes the fitting procedure. It is assumed that the same $k$ should also provide the optimized result, so as to reduce excessive fitting calculations.
 
 
 \section{Model Construction and Simulation Analysis}
 \subsection{Problem 1: Time-Space Model}
 \subsubsection{Construction Process}
-We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states from 2010 to 2017.
+We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx'' and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states since 2010 till 2017.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=15cm]{figure-release/StateSum.png}
-	\caption{Total Drug Use In Five States in Years 2010-2017}\label{sum_flowchart}
+	\caption{Total Drug Use In Five States in Years, Since 2010 Till 2017}\label{sum_flowchart}
 \end{figure}
 
-Through the overall analysis of the flow chart, we find that the number of cases has a tendency to rise slowly. We take the following steps to build this model[\cite{4}].First of all, we think that the change in the number of cases in a county $Y(t)$ depends on two factors: time $T(t)$ and space $S(t)$ and these two factors have equally important influence on the change of the case number. Based on this, the space-time model of $Y(t) = T(t)S(t)$ type for the county case number is established:
+Through the overall analysis of the flow chart, we find that the number of cases has a tendency to rise slowly. We take the following steps to build this model\cite{4}.First of all, we think that the change in the number of cases in a county $Y(t)$ depends on two factors: time $T(t)$ and space $S(t)$ and these two factors have equally important influence on the change of the case number. Based on this, the space-time model of $Y(t) = T(t)S(t)$ type for the county case number is established:
 \begin{enumerate}
 	\item \textbf{The impact of the number of local cases in the past on the present.} According to the knowledge of time series, we need $T(t)$ to reflect the trend and periodicity of case number changes. Therefore, $T(t)$ should be a component that fluctuates slowly with time. We assume that $ T(t) = C_{base}e^{sin(\omega t+\varphi)}$, where $C_{base}$ is the base level of the number of cases in the county, $\omega$ in $e$ is the angular velocity of the number of cases in the county, and $\varphi$ is the modified initial phase.
 	\item \textbf{The influence of the number of cases in the current space around on the number of local cases.} According to the figure we establish, we need $S(t)$ to reflect the randomness and correlation of the number of cases, so $S(t)$ should be a random component monitoring the influence of the number of cases in the surrounding space. We believe that the impact on the number of the cases in the local counties is positively correlated with the number of the adjacent county cases and negatively correlated with the distance between the two places. At the same time, we note that distance and influence are not strictly inversely proportional. For example, at a distance of enough, a difference of 1 or 2 kilometers does not make a significant difference. We think that taking the logarithm of the distance is going to be a good solution.
@@ -150,13 +150,13 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} (1+\sum_{i=1}^{k} {\frac{C_{i,j}
 In the equation, $P_{j}$ represents the number of cases in the target county, $P_{i}$ represents the number of cases in the surrounding county, $(1+\sum_{i=1}^{k} {\frac{C_{i,j} P_{i}(t)}{\ln (D_{i,j}+1)}})$ represents the effect of $k$ surrounding counties on target counties (We consider that this parameter is going to be the value of fluctuating on a base of $1$), $C_{i,j}$ represents the influence coefficient of county i on county j, and $D_{i,j}$ represents the distance between county i and county j.
 
 \subsubsection{Model Simplification}
-In the model, if we take into account the relationship among all counties, then $k$ will be 451, and we will calculate 451 correlation coefficients when we analyze each county. Considering that there is the data of only eight years from 2010 to 2017 in the file ``MCM\_NFLIS\_Data.xlsx``, we cannot specifically calculate the specific value of each parameter. And when the geographical location of two counties is far from each other, the relationship between them is relatively small, and then its influence can be ignored. In other words, we can only take adjacent counties that are close to the target county as the analysis target. How do we define proximity? Based on the map information, we collect the longitude and latitude information of each county. Since the latitude and longitude of the five states do not vary much, we used the longitude and latitude of the two locations to calculate their relative distances\eqref{distance}.
+In the model, if we take into account the relationship among all counties, then $k$ will be 451, and we will calculate 451 correlation coefficients when we analyze each county. Considering that there is the data of only eight years from 2010 to 2017 in the file ``MCM\_NFLIS\_Data.xlsx'', we cannot specifically calculate the specific value of each parameter. And when the geographical location of two counties is far from each other, the relationship between them is relatively small, and then its influence can be ignored. In other words, we can only take adjacent counties that are close to the target county as the analysis target. How do we define proximity? Based on the map information, we collect the longitude and latitude information of each county. Since the latitude and longitude of the five states do not vary much, we used the longitude and latitude of the two locations to calculate their relative distances\eqref{distance}.
 \begin{equation}
 D_{i,j} = \sqrt{(long_i-long_j)^2+(lat_i-lat_j)^2}
 \label{distance}
 \end{equation}
 
-In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{5}, we learned that using variance and deviation analysis can help us get the right parameter $k$. We get Figure [\ref{model1_deviation_variance}] as a result. From the figure, when $k = 3$, we can get the best fit.
+In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{5}, we learned that great deviation with little variance reveals under-fitting, while little deviation with great variance reveals over-fitting. According to Figure [\ref{model1_deviation_variance}] we get, we can point out that we can get the best fit when $k = 3$.
 \begin{figure}[ht]
 	\centering
 	\subfigure[Deviation Analysis]{
@@ -181,14 +181,43 @@ Based on Equation\eqref{model1_sim}, we put the data of eight years into the for
 	\caption{Relationship of All Counties for the Drug Use Spread}\label{all_relation}
 \end{figure}
 
+For certain types of drugs, most have too small amounts of cases to be analyzed. Therefore, we chose heroin, which is in large quantity relatively, and construct the county relation chart of heroin. We choose a small representative area to identify where it might have started[\ref{model1_heroin}].
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model1.Abstract.png}
+	\caption{An Example for the Solution to Where Heroin Have Started}\label{model1_heroin}
+\end{figure}
 
+For this graph, we first select a point as root, and then keep looking for the edge that has the least reciprocal of weight as the new edge. If the new edge doesn't form a ring, add it to the graph. If the constructed diagram already contains all six points, we succeed in getting the correct graph. Otherwise, choose another point as the root. After selection, we get three points that meet our requirements. We end up choosing the option with the smallest sum of the reciprocal of weight. Based on the choise, we obtain the tree in Figure[\ref{model1_tree}], and we analysed the dependency influence relationship of each point.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model1.GridMap.png}
+	\caption{An Example for the Solution to Where Heroin Have Started}\label{model1_tree}
+\end{figure}
 
-\subsubsection{Sensitivity Analysis}
-\cite{6}
+Based on the analysis of this picture, we can conclude that Mt.Pleasant is most likely to be the place where drug use have started.
+
+When the number of cases is growing fastest, the government should take measures to control the spread of drugs. From Equation\eqref{model1_sim}, we know that $C_1, C_2, C_3$ is very small, so the change in a county is basically the same as that in the surrounding counties. Based on calculus, we know when the second derivative of the formula is equal to zero, the growth rate is the maximum.
+This is where the government should take control of the spread of drug use.
+
+\subsubsection{K-fold Cross Validation}
+Because we only have eight years of data and we don not have enough data to test for long periods of time, we decide to use K-fold Cross Validation to verify the correctness of our Model\cite{6}. K-fold cross validation randomly divides the sample set into $k$ parts, with $k-1$ part as the training set and 1 part as the verification set. The training set and verification set are rotated in turn for $k$ times, and the parameter with the smallest verification deviation is the desired parameter. In our model, we take the following steps to perform K-fold Cross Validation:
+\begin{enumerate}
+	\item We divide the data from 2010 to 2017 into 7 independent data sets, select 5 fitting curves each time, and get the corresponding parameters.
+	\item The results of the remaining years are taken as verification set to calculate the deviation.
+\end{enumerate}
+
+From Figure[\ref{model1_deviation_variance}], we find that the deviation obtained is within the acceptable range. Therefore, we believe our model fits well.
 
 \subsection{Problem 2: TSSE Model}
 \subsubsection{Construction Process}
-In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process[\cite{7}]. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories[\cite{8}]: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
+In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process\cite{7}. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02'' folder, and find that they divide the county's demographics and family structure by different criteria.
+
+
+ Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories\cite{8}: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
+ 
+ To determine $(\alpha, \beta, \gamma)$ precisely, we must take the weighted average value as the result. However, making 451 times of single fitting calculation is not acceptable considering its great time consumption. To balance the time and preciseness, every time we randomly pick 20 different counties to build the parameters.
+ 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figure-release/Model2.LayerMap.png}
@@ -211,9 +240,9 @@ And so on we can get three important levels($x_{F,E}$, $x_{F,C}$, $x_{E,C}$) for
 \end{pmatrix}
 \]
 
-A new matrix is obtained by normalizing each column of the matrix. Then we figure out the average value of each row, and they are influence coefficients of family factor, education factor and cultural factor of each county ($a$,$b$, and $d$). Finally taking the logarithm of the population of each county, we take the weighted average of the three coefficients and get The general coefficients of the three influence factors. We get the final equation: Equation\eqref{model2_eq2}.
+A new matrix is obtained by normalizing each column of the matrix. Then we figure out the average value of each row, and they are influence coefficients of family factor, education factor and cultural factor of each county ($\alpha$, $\beta$, $\gamma$). Finally taking the logarithm of the population of each county, we take the weighted average of the three coefficients and get The general coefficients of the three influence factors. We get the final equation: Equation\eqref{model2_eq2}.
 \begin{equation}
-P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)\left(a\*F+b\*E+d\*C\right)
+P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)\left(\alpha\*F+\beta\*E+\gamma\*C\right)
 \label{model2_eq2}
 \end{equation}
 
@@ -225,72 +254,97 @@ Then we compare the results of this model with the actual results and get Figure
 	\caption{The Fitting Results of TSSE Model}\label{model2_results}
 \end{figure}
 
-Moreover, we carried on variance and deviation analysis to model 2, and get the Figure[\ref{model2_vd}]
+Moreover, we carried on variance and deviation analysis to model 2, and get the Figure[\ref{model2_vd}].
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm]{figure-release/Model2.Evaluation.png}
-	\caption{Variance And Deviation analysis of TSSE Model}\label{model2_vd}
+	\includegraphics[width=13cm]{figure-release/Model2.Evaluation.png}
+	\caption{Variance and Deviation Analysis of TSSE Model}\label{model2_vd}
 \end{figure}
 
 
 \subsubsection{Consistency Test}
-In the analytic hierarchy process, the consistency test can be used to measure the significance of differences in the relationship of the principles. According to \textbf{Consistency Test}, we can define consistency index as $CI$. The expression of $CI$ is shown below\eqref{model2_ci}.
+In the analytic hierarchy process, the consistency test can be used to measure the significance of differences in the relationship of the principles. 
+
+According to \textbf{Consistency Test}, we can define consistency index as $CI$. The expression of $CI$ is shown below\eqref{model2_ci}.
 \begin{equation}
 CI = \frac{\lambda_{max}-n}{n-1}
 \label{model2_ci}
 \end{equation}
 
-In general, if $CI$$\le$0.10, the matrix is considered to be consistent. The values calculated are acceptable according to this.
-Therefore, in TSSE Model, we can get $CI$=0.0776$\le$0.10. It can be inferred that we have a good accuracy in fitting the important degree coefficient of family, education, and culture factors. We can be sure that they have such a relationship.
+In general, if $CI\le0.10$, the matrix is considered to be consistent. The values calculated are acceptable according to this.
+Therefore, in TSSE Model, we can get $CI=0.0776\le0.10$. It can be inferred that we have a good accuracy in fitting the important degree coefficient of family, education, and culture factors. We can be sure that they have such a relationship.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{figure-release/Model3.EdgeWeight.png}
+	\caption{An Example of Degree Centrality}\label{model3_ew}
+\end{figure}
 
 \subsection{Problem 3: Strategy and Evaluating}
 \subsubsection{Problem Solving}
 In model 1, we consider that case number changes are influenced by both time and space factors and obtain the fitting result with small deviation. In model 2, we combine the results of the county population survey, focuse on the internal factors, and identify the important degree of the influence of different population factors through the analytic hierarchy process. Based on all the data provided and the county geographic information that we have looked up, we can get a complete equation\eqref{model2_eq2} of how the county case numbers are changing.
 
-We have taken into account the response to the drug crisis in many regions[\cite{9}] and find that they take into account both the whole and the parts. In other words, the states control the trend by making laws, strengthen safety education, and monitoring food safety. In the meanwhile, the counties monitor the region where drug cases are most frequent. The above measure takes both efficiency and effect into consideration, with little investment to achieve the purpose of stable drug control[\cite{10}].
+We have taken into account the response to the drug crisis in many regions\cite{9} and find that they take into account both the whole and the parts. In other words, the states control the trend by making laws, strengthen safety education, and monitoring food safety. In the meanwhile, the counties monitor the region where drug cases are most frequent. The above measure takes both efficiency and effect into consideration, with little investment to achieve the purpose of stable drug control\cite{10}.
+
+
 
 \textbf{Degree Centrality} can reflect the degree of association between a county and other neighboring counties. In other words, in counties with high clustering coefficient, traffic is always developed and drug trade is active. We decide to use the Degree Centrality as the measurement standard. By sorting the county Degree Centrality, we can get the list of key areas.
 
 Based on the above results, we get strategies to deal with the drug crisis:
 
 \begin{enumerate}
-	\item For counties with a high degree of centrality, we should strictly control their cargo links with surrounding counties and reduce drug trafficking between them.
+	\item For counties with a high degree of centrality, we should strictly control their cargo links with surrounding counties and reduce drug trafficking between them. For example, in Figure[\ref{model3_ew}], we should pay more attention to Ballard and Hickman and strictly inspect the goods in circulation.
 	\item We should make efforts to raise the educational level of the people.
 	\item The community should pay more attention to the family relations and mediate the family contradiction in time.
 \end{enumerate}
 
-\subsubsection{Evaluating and Sensitivity}
-With the help of the established model formula, we assume that the number of cases in the county change in the second year after the implementation of the above strategies. We compare the number of cases in the next few years with the original data. If there is a significant gap between the two (by means of deviation), we consider the strategy a success.
-
-Moreover, we perform sensitivity tests on these parameters.  The results are as follows[\ref{model_sensitivity}]:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=15cm]{figure-release/Model.Sensitivity.png}
 	\caption{Sensitivity Tests of the Model}\label{model_sensitivity}
 \end{figure}
 
+
+\subsubsection{Evaluating and Sensitivity}
+With the help of the established model formula, we assume that the number of cases in the county change in the second year after the implementation of the above strategies. We compare the number of cases in the next few years with the original data. If there is a significant gap between the two (by means of deviation), we consider the strategy a success.
+
+Moreover, we perform sensitivity tests on these parameters. We randomly select three counties for the study, and adjust the parameters to 90\% and 110\% of the original data. The results are as follows[\ref{model_sensitivity}]:
+
+
+The results support that the numerical simulation is sensitive to the parameters.
+
+\section{Strengths and Weaknesses}
+
 \subsection{Strengths}
 \begin{itemize}
-	\item \textbf{Simplification}\\
+	\item \textbf{Simpleness}\\
 	When building the model, we find the influence of the three surrounding counties account for a significant proportion, so we selectively ignore the influence of other counties. This greatly simplifies the process of model building and analysis.
 	\item \textbf{Exactness}\\
 	We fully consider the various influencing factors that are already known, and get a good fit after detailed discussion for the factors.
-	\item \textbf{Stabilitys}\\
+	\item \textbf{Stability}\\
 	Our models have some undetermined factors. We carry out Sensitivity analysis, consistency test and deviation analysis on these parameters, and obtain expected results.
-	\item \textbf{Stabilitys}\\
+	\item \textbf{Universality}\\
 	We have produced a general algorithm to solve the opioid crisis problem. Our model can not only fit the description of the opioid crisis in the United States, but also be used in other disciplines to analyze the interaction between local regions and the overall planning, such as sales pricing in different regions, news communication, and so on.
 \end{itemize}
 
 \subsection{Weaknesses}
 \begin{itemize}
-	\item When calculating distance between counties, the curvature of the earth isn’t considered. These 5 states’ latitude varies between 36° N and 42° N. That causes notable bias when the latitude difference can’t be ignored.
-	\item Not all social and economic factor data is accessible, so the model can’t be complete as lacking traffic, politics, and laws information.
-	\item Only 5 states’ data of the U.S. were provided, so these counties lying in the borderline between the 5 states and the rest would not be well described.
+	\item \textbf{Approximation}\\
+	 When calculating distance between counties, the curvature of the earth isn’t considered. These 5 states’ latitude varies between $36^\circ$ N and $42^\circ$ N. That causes notable bias when the latitude difference can’t be ignored.
+	\item \textbf{Insufficient Factors}\\
+	 Not all social and economic factor data is accessible, so the model can’t be complete as lacking traffic, politics, and laws information.
+	\item \textbf{Limited Analyzing Volume}\\
+	 Only 5 states’ data of the U.S. were provided, so these counties lying in the borderline between the 5 states and the rest would not be well described.
 \end{itemize}
 
 \section{Conclusions}
-In this paper, we generated a database containing geography location and history case reports first. Then we use opioid and heroin case history as fitting foundation, taking internal autoregressive and external affecting factor as fitting target parameters to solve Problem 1. After getting the weight of each edge indicating the spreading index, we construct the abstracted graph to find the propagation source of one specific drug. In the following Problem 2, we use all drug types’ cases data to re-fit the parameters above in the legacy way. Then, we utilize the eco-social data in the AHP procedure to determine the correlation index, and optimize the internal autoregressive model. Finally, we validates our model and figure out the suggestions and solutions to the practical problems.
+In this paper, we first generated a database containing geography location and history case reports. 
+
+Then we use opioid and heroin case history as fitting foundation, taking internal autoregressive and external affecting factor as fitting target parameters to solve Problem 1. After getting the weight of each edge indicating the spreading index, we construct the abstracted graph to find the propagation source of one specific drug. 
+
+In the following Problem 2, we use all drug types’ cases data to re-fit the parameters above in the legacy way. Then, we utilize the eco-social data in the AHP procedure to determine the correlation index, and optimize the internal autoregressive model. 
+
+Finally, we validates our model and figure out the suggestions and solutions to the practical problems.
 \newpage
 \Large\textbf{MEMORANDUM}
 
@@ -323,35 +377,41 @@ useful information. Thanks.
 
 \newpage
 \begin{thebibliography}{99}
-	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
-	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
+	\bibitem{1} ``WORLD DRUG REPORT 2018'', \url{https://www.unodc.org/wdr2018/prelaunch/}
+	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M \& Hwang D U. ``Complex networks: Structure and dynamics''. Physics reports, 2006, 424(4): 175-308.
 	\bibitem{3} U.S. Census Bureau  \url{https://www.census.gov/geo/maps-data/}
-	\bibitem{4} Richard A. Davis. ``Introduction to statistical analysis of time series." \url{http://www.stat.columbia.edu/~rdavis/lecture/Session6.pdf}
-	\bibitem{5} Edward A. Bender. ``An Introduction to Mathematical Modeling". 2000
+	\bibitem{4} Richard A. Davis. ``Introduction to statistical analysis of time series.'' \url{http://www.stat.columbia.edu/~rdavis/lecture/Session6.pdf}
+	\bibitem{5} Edward A. Bender. ``An Introduction to Mathematical Modeling''. 2000
 	\bibitem{6} \url{https://en.wikipedia.org/wiki/Cross-validation_(statistics)}
-	\bibitem{7} Matthew J. Liberatore, Robert L. Nydick. ``The analytic hierarchy process in medical and health care decision making: A literature review". European Journal of Operational Research, 2008, 189(1): 194-207
-	\bibitem{8} Steve Sussman, William J. McCuller, Clyde W. Dent. ``The associations of social self-control, personality disorders, and demographics with drug use among high-risk youth". 2003
-	\bibitem{9} \url{https://www.globalcommissionondrugs.org}
-	\bibitem{10} \url{https://ips-dc.org/us_drug_policy}
+	\bibitem{7} Matthew J. Liberatore \& Robert L. Nydick. ``The analytic hierarchy process in medical and health care decision making: A literature review''. European Journal of Operational Research, 2008, 189(1): 194-207
+	\bibitem{8} Steve Sussman, William J. McCuller \& Clyde W. Dent. ``The associations of social self-control, personality disorders, and demographics with drug use among high-risk youth''. 2003
+	\bibitem{9} The Global Commission on Drug Policy. \url{https://www.globalcommissionondrugs.org}
+	\bibitem{10} U.S. Drug Policy. \url{https://ips-dc.org/us_drug_policy}
 \end{thebibliography}
 
 \newpage
 
 \begin{appendices}
 	
-	\section{First appendix}
+	\section{Data Analyzing Code}
 	
-	\lipsum[13]
+	Here are some python scripts we used in data analyzing procedure.\\
 	
-	Here are simulation programmes we used in our model as follow.\\
+	\textbf{\textcolor[rgb]{0.98,0.00,0.00}{data\_parser.py}}
+	\lstinputlisting[language=Python]{./data-analysis-p1/2018_MCMProblemC_DATA/data_parser.py}
+
 	
-	%\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Input matlab source:}}
-	%\lstinputlisting[language=Matlab]{./code/mcmthesis-matlab1.m}
+	\textbf{\textcolor[rgb]{0.98,0.00,0.00}{weight\_gen.py}}
+	\lstinputlisting[language=Python]{./data-analysis-p2/2018_MCMProblemC_DATA/weight_gen.py}	
+	\section{Model Fitting Code}
 	
-	\section{Second appendix}
+	Here are some python scripts we used in model parameters fitting procedure.\\
 	
-	%some more text \textcolor[rgb]{0.98,0.00,0.00}{\textbf{Input C++ source:}}
-	%\lstinputlisting[language=C++]{./code/mcmthesis-sudoku.cpp}
+	\textbf{\textcolor[rgb]{0.98,0.00,0.00}{data\_fit.py}}
+	\lstinputlisting[language=Python]{./data-analysis-p1/2018_MCMProblemC_DATA/data_grab.py}
+	
+	\textbf{\textcolor[rgb]{0.98,0.00,0.00}{fitting.py}}
+	\lstinputlisting[language=Python]{./data-analysis-p2/2018_MCMProblemC_DATA/fitting.py}
 	
 	
 \end{appendices}

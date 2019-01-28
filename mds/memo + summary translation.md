@@ -14,8 +14,10 @@ In the next decade, American opioid and heroin crime cases would keep increasing
 ### Advice
 Ordered by importance, as following:
 
-建议：按重要度排序，措施依次为：
-（1）希望提高对毒品犯罪的注意，在全美推行严格的管控措施。其中包括对公民预防、对吸毒者戒毒和恢复健康计划，联合农业部和商业部管控毒品作物种植和进口，以期对全美毒品犯罪宏观调控。
+* Raise the attention of drug crime, and implement strict drug managing laws. Control the planting and import of drug crops with the help of U.S. Department of Agriculture and Commerce.
+
+* 
+
 （2）希望敦促各州对该州区域性犯罪团伙的法律制裁，依照犯罪人数增长的周期性规律在增长势头最猛的时候强力遏制毒品源头的规模和扩散趋势，保持犯罪人数的低水平稳定。
 （3）希望注意州际线附近犯罪，敦促州际合作与联动，提高管控效率，切断跨州合作网络，分散势力各个击破。
 （4）希望推进毒品犯罪更严厉的法律措施惩罚，从根本上改变犯罪管控局势。

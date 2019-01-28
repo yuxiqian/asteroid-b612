@@ -94,7 +94,7 @@ for dat in counties_dat:
         # input()
         avg = np.mean(nums)
         for i in range(7):
-            if i in [4, 6]:
+            if not i in [6, 7]:
                 dat[2][i][j] = nums[i] / avg
             else:
                 dat[2][i][j] = 2.0 - nums[i] / avg
@@ -112,9 +112,11 @@ with open(savefilename, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
 
     spamwriter.writerow(
-        ["Year", "ID", "Name", "InnerIndex"] + result)
-    for row in results:
-        spamwriter.writerow(row)
+        ["Year", "ID", "Name", "InnerIndex", 'Weight', 'Family 1', 'Family 2', 'Family 3', 'Education 1', 'Education 2', 'Culture 1', 'Culture 2'])
+    for i in counties_dat:
+        for year in range(7):
+            spamwriter.writerow(
+                [year, i[1].id, i[1].name, i[1].get_interior_index(year)] + i[2][year])
 
 
 savebinaryfile = input("Save binary file to [where].bf... \n>>> ")

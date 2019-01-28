@@ -34,7 +34,11 @@ total_weight = 0.0
 
 for index in range(length):
     loc_x = weight_csv.iloc[index]
+    if abs(float(loc_x['x value'] - 0.5)) > 0.2:
+        continue
+
     weight = int(loc_x['Weight'])
+    # weight = 1
     total_weight += weight
     type = int(loc_x['Type'])
     if type == 0:

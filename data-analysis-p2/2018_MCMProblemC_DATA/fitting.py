@@ -108,7 +108,9 @@ for itm in pkgs:
         if l.affect_index_a == 1.0 or l.affect_index_b == 1.0 or l.affect_index_c == 1.0:
             print("Fitting %s results in a failure.\n\n" % lst)
             input()
-        # input()
+    # flag = input()
+    # if flag != "":
+    #     break
 
 
 savefilename = input("Save csv file to [where].csv... \n>>> ")

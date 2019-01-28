@@ -81,9 +81,9 @@ gamma_dft = 0.52163
 
 sensitive_check = []
 
-i = locs[9]
+i = locs[1]
 
-try:
+for x in range(1):
     print(i)
 
     name = i.name
@@ -116,7 +116,7 @@ try:
                   locs[i.nearest_id[0]].history[year],
                   locs[i.nearest_id[1]].history[year],
                   locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], alpha=alpha_dft * 0.9))
+                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], alpha=alpha_dft * 0.9, beta=beta_dft * 0.9, gamma=gamma_dft*0.9))
 
         sensitive_check[-1].append(
             estmt(year, avg, i.p, i.w,
@@ -124,39 +124,7 @@ try:
                   locs[i.nearest_id[0]].history[year],
                   locs[i.nearest_id[1]].history[year],
                   locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], alpha=alpha_dft * 1.1))
-
-        sensitive_check[-1].append(
-            estmt(year, avg, i.p, i.w,
-                  i.affect_index_a, i.affect_index_b, i.affect_index_c,
-                  locs[i.nearest_id[0]].history[year],
-                  locs[i.nearest_id[1]].history[year],
-                  locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], beta=beta_dft * 0.9))
-
-        sensitive_check[-1].append(
-            estmt(year, avg, i.p, i.w,
-                  i.affect_index_a, i.affect_index_b, i.affect_index_c,
-                  locs[i.nearest_id[0]].history[year],
-                  locs[i.nearest_id[1]].history[year],
-                  locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], beta=beta_dft * 1.1))
-
-        sensitive_check[-1].append(
-            estmt(year, avg, i.p, i.w,
-                  i.affect_index_a, i.affect_index_b, i.affect_index_c,
-                  locs[i.nearest_id[0]].history[year],
-                  locs[i.nearest_id[1]].history[year],
-                  locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], gamma=gamma_dft * 0.9))
-
-        sensitive_check[-1].append(
-            estmt(year, avg, i.p, i.w,
-                  i.affect_index_a, i.affect_index_b, i.affect_index_c,
-                  locs[i.nearest_id[0]].history[year],
-                  locs[i.nearest_id[1]].history[year],
-                  locs[i.nearest_id[2]].history[year],
-                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], gamma=gamma_dft * 1.1))
+                  dist[0], dist[1], dist[2], Family[year], Education[year], Culture[year], alpha=alpha_dft * 1.1, beta=beta_dft * 1.1, gamma=gamma_dft*1.1))
 
     print(sensitive_check)
     input()
@@ -165,15 +133,12 @@ try:
 
     # input()
 
-except:
-    pass
-
 
 savefilename = input("Save sensitivity analysis to [where].csv... \n>>> ")
 with open(savefilename + " - sense.csv", 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile)
     spamwriter.writerow(
-        ["year", "real", "90% a", "110% a", "90% b", "110% b", "90% c", "110% c", ])
+        ["year", "real", "90%", "110%"])
     count = 2010
     for row in sensitive_check:
         spamwriter.writerow([count] + row)

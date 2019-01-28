@@ -79,7 +79,7 @@ In \textbf{Part 1}, we need to describe the spread of the reported cases and ide
 The following is the weighted directed graph we constructed. In this diagram [\ref{graph}], each node represents a county and the directed edge W$_{C,D}$ between two nodes C and D represents the influence coefficient of county C on county D is W$_{C,D}$ (The larger the influence coefficient, the more likely the county to be in county c, and the more likely the drug use in county D is to be transmitted from county C). Thus, a graph is constructed for all counties in the five states.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm]{graphtheory.png}
+	\includegraphics[width=15cm]{figure-release/Model1.ExampleMap.png}
 	\caption{An Example of the Weighted Directed Graph}\label{graph}
 \end{figure}
 
@@ -107,7 +107,7 @@ Some factors are provided directly and can be grabbed at the first time:
 We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states from 2010 to 2017.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=15cm]{StateSum.png}
+	\includegraphics[width=15cm]{figure-release/StateSum.png}
 	\caption{Total Drug Use In Five States in Years 2010-2017}\label{sum_flowchart}
 \end{figure}
 
@@ -128,18 +128,18 @@ In the equation, $P_{j}$ represents the number of cases in the target county, $P
 \subsubsection{Model Simplification}
 In the model, if we take into account the relationship among all counties, then $k$ will be 451, and we will calculate 451 correlation coefficients when we analyze each county. Considering that there is the data of only eight years from 2010 to 2017 in the file ``MCM\_NFLIS\_Data.xlsx``, we cannot specifically calculate the specific value of each parameter. And when the geographical location of two counties is far from each other, the relationship between them is relatively small, and then its influence can be ignored. In other words, we can only take adjacent counties that are close to the target county as the analysis target. How do we define proximity? Based on the map information, we collect the longitude and latitude information of each county. Since the latitude and longitude of the five states do not vary much, we used the longitude and latitude of the two locations to calculate their relative distances\eqref{distance}.
 \begin{equation}
-D_{i,j} = \sqrt{(lon_i-lon_j)^2+(lat_i-lat_j)^2}
+D_{i,j} = \sqrt{(long_i-long_j)^2+(lat_i-lat_j)^2}
 \label{distance}
 \end{equation}
 
-In the equation, $lon_i$ represents the longitude of county $i$, $lon_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and bias analysis can help us get the right parameter $k$. We get Figure \ref{model1_bias_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
+In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and bias analysis can help us get the right parameter $k$. We get Figure \ref{model1_bias_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
 \begin{figure}[ht]
 	\centering
 	\subfigure[Bias Analysis]{
-		\includegraphics[width=15cm]{model1_bias}\label{model1_bias}
+		\includegraphics[width=15cm]{figure-release/Model1.Bias.png}\label{model1_bias}
 	}
 	\subfigure[Variance Analysis]{
-		\includegraphics[width=8cm]{model1_variance}\label{model1_variance}
+		\includegraphics[width=8cm]{figure-release/Model1.Variance}\label{model1_variance}
 	}
 	\caption{Bias And Variance Analysis}\label{model1_bias_variance}	
 \end{figure}
@@ -153,7 +153,7 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 Based on Equation\eqref{model1_sim}, we put the data of eight years into the formula to fit it, and we get a graph of each county based on the total amount of drugs\ref{all_relation}.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=15cm]{all_relation.png}
+	\includegraphics[width=15cm]{figure-release/Model1.FlowMap.png}
 	\caption{}\label{all_relation}
 \end{figure}
 
@@ -166,7 +166,7 @@ Based on Equation\eqref{model1_sim}, we put the data of eight years into the for
 In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=15cm]{model2_layer.png}
+	\includegraphics[width=15cm]{figure-release/Model2.LayerMap.png}
 	\caption{AHP of Factors Affecting Drug Use}\label{model2_layer}
 \end{figure}
 
@@ -196,7 +196,19 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 \subsubsection{Problem Solving}
 In model 1, we consider that case number changes are influenced by both time and space factors and obtain the fitting result with small deviation. In model 2, we combine the results of the county population survey, focuse on the internal factors, and identify the important degree of the influence of different population factors through the analytic hierarchy process. Based on all the data provided and the county geographic information that we have looked up, we can get a complete equation\eqref{model2_eq2} of how the county case numbers are changing.
 
-We have taken into account the response to the drug crisis in many regions and find that they take into account both the whole and the parts.
+We have taken into account the response to the drug crisis in many regions and find that they take into account both the whole and the parts. In other words, the states control the trend by making laws, strengthen safety education, and monitoring food safety. In the meanwhile, the counties monitor the region where drug cases are most frequent. The above measure takes both efficiency and effect into consideration, with little investment to achieve the purpose of stable drug control.
+
+\textbf{Degree Centrality} can reflect the degree of association between a county and other neighboring counties. In other words, in counties with high clustering coefficient, traffic is always developed and drug trade is active. We decide to use the Degree Centrality as the measurement standard. By sorting the county Degree Centrality, we can get the list of key areas.
+
+Based on the above results, we get strategies to deal with the drug crisis:
+
+\begin{enumerate}
+	\item For counties with a high degree of centrality, we should strictly control their cargo links with surrounding counties and reduce drug trafficking between them.
+	\item We should make efforts to raise the educational level of the people.
+	\item The community should pay more attention to the family relations and mediate the family contradiction in time.
+\end{enumerate}
+
+$Y(t)=T(t)S(t)E(t)$
 
 \subsection{Strengths}
 \begin{itemize}

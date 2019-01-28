@@ -64,7 +64,7 @@ print("Successfully opened %d bfs." % len(pkgs))
 
 def estmt(t, avg, p, w, C1, C2, C3, P1, P2, P3, D1, D2, D3, F, E, C):
     # print(t, avg, p, w, C1, C2, C3, P1, P2, P3, D1, D2, D3)
-    return avg * pow(e, sin(p + t * w)) * (1 + C1 * P1 / log(1 + D1) + C2 * P2 / log(1 + D2) + C3 * P3 / log(1 + D3)) * (3.124 * F + 1.711 * E + C) / (3.124 + 1.711 + 1)
+    return avg * pow(e, sin(p + t * w)) * (1 + C1 * P1 / log(1 + D1) + C2 * P2 / log(1 + D2) + C3 * P3 / log(1 + D3)) * (0.16017 * F + 0.31820 * E + 0.52163 * C)
 
 
 a_s = []

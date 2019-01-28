@@ -3,16 +3,16 @@
 ### Situation
 
 Our research based on eastnorthern 5 states reveals that American opioid and heroin related crime frequency is strongly regional and spatial.
-Each county 
+The total incident amount of each county floats around a reference value, at the same time, significantly affected by nearby counties and border geographical environment. Specific kinds of drug's propagation indicates the existence of drug selling chain and regional crime gang. Drug control faces a complex situation and great pressure.
 
-情况：
-以五州为样本研究发现：美国阿片类药物和海洛因犯罪在数量上；在空间上体现很强的地域性，每个州都在一个犯罪基数上浮动，且显著受到考虑地形因素临近郡的影响，形成一种药品从初始郡向四周扩散的逐年传播态势，说明已经形成了阿片类药物和海洛因的销售链和地区性犯罪团伙，管控面临的情况复杂，压力较大。
+### Influencing Factor
+According to economic research reports from NFLIS, the crime frequency is 52.16% related to culture factors, including nationality ratio, first language proportion, and ancestral combination of its population. It is also 31.82% related to education factors, as the education level and dropout rate of its population. It is merely 16.02% related to family factors, e.g., family people numbers, relatives' health status, and martial status.
 
-影响因素：
-我们依据（）组织的人口经济调查结果，发现犯罪数有（52.16）%的原因来自文化因素，即取决于国籍、第一语言以及原生地，有（16.02）%的原因来自家庭因素，即取决于家庭人口、亲属健康状况以及婚姻状况，（31.82）%的原因来自教育因素，即取决于受教育程度以及在学校的表现情况。因而，由于各州各郡不同的人口结构和经济发展状况，犯罪数有不同的基数和发展态势。
+### Prediction
+In the next decade, American opioid and heroin crime cases would keep increasing spirally. It is predicted that the growth-recession cycle is distributed between 3.5 years and 12.5 years, along with an approximately 10% increase by each cycle. Regional criminal gangs would develop closer communication, leading to the synchronized periodical floating of crime cases in a specific region. Consequently the managing of drugs would be much harder.
 
-预测：
-在未来的十年里，阿片类药物和海洛因犯罪数量将会螺旋上升，且预计每个郡的增长衰退周期在 3.5——12.5 年之间,且每个周期较之前周期犯罪基数增长 （数字）%。犯罪团伙的区域交流将更加密切，一个地区的增长将呈现同步性，这对应着未来的管理难度将会进一步增大。
+### Advice
+Ordered by importance, as following:
 
 建议：按重要度排序，措施依次为：
 （1）希望提高对毒品犯罪的注意，在全美推行严格的管控措施。其中包括对公民预防、对吸毒者戒毒和恢复健康计划，联合农业部和商业部管控毒品作物种植和进口，以期对全美毒品犯罪宏观调控。

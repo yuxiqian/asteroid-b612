@@ -7,6 +7,7 @@ import pandas as pd
 from pack import Pack
 from copy import deepcopy
 from math import sqrt, inf
+from random import shuffle
 
 
 class xval:
@@ -56,7 +57,9 @@ packages = []
 for i in pkgs:
     packages.append(i[1])
 
-for itm in pkgs[:10]:
+shuffle(pkgs)
+
+for itm in pkgs[:20]:
 
     time_strip = []
 

@@ -105,7 +105,7 @@ Some factors are provided directly and can be grabbed at the first time:
 \subsection{Problem 1}
 \subsubsection{Construction Process}
 We analyze and process the data of ``MCM\_NFLIS\_Data.xlsx" and establish databases and a flow chart[\ref{sum_flowchart}] for the total number of synthetic opioid and heroin cases in 451 counties of the five states from 2010 to 2017.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=15cm]{StateSum.png}
 	\caption{Total Drug Use In Five States in Years 2010-2017}\label{sum_flowchart}
@@ -133,13 +133,13 @@ D_{i,j} = \sqrt{(lon_i-lon_j)^2+(lat_i-lat_j)^2}
 \end{equation}
 
 In the equation, $lon_i$ represents the longitude of county $i$, $lon_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and bias analysis can help us get the right parameter $k$. We get Figure \ref{model1_bias_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\subfigure[Bias Analysis]{
 		\includegraphics[width=15cm]{model1_bias}\label{model1_bias}
 	}
 	\subfigure[Variance Analysis]{
-		\includegraphics[width=10cm]{model1_variance}\label{model1_variance}
+		\includegraphics[width=8cm]{model1_variance}\label{model1_variance}
 	}
 	\caption{Bias And Variance Analysis}\label{model1_bias_variance}	
 \end{figure}
@@ -150,18 +150,53 @@ P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1
 \label{model1_sim}
 \end{equation}
 \subsubsection{Problem Solving}
-
-\subsubsection{Sensitivity Analysis}
-\subsection{Problem 2}
-\subsubsection{Construction Process}
-
-\subsection{Problem 3}
-\section{Strengths and weaknesses}
-\begin{figure}[h]
+Based on Equation\eqref{model1_sim}, we put the data of eight years into the formula to fit it, and we get a graph of each county based on the total amount of drugs\ref{all_relation}.
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=15cm]{all_relation.png}
-	\caption{An Example of the Weighted Directed Graph}\label{all_relation}
+	\caption{}\label{all_relation}
 \end{figure}
+
+
+
+\subsubsection{Sensitivity Analysis}
+
+\subsection{Problem 2}
+\subsubsection{Construction Process}
+In this problem, we develop the model in Problem 1, and use the modified model as a tool to probe into the problem with the analytic hierarchy process. First, we consider a problem from the bottom up. We analyze and process the data in the ``ACS\_1x\_5YR\_DP02" folder, and find that they divide the county's demographics and family structure by different criteria. Then we establish a structural proportion database for each county from 2010 to 2017. These indicators are grouped into three categories: family factors, educational factors, and cultural factors and the structure of each indicator is divided into influential factors and non-influential factors\ref{model2_layer}. For example, in the education level indicator, we consider that people with high school education and below account for the majority of cases, while those with higher levels of education account for the minority. After this division, we do the geometric average on the indicator to get the criterion of a category. Inside criterion, each indicator has the same weight.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{model2_layer.png}
+	\caption{AHP of Factors Affecting Drug Use}\label{model2_layer}
+\end{figure}
+
+Secondly, we fit the model from the top down. We use the control variable method to study the importance of family factors to educational factors, family factors to cultural factors, and family factors to cultural factors. The following is an example of the importance of the education factor to the family factor of a county. We assume that family factor is $F$, educational factor is $E$, the degree of importance is $x$. We add $\left( F\*x+E\right) $ as a coefficient to model one and get Equation \eqref{model2_eq1}. After fitting, we can get the value of $x_{F,E}$.
+\begin{equation}
+P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)\left( F\*x+E\right)
+\label{model2_eq1}
+\end{equation}
+
+And so on we can get three important levels($x_{F,E}$, $x_{F,C}$, $x_{E,C}$) for each county. And then we can get the following matrix.
+
+\[
+\begin{pmatrix}
+{1 } & {x_{F,E} } & {x_{F,C} }  \\
+{\frac{1}{x_{F,E}}} & {1 } & {x_{E,C} }  \\
+{\frac{1}{x_{F,C} } } & {\frac{1}{x_{E,C}} } & {1}  \\
+\end{pmatrix}
+\]
+
+A new matrix is obtained by normalizing each column of the matrix. Then we figure out the average value of each row, and they are influence coefficients of family factor, education factor and cultural factor of each county ($a$,$b$, and $d$). Finally taking the logarithm of the population of each county, we take the weighted average of the three coefficients and get The general coefficients of the three influence factors. We get the final equation: Equation\eqref{model2_eq2}.
+\begin{equation}
+P_{j}(t) = C_{base} e^{\sin (\omega t+\varphi)} \left(\frac{C_1 P_1(t)}{\ln (D_1+1)}+\frac{C_2 P_2(t)}{\ln (D_2+1)}+\frac{C_3 P_3(t)}{\ln (D_3+1)}\right)\left(a\*F+b\*E+d\*C\right)
+\label{model2_eq2}
+\end{equation}
+
+\subsection{Problem 3}
+\subsubsection{Problem Solving}
+In model 1, we consider that case number changes are influenced by both time and space factors and obtain the fitting result with small deviation. In model 2, we combine the results of the county population survey, focuse on the internal factors, and identify the important degree of the influence of different population factors through the analytic hierarchy process. Based on all the data provided and the county geographic information that we have looked up, we can get a complete equation\eqref{model2_eq2} of how the county case numbers are changing.
+
+We have taken into account the response to the drug crisis in many regions and find that they take into account both the whole and the parts.
 
 \subsection{Strengths}
 \begin{itemize}

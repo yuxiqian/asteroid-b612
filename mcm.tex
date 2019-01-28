@@ -20,9 +20,12 @@
 	\end{keywords}
 \end{abstract}
 \maketitle
+\pagestyle{empty}
 \tableofcontents
 
 \newpage
+\pagestyle{fancy}
+\setcounter{page}{1}
 \section{Introduction}
 
 \subsection{Background}
@@ -34,11 +37,19 @@ Opioids continued to cause the most harm, accounting for 76 per cent of deaths w
 In 2015 and 2016, for the first time in half a century, life expectancy in the United States of America declined for two consecutive years. A key factor was the increase in unintentional injuries, which includes overdose deaths. In 2016, 63,632 people died from a drug overdose in the United States, the highest number on record and a 21 per cent increase from the previous year. This was largely due to a rise in deaths associated with pharmaceutical opioids, including fentanyl and fentanyl analogues. This group of opioids, excluding methadone, was implicated in 19,413 deaths in the country, more than double the number in 2015. It is necessary for us to study the law of drug spread and take corresponding measures to curb the trend of drug spread.\cite{1}
 
 \subsection{Our Work}
+First, we consider the influence of time and space on the number of drug use cases in counties, and combine the knowledge of graph theory to construct Time \& Space Equation. We study the spread of drug use, identify the locations where specific drug use started, give the drug identification threshold levels at what drug use will become harder to control, and test the effectiveness of our model.
 
+Secondly, we take the influence of some important  factors into consideration, improve our model, construct Time \& Space, Social \& Economic Equation(TSSE Equation) and compare the fitting result with the model before.
 
-\section{Assumptions and Notations}
+Finally, we come up with some solutions for the spread of drugs, test their effectiveness, and write a memo to the Chief Administrator, DEA/NFLIS Database.We use Figure [\ref{all_flowmap}] as a flowchart for our work.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{figure-release/ProgressMap.png}
+	\caption{The Flow Chart of the Modeling}\label{all_flowmap}
+\end{figure}
 
-\subsection{Assumptions}
+\section{Assumptions}
+
 We make the following basic assumptions in order to simplify the problem. Each
 of our assumptions is justified and is consistent with the basic fact.
 \begin{itemize}
@@ -47,29 +58,6 @@ of our assumptions is justified and is consistent with the basic fact.
 	\item \textbf{The rest of America and the rest of the world have a constant impact on the five states.} We assume that the external influence on these five states remains the same.
 	\item \textbf{States and counties have stable policies on drug use.} We assume that policy does not change during the study period.
 \end{itemize}
-
-\subsection{Notations}
-The notation table [\ref{table-notations}] contains all the notations we use in this paper.
-
-\begin{table}[h]
-	\centering
-	\caption{The data example} \label{table-notations}
-	\begin{tabular}{cp{20em}}
-		\toprule
-		ID & 28221526017700008\\
-		\hline
-		Time & 2018-02-28 22:15:26\\
-		\hline
-		PayMethod & Cash\\
-		\hline
-		Price & [0.982] Unit [Hainan Cherry Tomatoes] as [Season Fruit], Origin price [12.90] Discount Price [12.90]\\
-		\hline
-		isVip & False\\
-		\hline
-		SolderId & Merchant 22\\
-		\bottomrule
-	\end{tabular}
-\end{table}
 
 \section{Related Knowledge}
 
@@ -96,10 +84,38 @@ Some factors are provided directly and can be grabbed at the first time:
 	\item \textbf{Case Count}\\
 	Many drugs involved in all these incidents, but they are not equally significant. The reported count recording the troubles they made can be a convincing factor to determine how influential one drug is.
 	\item \textbf{Geography Location}\\
-	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to $Simple\ Maps\ Corp.$[1] and their generous contribution, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
+	The specific county name in OH, KY, WV, VA, and PA are provided in detail. Thanks to the data on the Internet\cite{3}, we could get accurate longitude and latitude to locate a single county. That would be a great help in visualizing our analysis.
 \end{itemize}
 
-\subsection{Error Data Fix}
+\subsection{Indirect Factors}
+There are several important factors that affects the modeling procedure but not provided directly. 
+\begin{itemize}
+	\item \textbf{Case History}\\
+	There are accurate data recording how many cases involving with drugs occurred in each county since 2010 until 2017. Putting individual case counts altogether would allow them make more sense.
+	\item \textbf{Neighbor Counties}\\
+	Besides grabbing the location of each county, their several nearest neighbor counties and their case history is also recorded to build a drug crisis spreading model.
+	\item \textbf{Population Density}
+	The annual population of each county is also provided. Combining them with the area information of each county, we can diverse each county into  several approximate density levels. That would be helpful in solving Problem 2.
+\end{itemize}
+
+\subsection{Resulting Dataset}
+\begin{itemize}
+	\item 451 Unique Counties
+	\item 69 Kinds of Substances
+	\item 24062 Case Recordings
+\end{itemize}
+
+\subsection{Error Handling}
+Thanks to the high quality database, there is no much difficulty finding out informations above. But it should be noticed that some names of counties are shared by two different states (for example, Adams County in Ohio and Adams County in Pennsylvania). To avoid conflicting analyzing result, both state name and county name should be used to identify a county. Hence the county data can be ensured unique.
+
+\subsection{Spreading Index}
+To describe the spreading process quantitatively, opioid and heroin case report data during these years and the location data of all counties are introduced to fit the equation mentioned above. According to general intuition, two counties at long distance might not lead to major spreadings. So for one specific county, only those data from the nearest `k` counties can be used in model fitting. Considering the fitting efficiency, `k` should be no more than 10. The fitting result should go beyond a threshold value to make sense. Any lower spreading index should be treated as disturbance and ignored. By judging the value of spreading index, a weighted directed graph can be constructed to analyze the origin of any single kind of drugs.
+
+\subsection{Considering Eco-Social Factors}
+In Problem 1 solving phase, only opioid and heroin related case data are applied in model building, but the total amount of drug abusing cases are provided separately. Hence those spreading factor above can’t be directly used here, and another spreading index fitting for general drug abusing cases is necessary.
+Performing AHP needs data series of various factors. Eco-Social Factor Data in 2017 were not provided, so the fitting would be limited between 2010 and 2016 under this phase.
+In the modeling part of Problem 1 solution, we have determined a best `k` value that optimizes the fitting procedure. It is assumed that the same `k` should also provide the optimized result, so as to reduce excessive fitting calculations.
+
 
 \section{Model Construction and Simulation Analysis}
 \subsection{Problem 1}
@@ -132,16 +148,16 @@ D_{i,j} = \sqrt{(long_i-long_j)^2+(lat_i-lat_j)^2}
 \label{distance}
 \end{equation}
 
-In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and bias analysis can help us get the right parameter $k$. We get Figure \ref{model1_bias_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
+In the equation, $long_i$ represents the longitude of county $i$, $long_j$ represents the longitude of county $j$, $lat_i$ represents the latitude of county $i$, and $lat_i$ represents the latitude of county $i$. For each county, we rank the surrounding counties from smallest to largest by distance. How many surrounding counties should we choose? From article\cite{}, we learned that using variance and deviation analysis can help us get the right parameter $k$. We get Figure \ref{model1_deviation_variance} as a result. From the figure, when $k = 3$, we can get the best fit.
 \begin{figure}[ht]
 	\centering
-	\subfigure[Bias Analysis]{
-		\includegraphics[width=15cm]{figure-release/Model1.Bias.png}\label{model1_bias}
+	\subfigure[Deviation Analysis]{
+		\includegraphics[width=15cm]{figure-release/Model1.Deviation.png}\label{model1_deviation}
 	}
 	\subfigure[Variance Analysis]{
 		\includegraphics[width=8cm]{figure-release/Model1.Variance}\label{model1_variance}
 	}
-	\caption{Bias And Variance Analysis}\label{model1_bias_variance}	
+	\caption{Deviation And Variance Analysis}\label{model1_deviation_variance}	
 \end{figure}
 
 Finally, we can get the simplified equation\eqref{model1_sim}:
@@ -208,15 +224,12 @@ Based on the above results, we get strategies to deal with the drug crisis:
 	\item The community should pay more attention to the family relations and mediate the family contradiction in time.
 \end{enumerate}
 
-$Y(t)=T(t)S(t)E(t)$
+\subsubsection{Evaluating}
 
 \subsection{Strengths}
 \begin{itemize}
-	\item \textbf{Applies widely}\\
-	This  system can be used for many types of airplanes, and it also
-	solves the interference during  the procedure of the boarding
-	airplane,as described above we can get to the  optimization
-	boarding time.We also know that all the service is automate.
+	\item \textbf{Simplication}\\
+	
 	\item \textbf{Improve the quality of the airport service}\\
 	Balancing the cost of the cost and the benefit, it will bring in
 	more convenient  for airport and passengers.It also saves many
@@ -234,7 +247,7 @@ $Y(t)=T(t)S(t)E(t)$
 \begin{thebibliography}{99}
 	\bibitem{1} ``WORLD DRUG REPORT 2018", \url{https://www.unodc.org/wdr2018/prelaunch/}
 	\bibitem{2} Boccaletti S, Latora V, Moreno Y, Chavez M, Hwang D U. ``Complex networks: Structure and dynamics". Physics reports, 2006, 424(4): 175-308.
-	\bibitem{3}
+	\bibitem{3} \url{https://www.census.gov/geo/maps-data/}
 	\bibitem{4}\url{http://www.chinatex.org/}
 \end{thebibliography}
 

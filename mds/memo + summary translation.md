@@ -31,7 +31,7 @@ American is suffering from a national opioid crisis, bringing huge impact on the
 
 First, we build a relationship graph containing every county in these 5 states, consider the autoregressive internal factor and nearby counties' external affecting factor of each county, and build the equation that characterizes the variation of the opioid incident cases. We get the rule describing drug crime cases count by analyzing the equations, and get the source of drug propagation by the minimum spanning tree.
 
-Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by AHP. Subsuming these economical and social factors into the equations, we get a much better fitting model and less deviations.
+Then, we clarify the internal floating factor by considering the population and economic investigation report. We classify various factors into three major types, and determine their relevance and significance by AHP. Subsuming these economic and social factors into the equations, we get a much better fitting model and less deviations.
 
 Finally, we successfully describe national drug criminals’ traits with the modified model, and identify regional drug centers by the degree of centrality in the graph. We provide advice to the government by referring to the drug measures in other countries and regions.
 
